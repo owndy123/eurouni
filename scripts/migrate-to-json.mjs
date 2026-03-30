@@ -2,46 +2,73 @@
 /**
  * Migration Script: mockData.ts → data/programs.json
  * Run: node scripts/migrate-to-json.mjs
- * 
- * Reads mockData.ts backup and generates the versioned JSON.
  */
 
 import * as fs from 'fs'
 import * as path from 'path'
 
-const ROOT = path.join(process.cwd())
+const ROOT = process.cwd()
 const VERSION = 'v2026'
 const EFFECTIVE_DATE = '2026-01-01'
 
-// Read the backup (original TypeScript file)
 const bakPath = path.join(ROOT, 'src', 'data', 'mockData.ts.bak')
 const bakContent = fs.readFileSync(bakPath, 'utf-8')
 
-// Extract array content - find the large array literals
-// We look for: export const universities: University[] = [...];
-// and: export const programs: Program[] = [...];
-
-function extractArray(content, startMarker, endMarker) {
-  const startIdx = content.indexOf(startMarker)
-  if (startIdx === -1) throw new Error(`Could not find: ${startMarker}`)
-  const dataStart = content.indexOf('[', startIdx)
-  let bracketCount = 0
-  let dataEnd = dataStart
-  for (let i = dataStart; i < content.length; i++) {
-    if (content[i] === '[') bracketCount++
-    else if (content[i] === ']') { bracketCount--; if (bracketCount === 0) { dataEnd = i; break } }
-  }
-  return content.slice(dataStart, dataEnd + 1)
+// Helper: find the array literal starting after `=`
+function findArrayStart(content, marker) {
+  const markerIdx = content.indexOf(marker)
+  if (markerIdx === -1) throw new Error(`Marker not found: ${marker}`)
+  const eqIdx = content.indexOf('=', markerIdx)
+  if (eqIdx === -1) throw new Error(`No = after marker: ${marker}`)
+  const bracketStart = content.indexOf('[', eqIdx)
+  if (bracketStart === -1) throw new Error(`No [ after = in: ${marker}`)
+  return bracketStart
 }
 
-const uniArrayStr = extractArray(bakContent, 'export const universities', '// ============ PROGRAMS')
-const progArrayStr = extractArray(bakContent, 'export const programs', '// Helper functions')
+function extractArray(content, marker) {
+  const bracketStart = findArrayStart(content, marker)
+  let bc = 0, end = bracketStart
+  for (let i = bracketStart; i < content.length; i++) {
+    if (content[i] === '[') bc++
+    else if (content[i] === ']') { bc--; if (bc === 0) { end = i; break } }
+  }
+  return { start: bracketStart, end, str: content.slice(bracketStart, end + 1) }
+}
 
-// Use Function constructor to safely eval array literals (they contain only plain data)
-const universities = new Function(`return ${uniArrayStr}`)()
-const programs = new Function(`return ${progArrayStr}`)()
+// Extract country university arrays and combine
+function extractUniversities(content) {
+  const countries = [
+    'slovakUniversities', 'czechUniversities', 'austrianUniversities',
+    'polishUniversities', 'hungarianUniversities', 'germanUniversities', 'netherlandsUniversities'
+  ]
+  const result = []
 
-console.log(`Found ${universities.length} universities and ${programs.length} programs`)
+  for (const country of countries) {
+    const marker = `export const ${country}: University[]`
+    try {
+      const { str } = extractArray(content, marker)
+      const arr = eval(str)
+      result.push(...arr)
+      console.log(`  + ${country}: ${arr.length}`)
+    } catch (e) {
+      console.error(`  ! ${country}: ${e.message}`)
+    }
+  }
+  return result
+}
+
+function extractPrograms(content) {
+  const { str } = extractArray(content, 'export const programs: Program[]')
+  return eval(str)
+}
+
+console.log('Extracting universities...')
+const universities = extractUniversities(bakContent)
+console.log(`Total: ${universities.length} universities\n`)
+
+console.log('Extracting programs...')
+const programs = extractPrograms(bakContent)
+console.log(`Total: ${programs.length} programs\n`)
 
 const transformUniversity = (uni) => ({
   id: uni.id, name: uni.name, country: uni.country, city: uni.city,
@@ -87,9 +114,8 @@ if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true })
 
 const outputPath = path.join(dataDir, 'programs.json')
 fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8')
-console.log(`[WRITE] Created ${outputPath}`)
-console.log()
-console.log('Migration complete!')
-console.log(`  - Universities: ${output.universities.length}`)
-console.log(`  - Programs: ${output.programs.length}`)
-console.log(`  - Version: ${VERSION}`)
+console.log(`[WRITE] ${outputPath}`)
+console.log('\nMigration complete!')
+console.log(`  Universities: ${output.universities.length}`)
+console.log(`  Programs: ${output.programs.length}`)
+console.log(`  Version: ${VERSION}`)

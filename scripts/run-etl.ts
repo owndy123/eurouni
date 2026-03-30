@@ -1,13 +1,24 @@
 /**
- * ETL Runner Script
- * Run: npx ts-node scripts/run-etl.ts
- * Run with force: npx ts-node scripts/run-etl.ts --force
+ * EuroUni ETL Runner Script
+ * Run: npx tsx scripts/run-etl.ts
+ * Run with force: npx tsx scripts/run-etl.ts --force
+ *
+ * The ETL pipeline:
+ * 1. Scrapes university websites for program data
+ * 2. Validates and normalizes the scraped data
+ * 3. Writes updated data to data/programs.json
+ * 4. Reloads the data source
+ *
+ * Country scrapers are implemented as stub functions below.
+ * Each stub logs a "not yet implemented" message.
+ * To implement a real scraper, replace the stub body with actual
+ * Playwright/cheerio logic for that country's universities.
  */
 
 import { scrapeAndSave, shouldRescrape, loadScrapedData, getLastScrapeTime } from '../src/lib/etl-pipeline'
-import { universities } from '../src/data/mockData'
+import { universities, reload } from '../src/lib/dataSource'
 
-// University program URLs - map university IDs to their program listing URLs
+// University program URLs — map university IDs to their program listing URLs
 const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
   // Slovakia
   'stuba': 'https://www.stuba.sk/sk/fakulta.html',
@@ -18,7 +29,6 @@ const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
   'tu-zvolen': 'https://www.tuzvo.sk/en/',
   'uvm': 'https://www.uvm.sk/en/',
   'akademia': 'https://www.akademia.sk/en/',
-
   // Czech Republic
   'cuni': 'https://cuni.cz/UKEN_313.html',
   'cvut': 'https://www.cvut.cz/en/',
@@ -30,7 +40,6 @@ const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
   'utb': 'https://www.utb.cz/en/',
   'ujep': 'https://www.ujep.cz/en/',
   'uwb': 'https://www.zcu.cz/en/',
-
   // Austria
   'univie': 'https://www.univie.ac.at/en/studies/',
   'tuw': 'https://www.tuwien.ac.at/en/studies',
@@ -40,7 +49,6 @@ const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
   'sbg': 'https://www.plus.ac.at/en/study/',
   'wu-wien': 'https://www.wu.ac.at/en/study/',
   'mu-wien': 'https://www.meduniwien.ac.at/en/study/',
-
   // Poland
   'uw': 'https://www.uw.edu.pl/en/education/',
   'pw': 'https://www.pw.edu.pl/en/Studies',
@@ -52,7 +60,6 @@ const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
   'pwr': 'https://www.pwr.edu.pl/en/education/',
   'ug': 'https://www.ug.edu.pl/en/education/',
   'pg': 'https://www.pg.edu.pl/en/education/',
-
   // Hungary
   'elte': 'https://www.elte.hu/en/',
   'bme': 'https://www.bme.hu/en/education',
@@ -62,7 +69,6 @@ const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
   'pte': 'https://www.pte.hu/en/education/',
   'szte': 'https://www.u-szeged.hu/en/education/',
   'debrecen': 'https://www.unideb.hu/en/education/',
-
   // Germany
   'tum': 'https://www.tum.de/en/studies/degree-programs',
   'tum-wsi': 'https://www.wsi.tum.de/en/study/',
@@ -74,7 +80,6 @@ const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
   'hu-berlin': 'https://www.hu-berlin.de/en/studies/',
   'lmu': 'https://www.lmu.de/en/studies/',
   'heidelberg': 'https://www.uni-heidelberg.de/en/studies/',
-
   // Netherlands
   'uva': 'https://www.uva.nl/en/programmes',
   'tue': 'https://www.tue.nl/en/education/',
@@ -94,42 +99,177 @@ interface ScrapeResult {
   error?: string
 }
 
+// ============ Country Scraper Stubs ============
+//
+// Each scraper function handles all universities in a given country.
+// Replace the stub body with real Playwright/cheerio scraping logic.
+//
+// The expected pattern for each scraper:
+// 1. Fetch the main university listings page
+// 2. Parse program cards using country-specific selectors
+// 3. Normalize data to Program interface
+// 4. Merge with existing JSON data
+// 5. Write back to data/programs.json
+
+async function scrapeSlovakia(): Promise<ScrapeResult[]> {
+  console.log('[SCRAPER] Slovakia — not yet implemented')
+  // TODO: Implement Playwright/cheerio scraping for Slovak universities:
+  //   - stuba.sk (STU Bratislava)
+  //   - uniba.sk (Comenius)
+  //   - ukf.sk (Constantine the Philosopher)
+  //   - tuke.sk (Technical University Košice)
+  //   - upjs.sk (Pavol Jozef Šafárik)
+  //   - tuzvo.sk (Technical University Zvolen)
+  //   - uvm.sk (Veterinary Medicine Košice)
+  //   - akademia.sk (Performing Arts)
+  const results: ScrapeResult[] = []
+  for (const uni of universities.filter(u => u.country === 'Slovakia')) {
+    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  }
+  return results
+}
+
+async function scrapeCzech(): Promise<ScrapeResult[]> {
+  console.log('[SCRAPER] Czech Republic — not yet implemented')
+  // TODO: Implement scraping for Czech universities:
+  //   - cuni.cz (Charles University)
+  //   - cvut.cz (Czech Technical University)
+  //   - vut.cz (Brno University of Technology)
+  //   - muni.cz (Masaryk University)
+  //   - czu.cz (Czech University of Life Sciences)
+  //   - upol.cz (Palacký University)
+  //   - osu.cz (University of Ostrava)
+  //   - utb.cz (Tomas Bata University)
+  //   - ujep.cz (Jan Evangelista Purkyně University)
+  //   - zcu.cz (University of West Bohemia)
+  const results: ScrapeResult[] = []
+  for (const uni of universities.filter(u => u.country === 'Czech Republic')) {
+    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  }
+  return results
+}
+
+async function scrapeAustria(): Promise<ScrapeResult[]> {
+  console.log('[SCRAPER] Austria — not yet implemented')
+  // TODO: Implement scraping for Austrian universities:
+  //   - univie.ac.at (University of Vienna)
+  //   - tuwien.ac.at (TU Wien)
+  //   - tugraz.at (TU Graz)
+  //   - jku.at (JKU Linz)
+  //   - uibk.ac.at (University of Innsbruck)
+  //   - plus.ac.at (University of Salzburg)
+  //   - wu.ac.at (Vienna University of Economics)
+  //   - meduniwien.ac.at (Medical University of Vienna)
+  const results: ScrapeResult[] = []
+  for (const uni of universities.filter(u => u.country === 'Austria')) {
+    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  }
+  return results
+}
+
+async function scrapePoland(): Promise<ScrapeResult[]> {
+  console.log('[SCRAPER] Poland — not yet implemented')
+  // TODO: Implement scraping for Polish universities:
+  //   - uw.edu.pl (University of Warsaw)
+  //   - pw.edu.pl (Warsaw University of Technology)
+  //   - uj.edu.pl (Jagiellonian University)
+  //   - agh.edu.pl (AGH University of Science and Technology)
+  //   - put.poznan.pl (Poznań University of Technology)
+  //   - amu.edu.pl (Adam Mickiewicz University)
+  //   - uw.edu.pl (University of Wrocław)
+  //   - pwr.edu.pl (Wrocław University of Science and Technology)
+  //   - ug.edu.pl (University of Gdańsk)
+  //   - pg.edu.pl (Gdańsk University of Technology)
+  const results: ScrapeResult[] = []
+  for (const uni of universities.filter(u => u.country === 'Poland')) {
+    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  }
+  return results
+}
+
+async function scrapeHungary(): Promise<ScrapeResult[]> {
+  console.log('[SCRAPER] Hungary — not yet implemented')
+  // TODO: Implement scraping for Hungarian universities:
+  //   - elte.hu (Eötvös Loránd University)
+  //   - bme.hu (Budapest University of Technology)
+  //   - inf.elte.hu (ELTE Faculty of Informatics)
+  //   - semmelweis.hu (Semmelweis University)
+  //   - uni-miskolc.hu (University of Miskolc)
+  //   - pte.hu (University of Pécs)
+  //   - u-szeged.hu (University of Szeged)
+  //   - unideb.hu (University of Debrecen)
+  const results: ScrapeResult[] = []
+  for (const uni of universities.filter(u => u.country === 'Hungary')) {
+    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  }
+  return results
+}
+
+async function scrapeGermany(): Promise<ScrapeResult[]> {
+  console.log('[SCRAPER] Germany — not yet implemented')
+  // TODO: Implement scraping for German universities:
+  //   - tum.de (Technical University of Munich)
+  //   - wsi.tum.de (TUM School of Management)
+  //   - tu-berlin.de (TU Berlin)
+  //   - rwth-aachen.de (RWTH Aachen)
+  //   - kit.edu (Karlsruhe Institute of Technology)
+  //   - ph.tum.de (TUM Department of Physics)
+  //   - fu-berlin.de (Freie Universität Berlin)
+  //   - hu-berlin.de (Humboldt University of Berlin)
+  //   - lmu.de (Ludwig Maximilian University of Munich)
+  //   - uni-heidelberg.de (Heidelberg University)
+  const results: ScrapeResult[] = []
+  for (const uni of universities.filter(u => u.country === 'Germany')) {
+    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  }
+  return results
+}
+
+async function scrapeNetherlands(): Promise<ScrapeResult[]> {
+  console.log('[SCRAPER] Netherlands — not yet implemented')
+  // TODO: Implement scraping for Dutch universities:
+  //   - uva.nl (University of Amsterdam)
+  //   - tue.nl (Eindhoven University of Technology)
+  //   - tudelft.nl (Delft University of Technology)
+  //   - universiteitleiden.nl (Leiden University)
+  //   - utwente.nl (University of Twente)
+  //   - rug.nl (University of Groningen)
+  //   - vu.nl (Vrije Universiteit Amsterdam)
+  //   - ru.nl (Radboud University)
+  const results: ScrapeResult[] = []
+  for (const uni of universities.filter(u => u.country === 'Netherlands')) {
+    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  }
+  return results
+}
+
+// ============ Individual University Scrape ============
+
 async function processUniversity(
   universityId: string,
   url: string,
   force: boolean
 ): Promise<ScrapeResult> {
-  // Check if we should skip based on data age
   if (!force && !shouldRescrape(universityId, 7)) {
     const lastScrape = getLastScrapeTime(universityId)
     const existingPrograms = loadScrapedData(universityId)
-    console.log(`[SKIP] ${universityId} - data is fresh (last scraped: ${lastScrape?.toISOString() || 'never'}, ${existingPrograms.length} programs)`)
-    return {
-      universityId,
-      success: true,
-      programCount: existingPrograms.length,
-      skipped: true,
-    }
+    console.log(`[SKIP] ${universityId} — data is fresh (last scraped: ${lastScrape?.toISOString() ?? 'never'}, ${existingPrograms.length} programs)`)
+    return { universityId, success: true, programCount: existingPrograms.length, skipped: true }
   }
 
-  // Scrape and save
-  console.log(`[SCRAPE] ${universityId} - scraping from ${url}`)
+  console.log(`[SCRAPE] ${universityId} — scraping from ${url}`)
   const result = await scrapeAndSave(universityId, url)
 
   if (result.success) {
-    console.log(`[OK] ${universityId} - scraped ${result.programCount} programs`)
+    console.log(`[OK] ${universityId} — scraped ${result.programCount} programs`)
   } else {
-    console.error(`[FAIL] ${universityId} - ${result.error}`)
+    console.error(`[FAIL] ${universityId} — ${result.error}`)
   }
 
-  return {
-    universityId,
-    success: result.success,
-    programCount: result.programCount,
-    skipped: false,
-    error: result.error,
-  }
+  return { universityId, success: result.success, programCount: result.programCount, skipped: false, error: result.error }
 }
+
+// ============ Main ETL Runner ============
 
 async function runETL(force: boolean = false): Promise<void> {
   console.log('='.repeat(60))
@@ -138,18 +278,38 @@ async function runETL(force: boolean = false): Promise<void> {
   console.log('='.repeat(60))
   console.log()
 
+  // Country scraper mode: if --country=<name> is passed, run only that scraper
+  const countryArg = process.argv.find(a => a.startsWith('--country='))
+  if (countryArg) {
+    const country = countryArg.split('=')[1]
+    console.log(`Running country-specific scraper: ${country}\n`)
+    const scrapers: Record<string, () => Promise<ScrapeResult[]>> = {
+      slovakia: scrapeSlovakia,
+      czech: scrapeCzech,
+      austria: scrapeAustria,
+      poland: scrapePoland,
+      hungary: scrapeHungary,
+      germany: scrapeGermany,
+      netherlands: scrapeNetherlands,
+    }
+    const scraper = scrapers[country.toLowerCase()]
+    if (!scraper) {
+      console.error(`Unknown country: ${country}. Available: ${Object.keys(scrapers).join(', ')}`)
+      process.exit(1)
+    }
+    const results = await scraper()
+    console.log(`\n${country} scraper complete: ${results.length} universities`)
+    return
+  }
+
+  // Default: run individual university scraping (legacy mode)
   const startTime = Date.now()
   const results: ScrapeResult[] = []
 
-  // Get universities that have URLs defined
-  const universitiesToScrape = universities.filter(
-    uni => UNIVERSITY_PROGRAM_URLS[uni.id]
-  )
-
+  const universitiesToScrape = universities.filter(uni => UNIVERSITY_PROGRAM_URLS[uni.id])
   console.log(`Found ${universitiesToScrape.length} universities with URLs to scrape`)
   console.log()
 
-  // Process in batches of 2 for controlled concurrency
   const CONCURRENCY = 2
   for (let i = 0; i < universitiesToScrape.length; i += CONCURRENCY) {
     const batch = universitiesToScrape.slice(i, i + CONCURRENCY)
@@ -168,6 +328,9 @@ async function runETL(force: boolean = false): Promise<void> {
     )
     results.push(...batchResults)
   }
+
+  // Reload the data source after scraping completes
+  reload()
 
   // Summary
   const successCount = results.filter(r => r.success && !r.skipped).length
@@ -190,21 +353,15 @@ async function runETL(force: boolean = false): Promise<void> {
 
   if (failCount > 0) {
     console.log('Failed universities:')
-    results
-      .filter(r => !r.success && !r.skipped)
-      .forEach(r => {
-        console.log(`  - ${r.universityId}: ${r.error}`)
-      })
+    results.filter(r => !r.success && !r.skipped).forEach(r => {
+      console.log(`  - ${r.universityId}: ${r.error}`)
+    })
     console.log()
   }
 
-  // Exit with error code if any failures
-  if (failCount > 0) {
-    process.exit(1)
-  }
+  if (failCount > 0) process.exit(1)
 }
 
-// Main entry point
 function main(): void {
   const force = process.argv.includes('--force')
   runETL(force).catch(error => {
