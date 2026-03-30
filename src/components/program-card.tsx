@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Clock, GraduationCap, Languages, Euro, ArrowRight, MapPin } from 'lucide-react'
 import Link from 'next/link'
 import { Program, University, getUniversityWithLogo } from '@/data/mockData'
+import { UniversityAvatar } from './university-avatar'
 
 interface ProgramCardProps {
   program: Program
@@ -12,9 +13,7 @@ interface ProgramCardProps {
 }
 
 export default function ProgramCard({ program, university, score }: ProgramCardProps) {
-  // Get university with proper logo
   const uniWithLogo = getUniversityWithLogo(university.id) || university
-  const logoUrl = uniWithLogo.logo
   
   const languageMap: Record<string, string> = {
     english: 'English',
@@ -39,15 +38,11 @@ export default function ProgramCard({ program, university, score }: ProgramCardP
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            {logoUrl.startsWith('http') ? (
-              <img 
-                src={logoUrl} 
-                alt={university.name}
-                className="w-10 h-10 object-contain rounded"
-              />
-            ) : (
-              <span className="text-2xl">{logoUrl}</span>
-            )}
+            <UniversityAvatar
+              name={uniWithLogo.name}
+              country={uniWithLogo.country}
+              size="md"
+            />
             <div>
               <h3 className="font-semibold text-slate-900">{program.name}</h3>
               <p className="text-sm text-slate-500">{university.name}</p>

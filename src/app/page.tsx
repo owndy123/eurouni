@@ -7,6 +7,7 @@ import { GraduationCap, MapPin, Languages, Calculator, ArrowRight, Globe, Users,
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { universities, programs, getStats, getUniversityWithLogo } from '@/data/mockData'
+import { UniversityAvatar } from '@/components/university-avatar'
 
 // ============ ANIMATED COUNTER ============
 function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: string }) {
@@ -113,12 +114,10 @@ function UniversityCard({
   programCount,
   index,
 }: {
-  university: { id: string; name: string; city: string; logo: string }
+  university: { id: string; name: string; city: string; logo: string; country: string }
   programCount: number
   index: number
 }) {
-  const logoUrl = university.logo
-
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -130,13 +129,7 @@ function UniversityCard({
       <Card className="p-4 h-full transition-all duration-300 hover:border-primary/30 cursor-pointer">
         <CardHeader className="p-0 mb-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center overflow-hidden flex-shrink-0">
-              {logoUrl.startsWith('http') ? (
-                <img src={logoUrl} alt={university.name} className="w-8 h-8 object-contain" />
-              ) : (
-                <Globe className="w-4 h-4 text-muted-foreground" />
-              )}
-            </div>
+            <UniversityAvatar name={university.name} country={university.country} size="md" />
             <CardTitle className="line-clamp-2 text-sm leading-tight">
               {university.name}
             </CardTitle>

@@ -45,39 +45,10 @@ function FitBounds({ markers }: { markers: [number, number][] }) {
 }
 
 // Create custom icon for university markers
-function createUniversityIcon(logoUrl: string, isInRange: boolean) {
+function createUniversityIcon(emoji: string, isInRange: boolean) {
   const size = 32
   const borderColor = isInRange ? '#0284c7' : '#94a3b8'
-  const isHttpUrl = logoUrl.startsWith('http')
   
-  if (isHttpUrl) {
-    return L.divIcon({
-      className: 'university-marker',
-      html: `
-        <div style="
-          width: ${size}px;
-          height: ${size}px;
-          border-radius: 50%;
-          border: 2px solid ${borderColor};
-          overflow: hidden;
-          background: white;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        ">
-          <img 
-            src="${logoUrl}" 
-            alt="university" 
-            style="width: 100%; height: 100%; object-fit: contain; padding: 2px;"
-            onerror="this.style.display='none'"
-          />
-        </div>
-      `,
-      iconSize: [size, size],
-      iconAnchor: [size / 2, size / 2],
-      popupAnchor: [0, -size / 2],
-    })
-  }
-  
-  // Fallback icon with emoji
   return L.divIcon({
     className: 'university-marker',
     html: `
@@ -92,10 +63,9 @@ function createUniversityIcon(logoUrl: string, isInRange: boolean) {
         justify-content: center;
         color: white;
         font-size: 14px;
-        font-weight: bold;
         box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       ">
-        🎓
+        ${emoji}
       </div>
     `,
     iconSize: [size, size],
@@ -230,26 +200,21 @@ function MapInner({
                 )
               : null
             const isInRange = dist !== null && dist <= maxDistance
-            const logoUrl = getLogo(uni.id)
+            const logoEmoji = getLogo(uni.id) || '🎓'
             const programCount = universitiesWithPrograms.get(uni.id) || 0
             
             return (
               <Marker
                 key={uni.id}
                 position={[uni.coordinates.lat, uni.coordinates.lng]}
-                icon={createUniversityIcon(logoUrl, isInRange)}
+                icon={createUniversityIcon(logoEmoji, isInRange)}
               >
                 <Popup>
                   <div className="min-w-48">
                     <div className="flex items-start gap-3">
-                      {logoUrl && (
-                        <img 
-                          src={logoUrl} 
-                          alt={uni.name}
-                          className="w-10 h-10 object-contain rounded"
-                          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-                        />
-                      )}
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center text-2xl bg-sky-100 shrink-0">
+                        {logoEmoji}
+                      </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-slate-900 text-sm">{uni.name}</h4>
                         <p className="text-xs text-slate-500 mt-0.5">{uni.city}, {uni.country}</p>

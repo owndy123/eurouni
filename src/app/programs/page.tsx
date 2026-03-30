@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic'
 const DistanceMap = dynamic(() => import('@/components/distance-map'), { ssr: false })
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
+import { UniversityAvatar } from '@/components/university-avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -227,15 +228,7 @@ export default function ProgramsPage() {
           <CardHeader className="pb-2">
             <div className="flex items-start justify-between gap-3">
               <div className="flex items-center gap-3 min-w-0">
-                {university.logo.startsWith('http') ? (
-                  <img
-                    src={university.logo}
-                    alt={university.name}
-                    className="w-10 h-10 object-contain rounded-lg bg-white border shrink-0"
-                  />
-                ) : (
-                  <span className="text-2xl">{university.logo}</span>
-                )}
+                <UniversityAvatar name={university.name} country={university.country} size="md" />
                 <div className="min-w-0">
                   <CardTitle className="text-base leading-tight line-clamp-1">
                     {program.name}
