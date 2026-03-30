@@ -113,18 +113,15 @@ export default function ProgramCard({ program, university, score }: ProgramCardP
         </div>
 
         {/* Action */}
-        <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+        <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-end">
           <Link
             href={university.website}
             target="_blank"
-            className="text-sm text-primary-600 hover:text-primary-700 font-medium"
+            className="text-sm bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors flex items-center gap-1"
           >
             Visit Website
-          </Link>
-          <button className="text-sm bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors flex items-center gap-1">
-            Contact Admissions
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>

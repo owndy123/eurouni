@@ -12,6 +12,7 @@ import { calculateAllScores, DEFAULT_WEIGHTS, WeightConfig, getCoordinatesForCit
 import { programs, universities, getUniversity, Program, University } from '@/data/mockData'
 import ProgramCard from '@/components/program-card'
 import CalculatorUI from '@/components/calculator-ui'
+import { UniversityAvatar } from '@/components/university-avatar'
 import { Slider } from '@/components/ui/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -566,9 +567,12 @@ export default function OnboardingPage() {
                         {/* Content */}
                         <div className="flex-1 p-4">
                           <div className="flex items-start justify-between gap-4">
-                            <div className="flex-1 min-w-0">
-                              <h3 className="font-semibold text-slate-900 truncate">{result.program.name}</h3>
-                              <p className="text-sm text-muted-foreground">{result.university.name} · {result.university.country}</p>
+                            <div className="flex items-center gap-3 flex-1 min-w-0">
+                              <UniversityAvatar name={result.university.name} country={result.university.country} size="sm" />
+                              <div className="min-w-0">
+                                <h3 className="font-semibold text-slate-900 truncate">{result.program.name}</h3>
+                                <p className="text-sm text-muted-foreground">{result.university.name} · {result.university.country}</p>
+                              </div>
                             </div>
 
                             {/* Score badge */}
