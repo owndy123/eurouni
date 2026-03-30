@@ -2,69 +2,201 @@
   "universityId": "uniba",
   "programs": [
     {
-      "name": "Prostate cancer prevention is painless",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-general-medicine",
       "universityId": "uniba",
-      "id": "uniba-scraped-0",
+      "name": "General Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 10500,
+      "description": "Six-year medical program (MUDr — Doctor of Medicine) taught entirely in English. Clinical rotations at University Hospital Bratislava and affiliated hospitals. Recognized across the EU and many other countries.",
+      "entryRequirements": [
+        "Biology at secondary school (A-level equivalent)",
+        "Chemistry at secondary school",
+        "English proficiency test (B2 minimum)",
+        "Entrance exam (biology and chemistry)"
+      ],
+      "field": "Medicine",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Wishing Tree project comes to Comenius University...",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-dental-medicine",
       "universityId": "uniba",
-      "id": "uniba-scraped-1",
+      "name": "Dental Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 12000,
+      "description": "Five-year dental program in English. Comprehensive training in all aspects of dentistry including restorative dentistry, oral surgery, and prosthodontics. State-of-the-art dental simulation labs.",
+      "entryRequirements": [
+        "Biology and Chemistry",
+        "English B2",
+        "Entrance exam (Biology and Chemistry)"
+      ],
+      "field": "Medicine",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "At FMPI CU, health is protected by measuring radon",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-pharmacy",
       "universityId": "uniba",
-      "id": "uniba-scraped-2",
+      "name": "Pharmacy",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 9000,
+      "description": "Five-year Pharmacy program (Mgr Pharm) in English. Covers pharmaceutical sciences, pharmacology, toxicology, and clinical pharmacy. Prepares graduates for careers in pharmacy, pharma industry, and research.",
+      "entryRequirements": [
+        "Chemistry at secondary school",
+        "Biology at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Pharmacy",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Topping-Out Ceremony Held at the New University Hospital in...",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-law",
       "universityId": "uniba",
-      "id": "uniba-scraped-3",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Traditional five-year law program (JUDr) preparing graduates for legal professions in Slovakia and the EU. Constitutional law, civil law, criminal law, administrative law, and international law.",
+      "entryRequirements": [
+        "Slovak language exam (C1 for foreigners)",
+        "GPA minimum 2.0",
+        "Entrance exam in law-related topics"
+      ],
+      "field": "Law",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "CU REMAINS IN THE TOP 300 UNIVERSITIES IN EUROPE",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-psychology",
       "universityId": "uniba",
-      "id": "uniba-scraped-4",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Comprehensive psychology program covering clinical psychology, counseling psychology, work and organizational psychology, and research methodology. Strong emphasis on empirical research and practical training.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Slovak language (C1 for foreigners)",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "More news >",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-philosophy",
       "universityId": "uniba",
-      "id": "uniba-scraped-5",
+      "name": "Philosophy",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of fundamental philosophical questions, history of philosophy, logic, ethics, and metaphysics. Provides critical thinking skills applicable across humanities and social sciences.",
+      "entryRequirements": [
+        "General knowledge assessment",
+        "Slovak language C1"
+      ],
+      "field": "Humanities",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Verification of documents",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-political-science",
       "universityId": "uniba",
-      "id": "uniba-scraped-6",
+      "name": "Political Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of political systems, international relations, European studies, and public policy. Combines theory with practical analysis of contemporary political phenomena in Central Europe and beyond.",
+      "entryRequirements": [
+        "English B2",
+        "Social sciences background preferred"
+      ],
+      "field": "Social Sciences",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "E-shop",
-      "description": "",
-      "field": "Unknown",
+      "id": "uniba-journalism",
       "universityId": "uniba",
-      "id": "uniba-scraped-7",
+      "name": "Journalism",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Media and communication studies with practical journalism training. News writing, broadcast journalism, digital media, media law, and ethics. Partnerships with Slovak media outlets.",
+      "entryRequirements": [
+        "Slovak language C1",
+        "Written entrance exam"
+      ],
+      "field": "Communication",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-history",
+      "universityId": "uniba",
+      "name": "History",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of world history, European history, and Slovak history from antiquity to the present. Historiography, archival research methods, and source analysis. Prepares for careers in academia, archives, and cultural institutions.",
+      "entryRequirements": [
+        "History knowledge assessment",
+        "Slovak language C1"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-applied-mathematics",
+      "universityId": "uniba",
+      "name": "Applied Mathematics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mathematics with specializations in statistics, financial mathematics, and mathematical modeling. Research-oriented with applications in insurance, banking, and data science.",
+      "entryRequirements": [
+        "Mathematics bachelor or equivalent",
+        "English B2",
+        "Entrance exam in mathematics"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-computer-science",
+      "universityId": "uniba",
+      "name": "Computer Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced CS program covering algorithms, software engineering, AI, and data science. Research opportunities with faculty and industry partners in Bratislava's growing tech sector.",
+      "entryRequirements": [
+        "Computer Science bachelor or equivalent",
+        "English B2",
+        "GPA minimum 2.0"
+      ],
+      "field": "Computer Science",
       "lastUpdated": "2026-03-30"
     }
   ],
-  "savedAt": "2026-03-30T16:01:19.319Z"
+  "savedAt": "2026-03-30T21:57:46.122Z"
 }

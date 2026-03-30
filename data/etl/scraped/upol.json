@@ -1,0 +1,42 @@
+{
+  "universityId": "upol",
+  "programs": [
+    {
+      "id": "upol-informatics",
+      "universityId": "upol",
+      "name": "Informatics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Comprehensive computer science in historic Olomouc. Software development, networks, and AI fundamentals. Faculty of Science and Technology.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "upol-medicine-and-dentistry",
+      "universityId": "upol",
+      "name": "Medicine and Dentistry",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 11000,
+      "description": "English-taught medical program in Olomouc. Faculty of Medicine and Dentistry is highly regarded. Clinical training at University Hospital Olomouc.",
+      "entryRequirements": [
+        "Biology and Chemistry at A-level",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:58:22.250Z"
+}

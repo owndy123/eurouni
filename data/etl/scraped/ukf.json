@@ -2,133 +2,59 @@
   "universityId": "ukf",
   "programs": [
     {
-      "name": "Courses and study programmes taught also in foreign languages",
-      "description": "",
-      "field": "Unknown",
+      "id": "ukf-teacher-training-primary-education",
       "universityId": "ukf",
-      "id": "ukf-scraped-0",
+      "name": "Teacher Training (Primary Education)",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Prepares teachers for primary and lower secondary schools. Pedagogy, didactics, and subject specialization. Includes extensive teaching practice in partner schools.",
+      "entryRequirements": [
+        "Matura/secondary school diploma",
+        "Slovak language exam (C1 for foreigners)",
+        "Motivation interview"
+      ],
+      "field": "Education",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Modern European University message in the footsteps of Constantine the Philosopher.",
-      "description": "",
-      "field": "Unknown",
+      "id": "ukf-business-administration",
       "universityId": "ukf",
-      "id": "ukf-scraped-1",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Management, marketing, finance, and entrepreneurship. English-taught in Nitra. Case studies and business simulations with regional companies.",
+      "entryRequirements": [
+        "English B2",
+        "Mathematics at secondary level",
+        "Entrance exam"
+      ],
+      "field": "Business",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "UKF Welcomes Scholars from Argentina and Spain",
-      "description": "",
-      "field": "Unknown",
+      "id": "ukf-psychology",
       "universityId": "ukf",
-      "id": "ukf-scraped-2",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Secondary School Technical Olympiad and International Scientific Conference",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-3",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "International Cooperation within an Erasmus+ BIP Project",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-4",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Development of the University through Collective Effort",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-5",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Prof. František Petrovič Elected Rector of UKF",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-6",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Award for Vice-rector Pavliková in Albania",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-7",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Constantine the Philosopher University strengthens its position as a Cultural Routes expert",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-8",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Smart Tourism Academy launches",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-9",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Second Workshop at the Faculty of Central European Studies within the Recovery Plan Project",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-10",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "I want to study at UKF",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-11",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Brochure",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-12",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Faculties",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-13",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Informations for incoming students",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-14",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Media partners",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "ukf",
-      "id": "ukf-scraped-15",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Clinical psychology, counseling, and research methods. Strong emphasis on empirical work and practical training in psychological assessment.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Slovak C1",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
       "lastUpdated": "2026-03-30"
     }
   ],
-  "savedAt": "2026-03-30T16:01:20.108Z"
+  "savedAt": "2026-03-30T21:57:46.122Z"
 }

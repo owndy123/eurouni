@@ -1,0 +1,42 @@
+{
+  "universityId": "ujep",
+  "programs": [
+    {
+      "id": "ujep-informatics",
+      "universityId": "ujep",
+      "name": "Informatics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Applied informatics in north Bohemia. Software development and IT systems. Smaller university with personal approach.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "ujep-physics",
+      "universityId": "ujep",
+      "name": "Physics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Applied physics with specialization options. Research-oriented with laboratory work.",
+      "entryRequirements": [
+        "Physics bachelor or equivalent",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:58:22.250Z"
+}

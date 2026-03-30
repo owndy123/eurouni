@@ -1,0 +1,59 @@
+{
+  "universityId": "czu",
+  "programs": [
+    {
+      "id": "czu-agriculture",
+      "universityId": "czu",
+      "name": "Agriculture",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Modern agriculture, agronomy, and food production. Sustainable farming and agroecology. Prague location with access to Czech agricultural research institutions.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Agriculture",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "czu-environmental-science",
+      "universityId": "czu",
+      "name": "Environmental Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Sustainable resource management, environmental protection, and natural resource economics. Growing field as EU sustainability policies expand.",
+      "entryRequirements": [
+        "Environmental/Agricultural Sciences bachelor",
+        "English B2"
+      ],
+      "field": "Environmental",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "czu-economics",
+      "universityId": "czu",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Agricultural and resource economics with focus on sustainability and international trade. Prague financial hub location.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:58:22.249Z"
+}

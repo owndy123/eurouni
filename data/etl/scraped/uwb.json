@@ -1,0 +1,60 @@
+{
+  "universityId": "uwb",
+  "programs": [
+    {
+      "id": "uwb-computer-science",
+      "universityId": "uwb",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "CS in western Bohemia. Software engineering and information technology. Growing tech presence in Pilsen region.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uwb-electrical-engineering",
+      "universityId": "uwb",
+      "name": "Electrical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Power systems and electronics in Pilsen. Strong in industrial electronics and energy sector.",
+      "entryRequirements": [
+        "Electrical Engineering bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uwb-mechanical-engineering",
+      "universityId": "uwb",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Design and manufacturing in Pilsen. Škoda Auto and industrial partners in the region.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:58:22.250Z"
+}

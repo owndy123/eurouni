@@ -2,237 +2,76 @@
   "universityId": "vut-brno",
   "programs": [
     {
-      "name": "Studies",
-      "description": "",
-      "field": "Unknown",
+      "id": "vut-brno-electrical-engineering-and-communication",
       "universityId": "vut-brno",
-      "id": "vut-brno-scraped-0",
+      "name": "Electrical Engineering and Communication",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Electronics, telecommunications, and power engineering. Faculty of Electrical Engineering and Communication. Strong in RF engineering and embedded systems.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Legislation and regulations",
-      "description": "",
-      "field": "Unknown",
+      "id": "vut-brno-mechanical-engineering",
       "universityId": "vut-brno",
-      "id": "vut-brno-scraped-1",
+      "name": "Mechanical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mechanical design, automotive engineering, and production technology. Faculty of Mechanical Engineering. Industry partnerships with Škoda Auto and Bosch in the region.",
+      "entryRequirements": [
+        "Mechanical Engineering bachelor or equivalent",
+        "English B2"
+      ],
+      "field": "Engineering",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "International",
-      "description": "",
-      "field": "Unknown",
+      "id": "vut-brno-civil-engineering",
       "universityId": "vut-brno",
-      "id": "vut-brno-scraped-2",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Structural and building engineering. Modern facilities and sustainable construction focus. Growing region with strong infrastructure investment.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Study support",
-      "description": "",
-      "field": "Unknown",
+      "id": "vut-brno-computer-science",
       "universityId": "vut-brno",
-      "id": "vut-brno-scraped-3",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "University",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-4",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Legal and public information",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-5",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Career and work environment",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-6",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Faculties and university institutes",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-7",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Log in",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-8",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Here you can start",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-9",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Backstage BUT: Kateřina Myslivcová shapes the university's sustainable ...",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-10",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "FAST BUT Students Win the 2026 Construction Hackathon on Sustainable ...",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-11",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "BUT and Vodafone launch 5G-SHARE. Unique private 5G network for ...",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-12",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "AMPER 2026 in photos: BUT showcased a dozen exhibits. Two of them won gold",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-13",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "BUT in QS Rankings: Record Number of Subjects and Four Positions in Top 200",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-14",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "From Mechanic to Automotive Visionary: Martin Šula Turned His Knowledge ...",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-15",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "EULiST workshop at BUT provided input for advancing European education",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-16",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Only one week left to apply! Start your future at BUT",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-17",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Microscope of the Future: Combining Light and Electrons Wins ...",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-18",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Help related to the conflict at Ukraine / Пропозиція допомоги у зв'язку з конфліктом в Україні",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-19",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "NewsFromBUT.com",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-20",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "FEEC BUT student project shows future of colored photovoltaics",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-21",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Microscope of the Future: Combining Light and Electrons Wins ...",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-22",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Event Calendar",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-23",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Life at BUT",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-24",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Study options",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-25",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Students",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-26",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Cooperation",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-27",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "University",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "vut-brno",
-      "id": "vut-brno-scraped-28",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Software engineering and information technology. Faculty of Information Technology. Brno tech hub provides internship and employment opportunities.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
       "lastUpdated": "2026-03-30"
     }
   ],
-  "savedAt": "2026-03-30T16:01:24.494Z"
+  "savedAt": "2026-03-30T21:58:22.249Z"
 }

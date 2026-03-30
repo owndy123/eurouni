@@ -1,0 +1,148 @@
+{
+  "universityId": "stuba",
+  "programs": [
+    {
+      "id": "stuba-computer-science-and-information-technology",
+      "universityId": "stuba",
+      "name": "Computer Science and Information Technology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Faculty of Electrical Engineering and Information Technology. Covers software engineering, algorithms, databases, networks, and AI. Modern labs and strong industry links in Bratislava tech ecosystem.",
+      "entryRequirements": [
+        "Mathematics at secondary school level",
+        "English B2 (CEFR)",
+        "Passing entrance exam in mathematics"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-electrical-engineering",
+      "universityId": "stuba",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Focus on power systems, electronics, telecommunications, and automation. Combines theoretical foundations with practical laboratory work at one of Central Europe's leading technical faculties.",
+      "entryRequirements": [
+        "Mathematics and Physics at secondary school",
+        "English B2 (CEFR)",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-mechanical-engineering",
+      "universityId": "stuba",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Faculty of Mechanical Engineering. Specializations in automotive engineering, industrial design, and production technology. Strong partnerships with Slovak and European industry.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-architecture",
+      "universityId": "stuba",
+      "name": "Architecture",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 0,
+      "description": "Five-year integrated master program in Architecture and Design. Studio-based curriculum with emphasis on sustainable design, digital modeling, and urban planning for Central European contexts.",
+      "entryRequirements": [
+        "Talent/aptitude test (drawing)",
+        "Mathematics",
+        "Slovak language exam for foreign students"
+      ],
+      "field": "Architecture",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-civil-engineering",
+      "universityId": "stuba",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Faculty of Civil Engineering. Structural engineering, hydraulics, and infrastructure design. Accredited program with focus on modern construction technologies and sustainable building.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-computer-science-and-information-technology",
+      "universityId": "stuba",
+      "name": "Computer Science and Information Technology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced topics in software engineering, artificial intelligence, cybersecurity, and data science. Research-oriented curriculum with opportunities for industry collaboration in Bratislava.",
+      "entryRequirements": [
+        "Relevant bachelor degree (Computer Science, Informatics, or equivalent)",
+        "English B2",
+        "GPA minimum 2.0"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-mechanical-engineering",
+      "universityId": "stuba",
+      "name": "Mechanical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mechanical engineering with specializations in automotive engineering, industrial engineering, and thermal engineering. Industry-focused research projects.",
+      "entryRequirements": [
+        "Mechanical Engineering bachelor or equivalent",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-automation-and-information-engineering",
+      "universityId": "stuba",
+      "name": "Automation and Information Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Covers control systems, robotics, embedded systems, and industrial automation. Modern facilities with labs for PLC programming, robotics, and Industry 4.0 technologies.",
+      "entryRequirements": [
+        "Electrical/Mechanical Engineering bachelor",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:57:46.120Z"
+}

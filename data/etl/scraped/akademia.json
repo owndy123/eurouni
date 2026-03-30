@@ -1,0 +1,59 @@
+{
+  "universityId": "akademia",
+  "programs": [
+    {
+      "id": "akademia-music-performance",
+      "universityId": "akademia",
+      "name": "Music Performance",
+      "degree": "master",
+      "language": "slovak",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced performance training in classical music. Instrumental or vocal specialization. Solo recitals and ensemble work. Collaboration with Slovak Philharmonic.",
+      "entryRequirements": [
+        "Bachelor in Music",
+        "Audition (performance)",
+        "Slovak/English B2"
+      ],
+      "field": "Art",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "akademia-theatre-studies",
+      "universityId": "akademia",
+      "name": "Theatre Studies",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Acting, directing, and theatre production. Practical training with the academy's theatre company. History of theatre and dramatic theory.",
+      "entryRequirements": [
+        "Audition (monologue, interview)",
+        "Slovak B2"
+      ],
+      "field": "Art",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "akademia-film-and-television-directing",
+      "universityId": "akademia",
+      "name": "Film and Television Directing",
+      "degree": "master",
+      "language": "slovak",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced film and TV directing. Documentary, fiction, and experimental film. Collaboration with Slovak film studios and broadcasters.",
+      "entryRequirements": [
+        "Relevant bachelor",
+        "Portfolio/reel",
+        "Entrance exam"
+      ],
+      "field": "Art",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:57:46.123Z"
+}

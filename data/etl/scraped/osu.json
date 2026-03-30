@@ -1,0 +1,60 @@
+{
+  "universityId": "osu",
+  "programs": [
+    {
+      "id": "osu-computer-science",
+      "universityId": "osu",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "CS program in industrial Moravia. Software engineering, databases, and web development. Growing tech scene in Ostrava.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "osu-psychology",
+      "universityId": "osu",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "local",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Clinical psychology focus. Faculty of Arts. Practical training in partner healthcare institutions in the Moravian-Silesian Region.",
+      "entryRequirements": [
+        "Czech language B2",
+        "Biology preferred",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "osu-teacher-training",
+      "universityId": "osu",
+      "name": "Teacher Training",
+      "degree": "master",
+      "language": "local",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Secondary school teacher education for various subject combinations. Pedagogy and didactics with extensive school practice.",
+      "entryRequirements": [
+        "Bachelor in relevant subject",
+        "Czech B2",
+        "Entrance exam"
+      ],
+      "field": "Education",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:58:22.250Z"
+}

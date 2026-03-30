@@ -1925,868 +1925,6 @@
   ],
   "programs": [
     {
-      "id": "stuba-cs",
-      "universityId": "stuba",
-      "name": "Computer Science",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Premier technical program in Slovakia. Strong focus on algorithms, software engineering, and AI.",
-      "entryRequirements": [
-        "Math proficiency",
-        "English B2",
-        "GPA 2.0+"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Computer Science",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Premier technical program in Slovakia. Strong focus on algorithms, software engineering, and AI.",
-            "entryRequirements": [
-              "Math proficiency",
-              "English B2",
-              "GPA 2.0+"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "stuba-arch",
-      "universityId": "stuba",
-      "name": "Architecture",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 300,
-      "durationMonths": 60,
-      "tuitionEur": 0,
-      "description": "Design-focused architecture program with studio work and technical courses.",
-      "entryRequirements": [
-        "Portfolio",
-        "Math",
-        "Slovak B2"
-      ],
-      "field": "Architecture",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Architecture",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 300,
-            "durationMonths": 60,
-            "tuitionEur": 0,
-            "description": "Design-focused architecture program with studio work and technical courses.",
-            "entryRequirements": [
-              "Portfolio",
-              "Math",
-              "Slovak B2"
-            ],
-            "field": "Architecture",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "stuba-mech",
-      "universityId": "stuba",
-      "name": "Mechanical Engineering",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Advanced mechanical engineering with focus on automotive and industrial design.",
-      "entryRequirements": [
-        "Relevant bachelor",
-        "English B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Mechanical Engineering",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Advanced mechanical engineering with focus on automotive and industrial design.",
-            "entryRequirements": [
-              "Relevant bachelor",
-              "English B2"
-            ],
-            "field": "Engineering",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uniba-medicine",
-      "universityId": "uniba",
-      "name": "General Medicine",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 360,
-      "durationMonths": 72,
-      "tuitionEur": 10000,
-      "description": "6-year medical program in English, recognized across EU. Clinical training in Bratislava hospitals.",
-      "entryRequirements": [
-        "Biology",
-        "Chemistry",
-        "English proficiency",
-        "Entrance exam"
-      ],
-      "field": "Medicine",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "General Medicine",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 360,
-            "durationMonths": 72,
-            "tuitionEur": 10000,
-            "description": "6-year medical program in English, recognized across EU. Clinical training in Bratislava hospitals.",
-            "entryRequirements": [
-              "Biology",
-              "Chemistry",
-              "English proficiency",
-              "Entrance exam"
-            ],
-            "field": "Medicine",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uniba-law",
-      "universityId": "uniba",
-      "name": "Law",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 240,
-      "durationMonths": 48,
-      "tuitionEur": 0,
-      "description": "Traditional law program preparing for legal careers in Slovakia and EU.",
-      "entryRequirements": [
-        "Slovak C1",
-        "GPA 2.0+"
-      ],
-      "field": "Law",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Law",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 240,
-            "durationMonths": 48,
-            "tuitionEur": 0,
-            "description": "Traditional law program preparing for legal careers in Slovakia and EU.",
-            "entryRequirements": [
-              "Slovak C1",
-              "GPA 2.0+"
-            ],
-            "field": "Law",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uniba-psych",
-      "universityId": "uniba",
-      "name": "Psychology",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Comprehensive psychology covering clinical, counseling, and research tracks.",
-      "entryRequirements": [
-        "Biology",
-        "Slovak B2"
-      ],
-      "field": "Psychology",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Psychology",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Comprehensive psychology covering clinical, counseling, and research tracks.",
-            "entryRequirements": [
-              "Biology",
-              "Slovak B2"
-            ],
-            "field": "Psychology",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uniba-pharm",
-      "universityId": "uniba",
-      "name": "Pharmacy",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 300,
-      "durationMonths": 60,
-      "tuitionEur": 9000,
-      "description": "5-year pharmacy program in English, gateway to pharmaceutical careers.",
-      "entryRequirements": [
-        "Chemistry",
-        "Biology",
-        "English B2"
-      ],
-      "field": "Pharmacy",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Pharmacy",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 300,
-            "durationMonths": 60,
-            "tuitionEur": 9000,
-            "description": "5-year pharmacy program in English, gateway to pharmaceutical careers.",
-            "entryRequirements": [
-              "Chemistry",
-              "Biology",
-              "English B2"
-            ],
-            "field": "Pharmacy",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "tuke-cs",
-      "universityId": "tuke",
-      "name": "Computer Science",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Technical CS program in eastern Slovakia with strong industry connections.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Computer Science",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Technical CS program in eastern Slovakia with strong industry connections.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "tuke-mining",
-      "universityId": "tuke",
-      "name": "Mining Engineering",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Unique program in mining, geology, and resource management.",
-      "entryRequirements": [
-        "Math",
-        "Physics",
-        "Slovak B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Mining Engineering",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Unique program in mining, geology, and resource management.",
-            "entryRequirements": [
-              "Math",
-              "Physics",
-              "Slovak B2"
-            ],
-            "field": "Engineering",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "upjs-cs",
-      "universityId": "upjs",
-      "name": "Applied Mathematics",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Research-focused mathematics with applications in cryptography and data science.",
-      "entryRequirements": [
-        "Math bachelor",
-        "English B2"
-      ],
-      "field": "Mathematics",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Applied Mathematics",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Research-focused mathematics with applications in cryptography and data science.",
-            "entryRequirements": [
-              "Math bachelor",
-              "English B2"
-            ],
-            "field": "Mathematics",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "upjs-medicine",
-      "universityId": "upjs",
-      "name": "General Medicine",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 360,
-      "durationMonths": 72,
-      "tuitionEur": 10500,
-      "description": "English-taught medical program in Kosice, modern facilities.",
-      "entryRequirements": [
-        "Biology",
-        "Chemistry",
-        "English proficiency"
-      ],
-      "field": "Medicine",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "General Medicine",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 360,
-            "durationMonths": 72,
-            "tuitionEur": 10500,
-            "description": "English-taught medical program in Kosice, modern facilities.",
-            "entryRequirements": [
-              "Biology",
-              "Chemistry",
-              "English proficiency"
-            ],
-            "field": "Medicine",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "ukf-edu",
-      "universityId": "ukf",
-      "name": "Teacher Training",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Education program preparing teachers for primary and secondary schools.",
-      "entryRequirements": [
-        "Slovak B2",
-        "GPA 2.0+"
-      ],
-      "field": "Education",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Teacher Training",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Education program preparing teachers for primary and secondary schools.",
-            "entryRequirements": [
-              "Slovak B2",
-              "GPA 2.0+"
-            ],
-            "field": "Education",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cvut-cs",
-      "universityId": "cvut",
-      "name": "Computer Science",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Top-tier technical CS program in Prague. Strong in algorithms and systems.",
-      "entryRequirements": [
-        "Math",
-        "English B2",
-        "Entrance exam"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Computer Science",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Top-tier technical CS program in Prague. Strong in algorithms and systems.",
-            "entryRequirements": [
-              "Math",
-              "English B2",
-              "Entrance exam"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cvut-ai",
-      "universityId": "cvut",
-      "name": "Artificial Intelligence",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Advanced AI program covering ML, deep learning, and robotics.",
-      "entryRequirements": [
-        "CS bachelor",
-        "Math",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Artificial Intelligence",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Advanced AI program covering ML, deep learning, and robotics.",
-            "entryRequirements": [
-              "CS bachelor",
-              "Math",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cvut-civil",
-      "universityId": "cvut",
-      "name": "Civil Engineering",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 240,
-      "durationMonths": 48,
-      "tuitionEur": 0,
-      "description": "Comprehensive civil engineering with structural and infrastructure focus.",
-      "entryRequirements": [
-        "Math",
-        "Physics",
-        "English B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Civil Engineering",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 240,
-            "durationMonths": 48,
-            "tuitionEur": 0,
-            "description": "Comprehensive civil engineering with structural and infrastructure focus.",
-            "entryRequirements": [
-              "Math",
-              "Physics",
-              "English B2"
-            ],
-            "field": "Engineering",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "muni-cs",
-      "universityId": "muni",
-      "name": "Computer Science",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 2000,
-      "description": "Modern CS program in Brno with specializations in AI, security, and web.",
-      "entryRequirements": [
-        "Math",
-        "English B2",
-        "Motivation letter"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Computer Science",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 2000,
-            "description": "Modern CS program in Brno with specializations in AI, security, and web.",
-            "entryRequirements": [
-              "Math",
-              "English B2",
-              "Motivation letter"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "muni-data",
-      "universityId": "muni",
-      "name": "Data Science",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 2500,
-      "description": "Data science program covering ML, statistics, and big data technologies.",
-      "entryRequirements": [
-        "Math/Stats",
-        "CS basics",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Data Science",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 2500,
-            "description": "Data science program covering ML, statistics, and big data technologies.",
-            "entryRequirements": [
-              "Math/Stats",
-              "CS basics",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "muni-econ",
-      "universityId": "muni",
-      "name": "Economics",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 1500,
-      "description": "Economics with focus on data analysis and international markets.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Economics",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Economics",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 1500,
-            "description": "Economics with focus on data analysis and international markets.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Economics",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "muni-psych",
-      "universityId": "muni",
-      "name": "Psychology",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 2500,
-      "description": "Research-oriented psychology program in English.",
-      "entryRequirements": [
-        "English C1",
-        "GPA 2.5+"
-      ],
-      "field": "Psychology",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Psychology",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 2500,
-            "description": "Research-oriented psychology program in English.",
-            "entryRequirements": [
-              "English C1",
-              "GPA 2.5+"
-            ],
-            "field": "Psychology",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "vut-ee",
-      "universityId": "vut-brno",
-      "name": "Electrical Engineering",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Strong EE program with focus on electronics and power systems.",
-      "entryRequirements": [
-        "Math",
-        "Physics",
-        "English B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Electrical Engineering",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Strong EE program with focus on electronics and power systems.",
-            "entryRequirements": [
-              "Math",
-              "Physics",
-              "English B2"
-            ],
-            "field": "Engineering",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "vut-mech",
-      "universityId": "vut-brno",
-      "name": "Mechanical Engineering",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Advanced mechanical engineering with industry partnerships.",
-      "entryRequirements": [
-        "Relevant bachelor",
-        "English B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Mechanical Engineering",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Advanced mechanical engineering with industry partnerships.",
-            "entryRequirements": [
-              "Relevant bachelor",
-              "English B2"
-            ],
-            "field": "Engineering",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "upol-cs",
-      "universityId": "upol",
-      "name": "Informatics",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Comprehensive informatics program in historic Olomouc.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Informatics",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Comprehensive informatics program in historic Olomouc.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
       "id": "tu-graz-cs",
       "universityId": "tu-graz",
       "name": "Computer Science",
@@ -3781,1000 +2919,6 @@
               "English B2"
             ],
             "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "ukf-psych",
-      "universityId": "ukf",
-      "name": "Psychology",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Psychology program focusing on clinical and counseling applications.",
-      "entryRequirements": [
-        "Biology",
-        "Slovak B2"
-      ],
-      "field": "Psychology",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Psychology",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Psychology program focusing on clinical and counseling applications.",
-            "entryRequirements": [
-              "Biology",
-              "Slovak B2"
-            ],
-            "field": "Psychology",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "ukf-business",
-      "universityId": "ukf",
-      "name": "Business Administration",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Business program with focus on management and marketing.",
-      "entryRequirements": [
-        "English B2",
-        "Math"
-      ],
-      "field": "Business",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Business Administration",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Business program with focus on management and marketing.",
-            "entryRequirements": [
-              "English B2",
-              "Math"
-            ],
-            "field": "Business",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "tuzvolen-forest",
-      "universityId": "tu-zvolen",
-      "name": "Forestry",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Sustainable forest management and wood science.",
-      "entryRequirements": [
-        "Biology",
-        "Slovak B2"
-      ],
-      "field": "Environmental",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Forestry",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Sustainable forest management and wood science.",
-            "entryRequirements": [
-              "Biology",
-              "Slovak B2"
-            ],
-            "field": "Environmental",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "tuzvolen-env",
-      "universityId": "tu-zvolen",
-      "name": "Environmental Engineering",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Environmental protection and sustainable development.",
-      "entryRequirements": [
-        "Relevant bachelor",
-        "English B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Environmental Engineering",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Environmental protection and sustainable development.",
-            "entryRequirements": [
-              "Relevant bachelor",
-              "English B2"
-            ],
-            "field": "Engineering",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uvm-vet",
-      "universityId": "uvm",
-      "name": "Veterinary Medicine",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 360,
-      "durationMonths": 72,
-      "tuitionEur": 11000,
-      "description": "6-year veterinary program recognized in EU.",
-      "entryRequirements": [
-        "Biology",
-        "Chemistry",
-        "English B2"
-      ],
-      "field": "Medicine",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Veterinary Medicine",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 360,
-            "durationMonths": 72,
-            "tuitionEur": 11000,
-            "description": "6-year veterinary program recognized in EU.",
-            "entryRequirements": [
-              "Biology",
-              "Chemistry",
-              "English B2"
-            ],
-            "field": "Medicine",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uvm-animal",
-      "universityId": "uvm",
-      "name": "Animal Science",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 5000,
-      "description": "Advanced animal husbandry and welfare.",
-      "entryRequirements": [
-        "Biology bachelor",
-        "English B2"
-      ],
-      "field": "Biology",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Animal Science",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 5000,
-            "description": "Advanced animal husbandry and welfare.",
-            "entryRequirements": [
-              "Biology bachelor",
-              "English B2"
-            ],
-            "field": "Biology",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "akademia-music",
-      "universityId": "akademia",
-      "name": "Music Performance",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Performance degrees in classical music.",
-      "entryRequirements": [
-        "Audition",
-        "English B2"
-      ],
-      "field": "Art",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Music Performance",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Performance degrees in classical music.",
-            "entryRequirements": [
-              "Audition",
-              "English B2"
-            ],
-            "field": "Art",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "akademia-theater",
-      "universityId": "akademia",
-      "name": "Theater Studies",
-      "degree": "bachelor",
-      "language": "slovak",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Acting and theater production.",
-      "entryRequirements": [
-        "Audition",
-        "Slovak B2"
-      ],
-      "field": "Art",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Theater Studies",
-            "degree": "bachelor",
-            "language": "slovak",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Acting and theater production.",
-            "entryRequirements": [
-              "Audition",
-              "Slovak B2"
-            ],
-            "field": "Art",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cuni-cs",
-      "universityId": "cuni",
-      "name": "Computer Science",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Premier CS program at Czech oldest university.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Computer Science",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Premier CS program at Czech oldest university.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cuni-math",
-      "universityId": "cuni",
-      "name": "Mathematics",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Pure and applied mathematics in Prague.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Mathematics",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Mathematics",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Pure and applied mathematics in Prague.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Mathematics",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cuni-phys",
-      "universityId": "cuni",
-      "name": "Physics",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Theoretical and experimental physics.",
-      "entryRequirements": [
-        "Math",
-        "Physics",
-        "English B2"
-      ],
-      "field": "Physics",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Physics",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Theoretical and experimental physics.",
-            "entryRequirements": [
-              "Math",
-              "Physics",
-              "English B2"
-            ],
-            "field": "Physics",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cuni-psych",
-      "universityId": "cuni",
-      "name": "Psychology",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 3000,
-      "description": "Clinical and research psychology.",
-      "entryRequirements": [
-        "Psychology bachelor",
-        "English C1"
-      ],
-      "field": "Psychology",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Psychology",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 3000,
-            "description": "Clinical and research psychology.",
-            "entryRequirements": [
-              "Psychology bachelor",
-              "English C1"
-            ],
-            "field": "Psychology",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cuni-law",
-      "universityId": "cuni",
-      "name": "Law",
-      "degree": "bachelor",
-      "language": "local",
-      "ects": 240,
-      "durationMonths": 48,
-      "tuitionEur": 0,
-      "description": "Traditional law degree in Prague.",
-      "entryRequirements": [
-        "Czech C1",
-        "GPA 2.0+"
-      ],
-      "field": "Law",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Law",
-            "degree": "bachelor",
-            "language": "local",
-            "ects": 240,
-            "durationMonths": 48,
-            "tuitionEur": 0,
-            "description": "Traditional law degree in Prague.",
-            "entryRequirements": [
-              "Czech C1",
-              "GPA 2.0+"
-            ],
-            "field": "Law",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "czu-agri",
-      "universityId": "czu",
-      "name": "Agriculture",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Modern agriculture and food sciences.",
-      "entryRequirements": [
-        "Biology",
-        "English B2"
-      ],
-      "field": "Agriculture",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Agriculture",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Modern agriculture and food sciences.",
-            "entryRequirements": [
-              "Biology",
-              "English B2"
-            ],
-            "field": "Agriculture",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "czu-env",
-      "universityId": "czu",
-      "name": "Environmental Science",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Sustainable resource management.",
-      "entryRequirements": [
-        "Env science bachelor",
-        "English B2"
-      ],
-      "field": "Environmental",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Environmental Science",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Sustainable resource management.",
-            "entryRequirements": [
-              "Env science bachelor",
-              "English B2"
-            ],
-            "field": "Environmental",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "czu-econ",
-      "universityId": "czu",
-      "name": "Economics",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Agricultural and resource economics.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Economics",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Economics",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Agricultural and resource economics.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Economics",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "osu-cs",
-      "universityId": "osu",
-      "name": "Computer Science",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "CS program in industrial Moravia.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Computer Science",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "CS program in industrial Moravia.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "osu-psych",
-      "universityId": "osu",
-      "name": "Psychology",
-      "degree": "bachelor",
-      "language": "local",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Psychology with clinical focus.",
-      "entryRequirements": [
-        "Czech B2",
-        "Biology"
-      ],
-      "field": "Psychology",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Psychology",
-            "degree": "bachelor",
-            "language": "local",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Psychology with clinical focus.",
-            "entryRequirements": [
-              "Czech B2",
-              "Biology"
-            ],
-            "field": "Psychology",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "osu-teacher",
-      "universityId": "osu",
-      "name": "Teacher Training",
-      "degree": "master",
-      "language": "local",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Secondary school teacher education.",
-      "entryRequirements": [
-        "Bachelor",
-        "Czech B2"
-      ],
-      "field": "Education",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Teacher Training",
-            "degree": "master",
-            "language": "local",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Secondary school teacher education.",
-            "entryRequirements": [
-              "Bachelor",
-              "Czech B2"
-            ],
-            "field": "Education",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "utb-business",
-      "universityId": "utb",
-      "name": "Business Administration",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 1500,
-      "description": "Modern business in emerging region.",
-      "entryRequirements": [
-        "English B2",
-        "Math"
-      ],
-      "field": "Business",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Business Administration",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 1500,
-            "description": "Modern business in emerging region.",
-            "entryRequirements": [
-              "English B2",
-              "Math"
-            ],
-            "field": "Business",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "utb-multimedia",
-      "universityId": "utb",
-      "name": "Multimedia Communication",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 2000,
-      "description": "Digital media and communications.",
-      "entryRequirements": [
-        "Media bachelor",
-        "English B2"
-      ],
-      "field": "Communication",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Multimedia Communication",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 2000,
-            "description": "Digital media and communications.",
-            "entryRequirements": [
-              "Media bachelor",
-              "English B2"
-            ],
-            "field": "Communication",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "ujep-cs",
-      "universityId": "ujep",
-      "name": "Informatics",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Applied informatics in north Bohemia.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Informatics",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Applied informatics in north Bohemia.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "ujep-phys",
-      "universityId": "ujep",
-      "name": "Physics",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Applied physics program.",
-      "entryRequirements": [
-        "Physics bachelor",
-        "English B2"
-      ],
-      "field": "Physics",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Physics",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Applied physics program.",
-            "entryRequirements": [
-              "Physics bachelor",
-              "English B2"
-            ],
-            "field": "Physics",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uwb-cs",
-      "universityId": "uwb",
-      "name": "Computer Science",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "CS in western Bohemia.",
-      "entryRequirements": [
-        "Math",
-        "English B2"
-      ],
-      "field": "Computer Science",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Computer Science",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "CS in western Bohemia.",
-            "entryRequirements": [
-              "Math",
-              "English B2"
-            ],
-            "field": "Computer Science",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uwb-electrical",
-      "universityId": "uwb",
-      "name": "Electrical Engineering",
-      "degree": "master",
-      "language": "english",
-      "ects": 120,
-      "durationMonths": 24,
-      "tuitionEur": 0,
-      "description": "Power systems and electronics.",
-      "entryRequirements": [
-        "EE bachelor",
-        "English B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Electrical Engineering",
-            "degree": "master",
-            "language": "english",
-            "ects": 120,
-            "durationMonths": 24,
-            "tuitionEur": 0,
-            "description": "Power systems and electronics.",
-            "entryRequirements": [
-              "EE bachelor",
-              "English B2"
-            ],
-            "field": "Engineering",
-            "lastUpdated": "2026-03-20"
-          }
-        }
-      ]
-    },
-    {
-      "id": "uwb-mech",
-      "universityId": "uwb",
-      "name": "Mechanical Engineering",
-      "degree": "bachelor",
-      "language": "english",
-      "ects": 180,
-      "durationMonths": 36,
-      "tuitionEur": 0,
-      "description": "Design and manufacturing.",
-      "entryRequirements": [
-        "Math",
-        "Physics",
-        "English B2"
-      ],
-      "field": "Engineering",
-      "versions": [
-        {
-          "version": "v2026",
-          "effectiveFrom": "2026-01-01",
-          "effectiveTo": null,
-          "data": {
-            "name": "Mechanical Engineering",
-            "degree": "bachelor",
-            "language": "english",
-            "ects": 180,
-            "durationMonths": 36,
-            "tuitionEur": 0,
-            "description": "Design and manufacturing.",
-            "entryRequirements": [
-              "Math",
-              "Physics",
-              "English B2"
-            ],
-            "field": "Engineering",
             "lastUpdated": "2026-03-20"
           }
         }
@@ -7855,10 +5999,1384 @@
           }
         }
       ]
+    },
+    {
+      "id": "stuba-computer-science-and-information-technology",
+      "universityId": "stuba",
+      "name": "Computer Science and Information Technology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Faculty of Electrical Engineering and Information Technology. Covers software engineering, algorithms, databases, networks, and AI. Modern labs and strong industry links in Bratislava tech ecosystem.",
+      "entryRequirements": [
+        "Mathematics at secondary school level",
+        "English B2 (CEFR)",
+        "Passing entrance exam in mathematics"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-electrical-engineering",
+      "universityId": "stuba",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Focus on power systems, electronics, telecommunications, and automation. Combines theoretical foundations with practical laboratory work at one of Central Europe's leading technical faculties.",
+      "entryRequirements": [
+        "Mathematics and Physics at secondary school",
+        "English B2 (CEFR)",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-mechanical-engineering",
+      "universityId": "stuba",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Faculty of Mechanical Engineering. Specializations in automotive engineering, industrial design, and production technology. Strong partnerships with Slovak and European industry.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-architecture",
+      "universityId": "stuba",
+      "name": "Architecture",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 0,
+      "description": "Five-year integrated master program in Architecture and Design. Studio-based curriculum with emphasis on sustainable design, digital modeling, and urban planning for Central European contexts.",
+      "entryRequirements": [
+        "Talent/aptitude test (drawing)",
+        "Mathematics",
+        "Slovak language exam for foreign students"
+      ],
+      "field": "Architecture",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-civil-engineering",
+      "universityId": "stuba",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Faculty of Civil Engineering. Structural engineering, hydraulics, and infrastructure design. Accredited program with focus on modern construction technologies and sustainable building.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-computer-science-and-information-technology",
+      "universityId": "stuba",
+      "name": "Computer Science and Information Technology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced topics in software engineering, artificial intelligence, cybersecurity, and data science. Research-oriented curriculum with opportunities for industry collaboration in Bratislava.",
+      "entryRequirements": [
+        "Relevant bachelor degree (Computer Science, Informatics, or equivalent)",
+        "English B2",
+        "GPA minimum 2.0"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-mechanical-engineering",
+      "universityId": "stuba",
+      "name": "Mechanical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mechanical engineering with specializations in automotive engineering, industrial engineering, and thermal engineering. Industry-focused research projects.",
+      "entryRequirements": [
+        "Mechanical Engineering bachelor or equivalent",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "stuba-automation-and-information-engineering",
+      "universityId": "stuba",
+      "name": "Automation and Information Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Covers control systems, robotics, embedded systems, and industrial automation. Modern facilities with labs for PLC programming, robotics, and Industry 4.0 technologies.",
+      "entryRequirements": [
+        "Electrical/Mechanical Engineering bachelor",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-general-medicine",
+      "universityId": "uniba",
+      "name": "General Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 10500,
+      "description": "Six-year medical program (MUDr — Doctor of Medicine) taught entirely in English. Clinical rotations at University Hospital Bratislava and affiliated hospitals. Recognized across the EU and many other countries.",
+      "entryRequirements": [
+        "Biology at secondary school (A-level equivalent)",
+        "Chemistry at secondary school",
+        "English proficiency test (B2 minimum)",
+        "Entrance exam (biology and chemistry)"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-dental-medicine",
+      "universityId": "uniba",
+      "name": "Dental Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 12000,
+      "description": "Five-year dental program in English. Comprehensive training in all aspects of dentistry including restorative dentistry, oral surgery, and prosthodontics. State-of-the-art dental simulation labs.",
+      "entryRequirements": [
+        "Biology and Chemistry",
+        "English B2",
+        "Entrance exam (Biology and Chemistry)"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-pharmacy",
+      "universityId": "uniba",
+      "name": "Pharmacy",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 9000,
+      "description": "Five-year Pharmacy program (Mgr Pharm) in English. Covers pharmaceutical sciences, pharmacology, toxicology, and clinical pharmacy. Prepares graduates for careers in pharmacy, pharma industry, and research.",
+      "entryRequirements": [
+        "Chemistry at secondary school",
+        "Biology at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Pharmacy",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-psychology",
+      "universityId": "uniba",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Comprehensive psychology program covering clinical psychology, counseling psychology, work and organizational psychology, and research methodology. Strong emphasis on empirical research and practical training.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Slovak language (C1 for foreigners)",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-philosophy",
+      "universityId": "uniba",
+      "name": "Philosophy",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of fundamental philosophical questions, history of philosophy, logic, ethics, and metaphysics. Provides critical thinking skills applicable across humanities and social sciences.",
+      "entryRequirements": [
+        "General knowledge assessment",
+        "Slovak language C1"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-political-science",
+      "universityId": "uniba",
+      "name": "Political Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of political systems, international relations, European studies, and public policy. Combines theory with practical analysis of contemporary political phenomena in Central Europe and beyond.",
+      "entryRequirements": [
+        "English B2",
+        "Social sciences background preferred"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-journalism",
+      "universityId": "uniba",
+      "name": "Journalism",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Media and communication studies with practical journalism training. News writing, broadcast journalism, digital media, media law, and ethics. Partnerships with Slovak media outlets.",
+      "entryRequirements": [
+        "Slovak language C1",
+        "Written entrance exam"
+      ],
+      "field": "Communication",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-history",
+      "universityId": "uniba",
+      "name": "History",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of world history, European history, and Slovak history from antiquity to the present. Historiography, archival research methods, and source analysis. Prepares for careers in academia, archives, and cultural institutions.",
+      "entryRequirements": [
+        "History knowledge assessment",
+        "Slovak language C1"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-applied-mathematics",
+      "universityId": "uniba",
+      "name": "Applied Mathematics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mathematics with specializations in statistics, financial mathematics, and mathematical modeling. Research-oriented with applications in insurance, banking, and data science.",
+      "entryRequirements": [
+        "Mathematics bachelor or equivalent",
+        "English B2",
+        "Entrance exam in mathematics"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uniba-computer-science",
+      "universityId": "uniba",
+      "name": "Computer Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced CS program covering algorithms, software engineering, AI, and data science. Research opportunities with faculty and industry partners in Bratislava's growing tech sector.",
+      "entryRequirements": [
+        "Computer Science bachelor or equivalent",
+        "English B2",
+        "GPA minimum 2.0"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "ukf-teacher-training-primary-education",
+      "universityId": "ukf",
+      "name": "Teacher Training (Primary Education)",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Prepares teachers for primary and lower secondary schools. Pedagogy, didactics, and subject specialization. Includes extensive teaching practice in partner schools.",
+      "entryRequirements": [
+        "Matura/secondary school diploma",
+        "Slovak language exam (C1 for foreigners)",
+        "Motivation interview"
+      ],
+      "field": "Education",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "ukf-business-administration",
+      "universityId": "ukf",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Management, marketing, finance, and entrepreneurship. English-taught in Nitra. Case studies and business simulations with regional companies.",
+      "entryRequirements": [
+        "English B2",
+        "Mathematics at secondary level",
+        "Entrance exam"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "ukf-psychology",
+      "universityId": "ukf",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Clinical psychology, counseling, and research methods. Strong emphasis on empirical work and practical training in psychological assessment.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Slovak C1",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "tuke-computer-science",
+      "universityId": "tuke",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Technical CS program at eastern Slovakia's leading technical university. Algorithms, software development, databases, and AI. Industry partnerships with tech companies in Košice region.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "tuke-mechanical-engineering",
+      "universityId": "tuke",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Automotive engineering, production technology, and design. Modern labs and strong ties to manufacturing industry in eastern Slovakia and EU.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "tuke-mining-engineering-geology-and-metallurgy",
+      "universityId": "tuke",
+      "name": "Mining Engineering, Geology and Metallurgy",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Unique program in mining, geology, quarrying, and metallurgical engineering. Field work and practical training in Slovakia's mining regions.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "Slovak B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "tuke-electrical-engineering",
+      "universityId": "tuke",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power engineering, electronics, and telecommunications. Combines theory with extensive lab work. Prepares for careers in energy, manufacturing, and telecom sectors.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "upjs-general-medicine",
+      "universityId": "upjs",
+      "name": "General Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 10500,
+      "description": "Six-year MUDr medical program in English. Clinical training at University Hospital Košice (one of Slovakia's largest hospitals). Recognized in EU and internationally.",
+      "entryRequirements": [
+        "Biology and Chemistry at A-level",
+        "English proficiency (B2)",
+        "Entrance exam"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "upjs-applied-mathematics",
+      "universityId": "upjs",
+      "name": "Applied Mathematics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Cryptography, data science, and mathematical modeling. Research-focused with collaborations in industry and academia.",
+      "entryRequirements": [
+        "Mathematics bachelor or equivalent",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "upjs-physics",
+      "universityId": "upjs",
+      "name": "Physics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Experimental and theoretical physics. Modern labs and research opportunities in cooperation with international physics institutes.",
+      "entryRequirements": [
+        "Mathematics and Physics at secondary school",
+        "English B2"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "tu-zvolen-forestry",
+      "universityId": "tu-zvolen",
+      "name": "Forestry",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Sustainable forest management, wood science, and environmental protection. Field work in Slovakia's forests. Unique in Central Europe.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Slovak B2",
+        "Entrance exam"
+      ],
+      "field": "Environmental",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "tu-zvolen-environmental-engineering",
+      "universityId": "tu-zvolen",
+      "name": "Environmental Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Environmental protection, waste management, and sustainable development. Focus on Central European environmental challenges.",
+      "entryRequirements": [
+        "Relevant bachelor degree",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uvm-veterinary-medicine",
+      "universityId": "uvm",
+      "name": "Veterinary Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 11000,
+      "description": "Six-year veterinary program (MVDr). Only veterinary school in Slovakia. Clinical training, animal husbandry, food safety, and public health. Recognized across EU.",
+      "entryRequirements": [
+        "Biology and Chemistry at A-level",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uvm-animal-science",
+      "universityId": "uvm",
+      "name": "Animal Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 5000,
+      "description": "Advanced animal husbandry, welfare, and production. Prepares for careers in agriculture, food industry, and research.",
+      "entryRequirements": [
+        "Biology or Agricultural Sciences bachelor",
+        "English B2"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "akademia-music-performance",
+      "universityId": "akademia",
+      "name": "Music Performance",
+      "degree": "master",
+      "language": "slovak",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced performance training in classical music. Instrumental or vocal specialization. Solo recitals and ensemble work. Collaboration with Slovak Philharmonic.",
+      "entryRequirements": [
+        "Bachelor in Music",
+        "Audition (performance)",
+        "Slovak/English B2"
+      ],
+      "field": "Art",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "akademia-theatre-studies",
+      "universityId": "akademia",
+      "name": "Theatre Studies",
+      "degree": "bachelor",
+      "language": "slovak",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Acting, directing, and theatre production. Practical training with the academy's theatre company. History of theatre and dramatic theory.",
+      "entryRequirements": [
+        "Audition (monologue, interview)",
+        "Slovak B2"
+      ],
+      "field": "Art",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "akademia-film-and-television-directing",
+      "universityId": "akademia",
+      "name": "Film and Television Directing",
+      "degree": "master",
+      "language": "slovak",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced film and TV directing. Documentary, fiction, and experimental film. Collaboration with Slovak film studios and broadcasters.",
+      "entryRequirements": [
+        "Relevant bachelor",
+        "Portfolio/reel",
+        "Entrance exam"
+      ],
+      "field": "Art",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-computer-science",
+      "universityId": "cuni",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Premier CS program at Czech Republic's oldest university. Covers algorithms, programming, AI, and software engineering. Strong research output and industry connections in Prague.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2 (CEFR)",
+        "Entrance exam (mathematics and logic)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-mathematics",
+      "universityId": "cuni",
+      "name": "Mathematics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Pure and applied mathematics. Specializations in algebra, analysis, geometry, and mathematical physics. Research-oriented with Prague mathematical institute collaborations.",
+      "entryRequirements": [
+        "Mathematics at advanced secondary level",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-physics",
+      "universityId": "cuni",
+      "name": "Physics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Theoretical and experimental physics. Modern laboratories and research facilities. Pathways to particle physics, astrophysics, and condensed matter research.",
+      "entryRequirements": [
+        "Mathematics and Physics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-psychology",
+      "universityId": "cuni",
+      "name": "Psychology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 3000,
+      "description": "Clinical and research psychology. Evidence-based approach with clinical practice. Research collaborations with healthcare institutions in Prague.",
+      "entryRequirements": [
+        "Psychology bachelor or equivalent",
+        "English C1",
+        "Entrance exam and interview"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-economics",
+      "universityId": "cuni",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Economics with focus on mathematical modeling, econometrics, and international economics. Prague location with access to EU institutions and financial sector.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-data-science",
+      "universityId": "cuni",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, statistics, and big data. Interdisciplinary program at the intersection of computer science and mathematics. Industry partnerships in Prague tech sector.",
+      "entryRequirements": [
+        "CS, Math, or Stats bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-international-relations",
+      "universityId": "cuni",
+      "name": "International Relations",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of global politics, EU affairs, security studies, and diplomacy. Prague location offers unique access to EU institutions and NATO headquarters proximity.",
+      "entryRequirements": [
+        "English B2",
+        "Social sciences background preferred",
+        "Entrance exam"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-chemistry",
+      "universityId": "cuni",
+      "name": "Chemistry",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Organic, inorganic, physical, and analytical chemistry. Modern labs and research opportunities. Good preparation for pharma and chemical industry careers.",
+      "entryRequirements": [
+        "Chemistry and Mathematics at secondary school",
+        "English B2"
+      ],
+      "field": "Chemistry",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cuni-philosophy",
+      "universityId": "cuni",
+      "name": "Philosophy",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced study in continental philosophy, phenomenology, ethics, and political philosophy. Prague has a rich philosophical tradition to draw on.",
+      "entryRequirements": [
+        "Philosophy bachelor or relevant humanities degree",
+        "English C1"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-computer-science-and-engineering",
+      "universityId": "cvut",
+      "name": "Computer Science and Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Top-tier technical CS program at Czech Republic's premier technical university. Strong in algorithms, systems programming, and software engineering. Prague tech ecosystem connections.",
+      "entryRequirements": [
+        "Mathematics at advanced secondary level",
+        "English B2",
+        "Entrance exam (mathematics, physics)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-artificial-intelligence",
+      "universityId": "cvut",
+      "name": "Artificial Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, deep learning, robotics, and computer vision. Research-focused with state-of-the-art labs. Strong industry partnerships in Prague AI sector.",
+      "entryRequirements": [
+        "Computer Science or Engineering bachelor",
+        "Mathematics",
+        "English B2"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-civil-engineering",
+      "universityId": "cvut",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Structural engineering, transportation engineering, and infrastructure design. Accredited program with modern labs. Strong in sustainable construction and BIM technologies.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-electrical-engineering-and-management",
+      "universityId": "cvut",
+      "name": "Electrical Engineering and Management",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Combines electrical engineering fundamentals with business management. Power systems, electronics, and entrepreneurship. Unique blend for technical leadership roles.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-mechanical-engineering",
+      "universityId": "cvut",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Design engineering, thermodynamics, and manufacturing. Faculty of Mechanical Engineering is one of CTU's largest. Strong ties to Czech automotive and manufacturing industry.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-cybernetics-and-artificial-intelligence",
+      "universityId": "cvut",
+      "name": "Cybernetics and Artificial Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Control systems, robotics, and AI. Faculty of Electrical Engineering research center. Applications in autonomous systems, Industry 4.0, and smart cities.",
+      "entryRequirements": [
+        "Electrical Engineering or CS bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-transportation-systems",
+      "universityId": "cvut",
+      "name": "Transportation Systems",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Intelligent transportation systems, logistics, and traffic engineering. Growing field with applications in smart city development across Europe.",
+      "entryRequirements": [
+        "Engineering bachelor (any field)",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-software-engineering",
+      "universityId": "cvut",
+      "name": "Software Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced software engineering, DevOps, cloud computing, and software architecture. Industry-aligned curriculum with Prague tech company projects.",
+      "entryRequirements": [
+        "CS/Software Engineering bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "cvut-electrical-engineering",
+      "universityId": "cvut",
+      "name": "Electrical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Power systems, electrical machines, and renewable energy. Prepares for careers in energy sector, manufacturing, and research institutes.",
+      "entryRequirements": [
+        "Electrical Engineering bachelor or equivalent",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "muni-computer-science",
+      "universityId": "muni",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2000,
+      "description": "Modern CS program in Brno with specializations in AI, cybersecurity, and web technologies. Faculty of Informatics is internationally recognized. Strong ties to Brno tech hub.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Motivation letter"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "muni-data-science",
+      "universityId": "muni",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2500,
+      "description": "Machine learning, big data, and statistics. Interdisciplinary between Computer Science and Mathematics. Research and industry projects in Brno's data science community.",
+      "entryRequirements": [
+        "Math/Stats/CS bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "muni-economics",
+      "universityId": "muni",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 1500,
+      "description": "International economics, finance, and economic analysis. Brno location offers proximity to Austrian and German business centers.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "muni-psychology",
+      "universityId": "muni",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2500,
+      "description": "Research-oriented psychology with clinical and counseling tracks. Faculty of Social Studies. Empirical approach with practical training opportunities.",
+      "entryRequirements": [
+        "English C1",
+        "Biology preferred",
+        "GPA 2.5+",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "muni-international-relations-and-european-politics",
+      "universityId": "muni",
+      "name": "International Relations and European Politics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2000,
+      "description": "EU affairs, security studies, and diplomacy. Brno strategic location between Prague, Vienna, and Bratislava offers unique European perspective.",
+      "entryRequirements": [
+        "Social sciences bachelor",
+        "English B2",
+        "Entrance exam and interview"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "vut-brno-electrical-engineering-and-communication",
+      "universityId": "vut-brno",
+      "name": "Electrical Engineering and Communication",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Electronics, telecommunications, and power engineering. Faculty of Electrical Engineering and Communication. Strong in RF engineering and embedded systems.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "vut-brno-mechanical-engineering",
+      "universityId": "vut-brno",
+      "name": "Mechanical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mechanical design, automotive engineering, and production technology. Faculty of Mechanical Engineering. Industry partnerships with Škoda Auto and Bosch in the region.",
+      "entryRequirements": [
+        "Mechanical Engineering bachelor or equivalent",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "vut-brno-civil-engineering",
+      "universityId": "vut-brno",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Structural and building engineering. Modern facilities and sustainable construction focus. Growing region with strong infrastructure investment.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "vut-brno-computer-science",
+      "universityId": "vut-brno",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Software engineering and information technology. Faculty of Information Technology. Brno tech hub provides internship and employment opportunities.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "czu-agriculture",
+      "universityId": "czu",
+      "name": "Agriculture",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Modern agriculture, agronomy, and food production. Sustainable farming and agroecology. Prague location with access to Czech agricultural research institutions.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Agriculture",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "czu-environmental-science",
+      "universityId": "czu",
+      "name": "Environmental Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Sustainable resource management, environmental protection, and natural resource economics. Growing field as EU sustainability policies expand.",
+      "entryRequirements": [
+        "Environmental/Agricultural Sciences bachelor",
+        "English B2"
+      ],
+      "field": "Environmental",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "czu-economics",
+      "universityId": "czu",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Agricultural and resource economics with focus on sustainability and international trade. Prague financial hub location.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "upol-informatics",
+      "universityId": "upol",
+      "name": "Informatics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Comprehensive computer science in historic Olomouc. Software development, networks, and AI fundamentals. Faculty of Science and Technology.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "upol-medicine-and-dentistry",
+      "universityId": "upol",
+      "name": "Medicine and Dentistry",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 11000,
+      "description": "English-taught medical program in Olomouc. Faculty of Medicine and Dentistry is highly regarded. Clinical training at University Hospital Olomouc.",
+      "entryRequirements": [
+        "Biology and Chemistry at A-level",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "osu-computer-science",
+      "universityId": "osu",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "CS program in industrial Moravia. Software engineering, databases, and web development. Growing tech scene in Ostrava.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "osu-psychology",
+      "universityId": "osu",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "local",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Clinical psychology focus. Faculty of Arts. Practical training in partner healthcare institutions in the Moravian-Silesian Region.",
+      "entryRequirements": [
+        "Czech language B2",
+        "Biology preferred",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "osu-teacher-training",
+      "universityId": "osu",
+      "name": "Teacher Training",
+      "degree": "master",
+      "language": "local",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Secondary school teacher education for various subject combinations. Pedagogy and didactics with extensive school practice.",
+      "entryRequirements": [
+        "Bachelor in relevant subject",
+        "Czech B2",
+        "Entrance exam"
+      ],
+      "field": "Education",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "utb-business-administration",
+      "universityId": "utb",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 1500,
+      "description": "Management, marketing, and international business in Zlín. English-taught with focus on entrepreneurial management. Zlín region is known for shoe manufacturing and creative industries.",
+      "entryRequirements": [
+        "English B2",
+        "Mathematics at secondary level",
+        "Entrance exam"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "utb-multimedia-communication",
+      "universityId": "utb",
+      "name": "Multimedia Communication",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2000,
+      "description": "Digital media, film, and communications. Creative program in emerging Czech region. Production projects with regional media companies.",
+      "entryRequirements": [
+        "Media or Communications bachelor",
+        "English B2",
+        "Portfolio"
+      ],
+      "field": "Communication",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "ujep-informatics",
+      "universityId": "ujep",
+      "name": "Informatics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Applied informatics in north Bohemia. Software development and IT systems. Smaller university with personal approach.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "ujep-physics",
+      "universityId": "ujep",
+      "name": "Physics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Applied physics with specialization options. Research-oriented with laboratory work.",
+      "entryRequirements": [
+        "Physics bachelor or equivalent",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uwb-computer-science",
+      "universityId": "uwb",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "CS in western Bohemia. Software engineering and information technology. Growing tech presence in Pilsen region.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uwb-electrical-engineering",
+      "universityId": "uwb",
+      "name": "Electrical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Power systems and electronics in Pilsen. Strong in industrial electronics and energy sector.",
+      "entryRequirements": [
+        "Electrical Engineering bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uwb-mechanical-engineering",
+      "universityId": "uwb",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Design and manufacturing in Pilsen. Škoda Auto and industrial partners in the region.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-03-30"
     }
   ],
   "meta": {
-    "lastUpdated": "2026-03-30",
+    "lastUpdated": "2026-03-30T21:58:22.263Z",
     "version": "1.0",
     "migratedFrom": "mockData.ts"
   }

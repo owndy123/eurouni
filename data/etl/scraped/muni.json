@@ -2,117 +2,96 @@
   "universityId": "muni",
   "programs": [
     {
-      "name": "10 reasons why you will fall in love with MU",
-      "description": "",
-      "field": "Unknown",
+      "id": "muni-computer-science",
       "universityId": "muni",
-      "id": "muni-scraped-0",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2000,
+      "description": "Modern CS program in Brno with specializations in AI, cybersecurity, and web technologies. Faculty of Informatics is internationally recognized. Strong ties to Brno tech hub.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Motivation letter"
+      ],
+      "field": "Computer Science",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Ask our ambassador",
-      "description": "",
-      "field": "Unknown",
+      "id": "muni-data-science",
       "universityId": "muni",
-      "id": "muni-scraped-1",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2500,
+      "description": "Machine learning, big data, and statistics. Interdisciplinary between Computer Science and Mathematics. Research and industry projects in Brno's data science community.",
+      "entryRequirements": [
+        "Math/Stats/CS bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "When hundreds of hours over textbooks turn into gold on the dance floor",
-      "description": "",
-      "field": "Unknown",
+      "id": "muni-economics",
       "universityId": "muni",
-      "id": "muni-scraped-2",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 1500,
+      "description": "International economics, finance, and economic analysis. Brno location offers proximity to Austrian and German business centers.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Economics",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Jakub Tolar and Frank Mittelbach take academic oath at ceremonial event",
-      "description": "",
-      "field": "Unknown",
+      "id": "muni-psychology",
       "universityId": "muni",
-      "id": "muni-scraped-3",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2500,
+      "description": "Research-oriented psychology with clinical and counseling tracks. Faculty of Social Studies. Empirical approach with practical training opportunities.",
+      "entryRequirements": [
+        "English C1",
+        "Biology preferred",
+        "GPA 2.5+",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
       "lastUpdated": "2026-03-30"
     },
     {
-      "name": "Masaryk University statement on the draft law on registration of entities with foreign ties",
-      "description": "",
-      "field": "Unknown",
+      "id": "muni-international-relations-and-european-politics",
       "universityId": "muni",
-      "id": "muni-scraped-4",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Don’t Panic app now helps users in 18 languages",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-5",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Seventeen PhD students from MU receive Brno Ph.D. Talent award",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-6",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Study at MU!",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-7",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Invitations",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-8",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Dobrosdílení",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-9",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "MjUNI at the University Campus (MED a PHARM)",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-10",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "MUNI RUN 2026",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-11",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "MUNI DAY 2026",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-12",
-      "lastUpdated": "2026-03-30"
-    },
-    {
-      "name": "Admissions",
-      "description": "",
-      "field": "Unknown",
-      "universityId": "muni",
-      "id": "muni-scraped-13",
+      "name": "International Relations and European Politics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2000,
+      "description": "EU affairs, security studies, and diplomacy. Brno strategic location between Prague, Vienna, and Bratislava offers unique European perspective.",
+      "entryRequirements": [
+        "Social sciences bachelor",
+        "English B2",
+        "Entrance exam and interview"
+      ],
+      "field": "Social Sciences",
       "lastUpdated": "2026-03-30"
     }
   ],
-  "savedAt": "2026-03-30T16:01:24.958Z"
+  "savedAt": "2026-03-30T21:58:22.249Z"
 }

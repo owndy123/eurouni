@@ -1,0 +1,41 @@
+{
+  "universityId": "uvm",
+  "programs": [
+    {
+      "id": "uvm-veterinary-medicine",
+      "universityId": "uvm",
+      "name": "Veterinary Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 11000,
+      "description": "Six-year veterinary program (MVDr). Only veterinary school in Slovakia. Clinical training, animal husbandry, food safety, and public health. Recognized across EU.",
+      "entryRequirements": [
+        "Biology and Chemistry at A-level",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "uvm-animal-science",
+      "universityId": "uvm",
+      "name": "Animal Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 5000,
+      "description": "Advanced animal husbandry, welfare, and production. Prepares for careers in agriculture, food industry, and research.",
+      "entryRequirements": [
+        "Biology or Agricultural Sciences bachelor",
+        "English B2"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:57:46.123Z"
+}

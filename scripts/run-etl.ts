@@ -17,6 +17,8 @@
 
 import { scrapeAndSave, shouldRescrape, loadScrapedData, getLastScrapeTime } from '../src/lib/etl-pipeline'
 import { universities, reload } from '../src/lib/dataSource'
+import { scrapeSlovakia as realScrapeSlovakia } from './countries/slovakia'
+import { scrapeCzech as realScrapeCzechRep } from './countries/czech'
 
 // University program URLs — map university IDs to their program listing URLs
 const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
@@ -112,40 +114,113 @@ interface ScrapeResult {
 // 5. Write back to data/programs.json
 
 async function scrapeSlovakia(): Promise<ScrapeResult[]> {
-  console.log('[SCRAPER] Slovakia — not yet implemented')
-  // TODO: Implement Playwright/cheerio scraping for Slovak universities:
-  //   - stuba.sk (STU Bratislava)
-  //   - uniba.sk (Comenius)
-  //   - ukf.sk (Constantine the Philosopher)
-  //   - tuke.sk (Technical University Košice)
-  //   - upjs.sk (Pavol Jozef Šafárik)
-  //   - tuzvo.sk (Technical University Zvolen)
-  //   - uvm.sk (Veterinary Medicine Košice)
-  //   - akademia.sk (Performing Arts)
-  const results: ScrapeResult[] = []
-  for (const uni of universities.filter(u => u.country === 'Slovakia')) {
-    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  console.log('[SCRAPER] Slovakia — running real scraper...')
+  const fs = await import('fs')
+  const path = await import('path')
+
+  let programs: import('./countries/slovakia').Program[] = []
+  try {
+    programs = await realScrapeSlovakia()
+  } catch (err) {
+    console.error('[SCRAPER] Slovakia scraper crashed:', err instanceof Error ? err.message : String(err))
+    return universities.filter(u => u.country === 'Slovakia').map(uni => ({
+      universityId: uni.id, success: false, programCount: 0, skipped: false,
+      error: err instanceof Error ? err.message : String(err),
+    }))
   }
+
+  const results: ScrapeResult[] = []
+
+  // Group programs by universityId
+  const byUni = new Map<string, import('./countries/slovakia').Program[]>()
+  for (const p of programs) {
+    if (!byUni.has(p.universityId)) byUni.set(p.universityId, [])
+    byUni.get(p.universityId)!.push(p)
+  }
+
+  for (const [uniId, progs] of byUni) {
+    results.push({ universityId: uniId, success: true, programCount: progs.length, skipped: false })
+
+    // Save to ETL scraped data dir
+    const scrapedDir = path.join(process.cwd(), 'data', 'etl', 'scraped')
+    if (!fs.existsSync(scrapedDir)) fs.mkdirSync(scrapedDir, { recursive: true })
+    fs.writeFileSync(
+      path.join(scrapedDir, `${uniId}.json`),
+      JSON.stringify({ universityId: uniId, programs: progs, savedAt: new Date().toISOString() }, null, 2),
+      'utf-8'
+    )
+  }
+
+  // Merge into programs.json
+  try {
+    const programsPath = path.join(process.cwd(), 'data', 'programs.json')
+    const existing = JSON.parse(fs.readFileSync(programsPath, 'utf-8'))
+    const existingProgramIds = new Set(existing.programs.map((p: { id: string }) => p.id))
+
+    // Remove old Slovak programs and add new ones
+    existing.programs = existing.programs.filter((p: { universityId: string }) => p.universityId && !['stuba','uniba','ukf','tuke','upjs','tu-zvolen','uvm','akademia'].includes(p.universityId))
+    const newProgs = programs.filter((p: import('./countries/slovakia').Program) => !existingProgramIds.has(p.id))
+    existing.programs.push(...newProgs)
+    existing.meta.lastUpdated = new Date().toISOString()
+    fs.writeFileSync(programsPath, JSON.stringify(existing, null, 2), 'utf-8')
+    console.log(`[SCRAPER] Slovakia — merged ${newProgs.length} new programs into data/programs.json`)
+  } catch (err) {
+    console.warn('[SCRAPER] Could not merge into programs.json:', err instanceof Error ? err.message : String(err))
+  }
+
   return results
 }
 
 async function scrapeCzech(): Promise<ScrapeResult[]> {
-  console.log('[SCRAPER] Czech Republic — not yet implemented')
-  // TODO: Implement scraping for Czech universities:
-  //   - cuni.cz (Charles University)
-  //   - cvut.cz (Czech Technical University)
-  //   - vut.cz (Brno University of Technology)
-  //   - muni.cz (Masaryk University)
-  //   - czu.cz (Czech University of Life Sciences)
-  //   - upol.cz (Palacký University)
-  //   - osu.cz (University of Ostrava)
-  //   - utb.cz (Tomas Bata University)
-  //   - ujep.cz (Jan Evangelista Purkyně University)
-  //   - zcu.cz (University of West Bohemia)
-  const results: ScrapeResult[] = []
-  for (const uni of universities.filter(u => u.country === 'Czech Republic')) {
-    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  console.log('[SCRAPER] Czech Republic — running real scraper...')
+  const fs = await import('fs')
+  const path = await import('path')
+
+  let programs: import('./countries/czech').Program[] = []
+  try {
+    programs = await realScrapeCzechRep()
+  } catch (err) {
+    console.error('[SCRAPER] Czech scraper crashed:', err instanceof Error ? err.message : String(err))
+    return universities.filter(u => u.country === 'Czech Republic').map(uni => ({
+      universityId: uni.id, success: false, programCount: 0, skipped: false,
+      error: err instanceof Error ? err.message : String(err),
+    }))
   }
+
+  const results: ScrapeResult[] = []
+
+  const byUni = new Map<string, import('./countries/czech').Program[]>()
+  for (const p of programs) {
+    if (!byUni.has(p.universityId)) byUni.set(p.universityId, [])
+    byUni.get(p.universityId)!.push(p)
+  }
+
+  for (const [uniId, progs] of byUni) {
+    results.push({ universityId: uniId, success: true, programCount: progs.length, skipped: false })
+
+    const scrapedDir = path.join(process.cwd(), 'data', 'etl', 'scraped')
+    if (!fs.existsSync(scrapedDir)) fs.mkdirSync(scrapedDir, { recursive: true })
+    fs.writeFileSync(
+      path.join(scrapedDir, `${uniId}.json`),
+      JSON.stringify({ universityId: uniId, programs: progs, savedAt: new Date().toISOString() }, null, 2),
+      'utf-8'
+    )
+  }
+
+  try {
+    const programsPath = path.join(process.cwd(), 'data', 'programs.json')
+    const existing = JSON.parse(fs.readFileSync(programsPath, 'utf-8'))
+    const existingProgramIds = new Set(existing.programs.map((p: { id: string }) => p.id))
+    existing.programs = existing.programs.filter((p: { universityId: string }) => p.universityId && !['cuni','cvut','vut-brno','muni','czu','upol','osu','utb','ujep','uwb'].includes(p.universityId))
+    const newProgs = programs.filter((p: import('./countries/czech').Program) => !existingProgramIds.has(p.id))
+    existing.programs.push(...newProgs)
+    existing.meta.lastUpdated = new Date().toISOString()
+    fs.writeFileSync(programsPath, JSON.stringify(existing, null, 2), 'utf-8')
+    console.log(`[SCRAPER] Czech Republic — merged ${newProgs.length} new programs into data/programs.json`)
+  } catch (err) {
+    console.warn('[SCRAPER] Could not merge into programs.json:', err instanceof Error ? err.message : String(err))
+  }
+
   return results
 }
 

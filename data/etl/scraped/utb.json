@@ -1,0 +1,42 @@
+{
+  "universityId": "utb",
+  "programs": [
+    {
+      "id": "utb-business-administration",
+      "universityId": "utb",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 1500,
+      "description": "Management, marketing, and international business in Zlín. English-taught with focus on entrepreneurial management. Zlín region is known for shoe manufacturing and creative industries.",
+      "entryRequirements": [
+        "English B2",
+        "Mathematics at secondary level",
+        "Entrance exam"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "id": "utb-multimedia-communication",
+      "universityId": "utb",
+      "name": "Multimedia Communication",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2000,
+      "description": "Digital media, film, and communications. Creative program in emerging Czech region. Production projects with regional media companies.",
+      "entryRequirements": [
+        "Media or Communications bachelor",
+        "English B2",
+        "Portfolio"
+      ],
+      "field": "Communication",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T21:58:22.250Z"
+}
