@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useForm, Controller } from 'react-hook-form'
@@ -118,10 +119,10 @@ export default function OnboardingPage() {
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <GraduationCap className="w-6 h-6 text-primary-600" />
             <span className="text-lg font-bold text-slate-900">EuroUni</span>
-          </div>
+          </Link>
           <span className="text-sm text-slate-500">Step {currentStep} of 4</span>
         </div>
       </header>
