@@ -260,7 +260,7 @@ const FIELD_KEYWORDS: Record<string, string[]> = {
   'mathematics': ['stats', 'statistics', 'applied-math', 'financial-math'],
   'chemistry': ['biochemistry', 'molecular', 'pharmaceutical'],
   'biology': ['biotechnology', 'bioinformatics', 'ecology', 'genetics'],
-  'psychology': ['counseling', 'social-work', 'cognitive'],
+  'psychology': ['psychology', 'counseling', 'social-work', 'cognitive', 'behavioral', 'clinical'],
   'law': ['legal', 'jurisprudence', 'international-law'],
   'art': ['design', 'fine-arts', 'visual', 'music', 'theater'],
 }
@@ -383,10 +383,17 @@ export function calculateProgramScore(
   // Budget score (use tuition scoring)
   const budgetScore = scoreTuition(profile.monthlyBudget, program.tuitionEur)
 
-  // Career score (field matching)
+  // Career score (field matching) - HARD FILTER
   let careerScore = profile.careerFocus
   if (universityParams?.fieldOfStudy) {
-    careerScore = scoreFieldMatch(universityParams.fieldOfStudy, program.field)
+    const fieldMatch = scoreFieldMatch(universityParams.fieldOfStudy, program.field)
+    if (fieldMatch >= 80) {
+      careerScore = 100  // exact match - full points
+    } else if (fieldMatch >= 40) {
+      careerScore = 30   // partial/related - some points
+    } else {
+      careerScore = 0    // no match - zero career points
+    }
   }
 
   // Ranking score (new component)
@@ -395,13 +402,13 @@ export function calculateProgramScore(
     rankingScore = scoreRanking(universityParams.ranking)
   }
 
-  // Calculate weighted total (include ranking as part of academic/quality)
+  // Calculate weighted total
   const totalScore =
     academicScore * weights.academic +
     locationScore * weights.location +
     languageScore * weights.language +
     budgetScore * weights.budget +
-    (careerScore * 0.6 + rankingScore * 0.4) * weights.career
+    careerScore * weights.career
 
   return {
     programId: '',
@@ -412,7 +419,7 @@ export function calculateProgramScore(
       location: Math.round(locationScore),
       language: Math.round(languageScore),
       budget: Math.round(budgetScore),
-      career: Math.round(careerScore * 0.6 + rankingScore * 0.4),
+      career: Math.round(careerScore),
     },
   }
 }
