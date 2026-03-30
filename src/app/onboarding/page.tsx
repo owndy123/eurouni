@@ -7,10 +7,16 @@ import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { ArrowRight, ArrowLeft, Check, GraduationCap, MapPin, Languages, Wallet, Target } from 'lucide-react'
-import { calculateAllScores, DEFAULT_WEIGHTS, WeightConfig, getCoordinatesForCity, CITY_COORDINATES } from '@/lib/calculator'
+import { calculateAllScores, DEFAULT_WEIGHTS, WeightConfig, getCoordinatesForCity } from '@/lib/calculator'
 import { programs, universities, getUniversity, Program, University } from '@/data/mockData'
 import ProgramCard from '@/components/program-card'
 import CalculatorUI from '@/components/calculator-ui'
+import { Slider } from '@/components/ui/slider'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Label } from '@/components/ui/label'
+import { Badge } from '@/components/ui/badge'
 
 const steps = [
   { id: 1, title: 'Academic Profile', icon: GraduationCap },
@@ -25,18 +31,18 @@ const formSchema = z.object({
   gpa: z.number().min(0).max(100),
   mathLevel: z.number().min(0).max(100),
   scienceLevel: z.number().min(0).max(100),
-  
+
   // Step 2: Location
   preferredCitySize: z.number().min(0).max(100),
   homeCountry: z.string().optional(),
   homeCity: z.string().optional(),
-  distanceMax: z.number().min(0).max(2000),
-  
+  distanceMax: z.number().min(50).max(1000),
+
   // Step 3: Language & Budget
   englishLevel: z.number().min(0).max(100),
   willingToLearnLocal: z.number().min(0).max(100),
-  monthlyBudget: z.number().min(0).max(5000),
-  
+  monthlyBudget: z.number().min(0).max(3000),
+
   // Step 4: Career
   careerFocus: z.number().min(0).max(100),
   fieldOfStudy: z.string(),
@@ -71,25 +77,22 @@ export default function OnboardingPage() {
   })
 
   const onSubmit = (data: FormData) => {
-    // Get home coordinates from city
     const homeCoords = data.homeCity ? getCoordinatesForCity(data.homeCity) : null
-    
-    // Add home location to profile
+
     const profileWithLocation = {
       ...data,
       homeLocation: homeCoords || undefined,
     }
-    
-    // Calculate scores with distance filtering
+
     const scores = calculateAllScores(profileWithLocation, programs, weights, universities)
-    
+
     const resultsWithDetails = scores.slice(0, 10).map((score) => ({
       program: programs.find(p => p.id === score.programId)!,
       university: universities.find(u => u.id === score.universityId)!,
       score: score.score,
       distance: score.distance,
     })).filter(r => r.program && r.university)
-    
+
     setResults(resultsWithDetails)
     setCurrentStep(5)
   }
@@ -169,401 +172,369 @@ export default function OnboardingPage() {
           key={currentStep}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-2xl border border-slate-200 p-8"
         >
           {/* Step 1: Academic Profile */}
           {currentStep === 1 && (
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">Academic Profile</h2>
-                <p className="text-slate-600">Tell us about your academic background.</p>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Overall GPA (%)
-                  </label>
-                  <Controller
-                    name="gpa"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>0%</span>
-                          <span className="font-medium text-primary-600">{field.value}%</span>
-                          <span>100%</span>
+            <Card className="p-8">
+              <CardHeader className="px-0 pt-0">
+                <CardTitle className="text-2xl">Academic Profile</CardTitle>
+                <CardDescription>Tell us about your academic background.</CardDescription>
+              </CardHeader>
+              <CardContent className="px-0 space-y-8">
+                <div className="space-y-4">
+                  <div>
+                    <Label className="mb-2 block">Overall GPA (%)</Label>
+                    <Controller
+                      name="gpa"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={100}
+                            step={1}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>0%</span>
+                            <span className="font-medium text-primary-600">{field.value}%</span>
+                            <span>100%</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                </div>
+                      )}
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Math Proficiency (%)
-                  </label>
-                  <Controller
-                    name="mathLevel"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>0%</span>
-                          <span className="font-medium text-primary-600">{field.value}%</span>
-                          <span>100%</span>
+                  <div>
+                    <Label className="mb-2 block">Math Proficiency (%)</Label>
+                    <Controller
+                      name="mathLevel"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={100}
+                            step={1}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>0%</span>
+                            <span className="font-medium text-primary-600">{field.value}%</span>
+                            <span>100%</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                </div>
+                      )}
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Science Proficiency (%)
-                  </label>
-                  <Controller
-                    name="scienceLevel"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>0%</span>
-                          <span className="font-medium text-primary-600">{field.value}%</span>
-                          <span>100%</span>
+                  <div>
+                    <Label className="mb-2 block">Science Proficiency (%)</Label>
+                    <Controller
+                      name="scienceLevel"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={100}
+                            step={1}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>0%</span>
+                            <span className="font-medium text-primary-600">{field.value}%</span>
+                            <span>100%</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
+                      )}
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           )}
 
           {/* Step 2: Location */}
           {currentStep === 2 && (
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">Location Preferences</h2>
-                <p className="text-slate-600">Where would you like to study?</p>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Preferred City Size
-                  </label>
-                  <Controller
-                    name="preferredCitySize"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>Village</span>
-                          <span className="font-medium text-primary-600">
-                            {field.value < 33 ? 'Small Town' : field.value < 66 ? 'City' : 'Metropolis'}
-                          </span>
-                          <span>Metropolis</span>
+            <Card className="p-8">
+              <CardHeader className="px-0 pt-0">
+                <CardTitle className="text-2xl">Location Preferences</CardTitle>
+                <CardDescription>Where would you like to study?</CardDescription>
+              </CardHeader>
+              <CardContent className="px-0 space-y-8">
+                <div className="space-y-4">
+                  <div>
+                    <Label className="mb-2 block">Preferred City Size</Label>
+                    <Controller
+                      name="preferredCitySize"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={100}
+                            step={1}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>Village</span>
+                            <span className="font-medium text-primary-600">
+                              {field.value < 33 ? 'Small Town' : field.value < 66 ? 'City' : 'Metropolis'}
+                            </span>
+                            <span>Metropolis</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                </div>
+                      )}
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Your Home City (for distance-based recommendations)
-                  </label>
-                  <Controller
-                    name="homeCity"
-                    control={control}
-                    render={({ field }) => (
-                      <select
-                        {...field}
-                        className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      >
-                        <option value="">Select your city</option>
-                        <optgroup label="Slovakia">
-                          <option value="bratislava">Bratislava</option>
-                          <option value="kosice">Košice</option>
-                          <option value="nitra">Nitra</option>
-                          <option value="zilina">Žilina</option>
-                          <option value="banska-bystrica">Banská Bystrica</option>
-                          <option value="presov">Prešov</option>
-                          <option value="trnava">Trnava</option>
-                        </optgroup>
-                        <optgroup label="Czech Republic">
-                          <option value="prague">Prague</option>
-                          <option value="brno">Brno</option>
-                          <option value="ostrava">Ostrava</option>
-                          <option value="plzen">Plzeň</option>
-                          <option value="olomouc">Olomouc</option>
-                        </optgroup>
-                        <optgroup label="Austria">
-                          <option value="vienna">Vienna</option>
-                          <option value="graz">Graz</option>
-                          <option value="linz">Linz</option>
-                          <option value="innsbruck">Innsbruck</option>
-                        </optgroup>
-                        <optgroup label="Poland">
-                          <option value="warsaw">Warsaw</option>
-                          <option value="krakow">Kraków</option>
-                          <option value="wroclaw">Wrocław</option>
-                          <option value="poznan">Poznań</option>
-                          <option value="gdansk">Gdańsk</option>
-                        </optgroup>
-                        <optgroup label="Hungary">
-                          <option value="budapest">Budapest</option>
-                          <option value="debrecen">Debrecen</option>
-                          <option value="szeged">Szeged</option>
-                          <option value="pecs">Pécs</option>
-                        </optgroup>
-                        <optgroup label="Germany">
-                          <option value="munich">Munich</option>
-                          <option value="berlin">Berlin</option>
-                          <option value="hamburg">Hamburg</option>
-                          <option value="frankfurt">Frankfurt</option>
-                        </optgroup>
-                        <optgroup label="Netherlands">
-                          <option value="amsterdam">Amsterdam</option>
-                          <option value="rotterdam">Rotterdam</option>
-                          <option value="utrecht">Utrecht</option>
-                        </optgroup>
-                      </select>
-                    )}
-                  />
-                </div>
+                  <div>
+                    <Label className="mb-2 block">Your Home City (for distance-based recommendations)</Label>
+                    <Controller
+                      name="homeCity"
+                      control={control}
+                      render={({ field }) => (
+                        <Select value={field.value} onValueChange={field.onChange}>
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Select your city" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="bratislava">Bratislava (Slovakia)</SelectItem>
+                            <SelectItem value="kosice">Košice (Slovakia)</SelectItem>
+                            <SelectItem value="nitra">Nitra (Slovakia)</SelectItem>
+                            <SelectItem value="zilina">Žilina (Slovakia)</SelectItem>
+                            <SelectItem value="banska-bystrica">Banská Bystrica (Slovakia)</SelectItem>
+                            <SelectItem value="presov">Prešov (Slovakia)</SelectItem>
+                            <SelectItem value="trnava">Trnava (Slovakia)</SelectItem>
+                            <SelectItem value="prague">Prague (Czech Republic)</SelectItem>
+                            <SelectItem value="brno">Brno (Czech Republic)</SelectItem>
+                            <SelectItem value="ostrava">Ostrava (Czech Republic)</SelectItem>
+                            <SelectItem value="plzen">Plzeň (Czech Republic)</SelectItem>
+                            <SelectItem value="olomouc">Olomouc (Czech Republic)</SelectItem>
+                            <SelectItem value="vienna">Vienna (Austria)</SelectItem>
+                            <SelectItem value="graz">Graz (Austria)</SelectItem>
+                            <SelectItem value="linz">Linz (Austria)</SelectItem>
+                            <SelectItem value="innsbruck">Innsbruck (Austria)</SelectItem>
+                            <SelectItem value="warsaw">Warsaw (Poland)</SelectItem>
+                            <SelectItem value="krakow">Kraków (Poland)</SelectItem>
+                            <SelectItem value="wroclaw">Wrocław (Poland)</SelectItem>
+                            <SelectItem value="poznan">Poznań (Poland)</SelectItem>
+                            <SelectItem value="gdansk">Gdańsk (Poland)</SelectItem>
+                            <SelectItem value="budapest">Budapest (Hungary)</SelectItem>
+                            <SelectItem value="debrecen">Debrecen (Hungary)</SelectItem>
+                            <SelectItem value="szeged">Szeged (Hungary)</SelectItem>
+                            <SelectItem value="pecs">Pécs (Hungary)</SelectItem>
+                            <SelectItem value="munich">Munich (Germany)</SelectItem>
+                            <SelectItem value="berlin">Berlin (Germany)</SelectItem>
+                            <SelectItem value="hamburg">Hamburg (Germany)</SelectItem>
+                            <SelectItem value="frankfurt">Frankfurt (Germany)</SelectItem>
+                            <SelectItem value="amsterdam">Amsterdam (Netherlands)</SelectItem>
+                            <SelectItem value="rotterdam">Rotterdam (Netherlands)</SelectItem>
+                            <SelectItem value="utrecht">Utrecht (Netherlands)</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      )}
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Maximum Distance: {watch('distanceMax')} km
-                  </label>
-                  <Controller
-                    name="distanceMax"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="50"
-                          max="1000"
-                          step="50"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>50 km</span>
-                          <span className="font-medium text-primary-600">
-                            {field.value < 200 ? 'Nearby' : field.value < 500 ? 'Region' : 'Country +'}
-                          </span>
-                          <span>1000 km</span>
+                  <div>
+                    <Label className="mb-2 block">Maximum Distance: {watch('distanceMax')} km</Label>
+                    <Controller
+                      name="distanceMax"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={50}
+                            max={1000}
+                            step={50}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>50 km</span>
+                            <span className="font-medium text-primary-600">
+                              {field.value < 200 ? 'Nearby' : field.value < 500 ? 'Region' : 'Country +'}
+                            </span>
+                            <span>1000 km</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
+                      )}
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           )}
 
           {/* Step 3: Language & Budget */}
           {currentStep === 3 && (
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">Language & Budget</h2>
-                <p className="text-slate-600">Your language skills and budget.</p>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    English Level (%)
-                  </label>
-                  <Controller
-                    name="englishLevel"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>None</span>
-                          <span className="font-medium text-primary-600">
-                            {field.value < 25 ? 'Beginner' : field.value < 50 ? 'Intermediate' : field.value < 75 ? 'Advanced' : 'Fluent'}
-                          </span>
-                          <span>Fluent</span>
+            <Card className="p-8">
+              <CardHeader className="px-0 pt-0">
+                <CardTitle className="text-2xl">Language & Budget</CardTitle>
+                <CardDescription>Your language skills and budget.</CardDescription>
+              </CardHeader>
+              <CardContent className="px-0 space-y-8">
+                <div className="space-y-4">
+                  <div>
+                    <Label className="mb-2 block">English Level (%)</Label>
+                    <Controller
+                      name="englishLevel"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={100}
+                            step={1}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>None</span>
+                            <span className="font-medium text-primary-600">
+                              {field.value < 25 ? 'Beginner' : field.value < 50 ? 'Intermediate' : field.value < 75 ? 'Advanced' : 'Fluent'}
+                            </span>
+                            <span>Fluent</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                </div>
+                      )}
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Willing to Learn Local Language (%)
-                  </label>
-                  <Controller
-                    name="willingToLearnLocal"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>No</span>
-                          <span className="font-medium text-primary-600">{field.value}%</span>
-                          <span>Yes</span>
+                  <div>
+                    <Label className="mb-2 block">Willing to Learn Local Language (%)</Label>
+                    <Controller
+                      name="willingToLearnLocal"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={100}
+                            step={1}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>No</span>
+                            <span className="font-medium text-primary-600">{field.value}%</span>
+                            <span>Yes</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
-                </div>
+                      )}
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Monthly Budget (EUR)
-                  </label>
-                  <Controller
-                    name="monthlyBudget"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="3000"
-                          step="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>€0</span>
-                          <span className="font-medium text-primary-600">€{field.value}/month</span>
-                          <span>€3000</span>
+                  <div>
+                    <Label className="mb-2 block">Monthly Budget (EUR)</Label>
+                    <Controller
+                      name="monthlyBudget"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={3000}
+                            step={100}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>€0</span>
+                            <span className="font-medium text-primary-600">€{field.value}/month</span>
+                            <span>€3000</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
+                      )}
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           )}
 
           {/* Step 4: Career Goals */}
           {currentStep === 4 && (
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">Career Goals</h2>
-                <p className="text-slate-600">What do you want to study?</p>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    How focused are you on a specific field? (%)
-                  </label>
-                  <Controller
-                    name="careerFocus"
-                    control={control}
-                    render={({ field }) => (
-                      <div className="space-y-2">
-                        <input
-                          type="range"
-                          min="0"
-                          max="100"
-                          value={field.value}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
-                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary-600"
-                        />
-                        <div className="flex justify-between text-sm text-slate-500">
-                          <span>Flexible</span>
-                          <span className="font-medium text-primary-600">{field.value}%</span>
-                          <span>Specific</span>
+            <Card className="p-8">
+              <CardHeader className="px-0 pt-0">
+                <CardTitle className="text-2xl">Career Goals</CardTitle>
+                <CardDescription>What do you want to study?</CardDescription>
+              </CardHeader>
+              <CardContent className="px-0 space-y-8">
+                <div className="space-y-4">
+                  <div>
+                    <Label className="mb-2 block">How focused are you on a specific field? (%)</Label>
+                    <Controller
+                      name="careerFocus"
+                      control={control}
+                      render={({ field }) => (
+                        <div className="space-y-2">
+                          <Slider
+                            min={0}
+                            max={100}
+                            step={1}
+                            value={[field.value]}
+                            onValueChange={(vals) => field.onChange(vals[0])}
+                            className="py-1"
+                          />
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <span>Flexible</span>
+                            <span className="font-medium text-primary-600">{field.value}%</span>
+                            <span>Specific</span>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  />
+                      )}
+                    />
+                  </div>
+
+                  <div>
+                    <Label className="mb-2 block">Field of Study</Label>
+                    <Controller
+                      name="fieldOfStudy"
+                      control={control}
+                      render={({ field }) => (
+                        <Select value={field.value} onValueChange={field.onChange}>
+                          <SelectTrigger className="w-full">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="Computer Science">Computer Science</SelectItem>
+                            <SelectItem value="Engineering">Engineering</SelectItem>
+                            <SelectItem value="Business">Business</SelectItem>
+                            <SelectItem value="Medicine">Medicine</SelectItem>
+                            <SelectItem value="Economics">Economics</SelectItem>
+                            <SelectItem value="Law">Law</SelectItem>
+                            <SelectItem value="Physics">Physics</SelectItem>
+                            <SelectItem value="Psychology">Psychology</SelectItem>
+                            <SelectItem value="Mathematics">Mathematics</SelectItem>
+                            <SelectItem value="Other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      )}
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Field of Study
-                  </label>
-                  <Controller
-                    name="fieldOfStudy"
-                    control={control}
-                    render={({ field }) => (
-                      <select
-                        {...field}
-                        className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                      >
-                        <option value="Computer Science">Computer Science</option>
-                        <option value="Engineering">Engineering</option>
-                        <option value="Business">Business</option>
-                        <option value="Medicine">Medicine</option>
-                        <option value="Economics">Economics</option>
-                        <option value="Law">Law</option>
-                        <option value="Physics">Physics</option>
-                        <option value="Psychology">Psychology</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    )}
-                  />
+                {/* Weight Configuration */}
+                <div className="pt-4 border-t border-border">
+                  <CalculatorUI weights={weights} onWeightsChange={setWeights} />
                 </div>
-              </div>
-
-              {/* Weight Configuration */}
-              <div className="pt-6 border-t border-slate-100">
-                <CalculatorUI weights={weights} onWeightsChange={setWeights} />
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           )}
 
           {/* Step 5: Results */}
@@ -582,34 +553,67 @@ export default function OnboardingPage() {
               {results.length > 0 ? (
                 <div className="grid gap-4">
                   {results.map((result, index) => (
-                    <div key={result.program.id} className="relative">
-                      {index === 0 && (
-                        <div className="absolute -left-2 top-1/2 -translate-y-1/2 z-10 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-xs font-bold">
-                          1
+                    <Card key={result.program.id} className="p-0 overflow-hidden">
+                      <div className="flex">
+                        {/* Rank badge */}
+                        <div className={`w-12 flex flex-col items-center justify-center shrink-0 ${
+                          index === 0 ? 'bg-yellow-400' : index === 1 ? 'bg-slate-300' : index === 2 ? 'bg-amber-600' : 'bg-muted'
+                        }`}>
+                          <span className="text-sm font-bold text-white">{index + 1}</span>
                         </div>
-                      )}
-                      <ProgramCard
-                        program={result.program}
-                        university={result.university}
-                        score={result.score}
-                      />
-                    </div>
+
+                        {/* Content */}
+                        <div className="flex-1 p-4">
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="flex-1 min-w-0">
+                              <h3 className="font-semibold text-slate-900 truncate">{result.program.name}</h3>
+                              <p className="text-sm text-muted-foreground">{result.university.name} · {result.university.country}</p>
+                            </div>
+
+                            {/* Score badge */}
+                            <Badge variant={result.score >= 80 ? 'default' : result.score >= 60 ? 'secondary' : 'outline'} className="shrink-0 text-base px-3 py-1">
+                              {Math.round(result.score)}%
+                            </Badge>
+                          </div>
+
+                          <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-muted-foreground">
+                            <span>{result.program.ects} ECTS</span>
+                            <span>·</span>
+                            <span>{result.program.durationMonths} months</span>
+                            <span>·</span>
+                            <span className={result.program.tuitionEur === 0 ? 'text-green-600 font-medium' : ''}>
+                              {result.program.tuitionEur === 0 ? 'Free' : `€${result.program.tuitionEur.toLocaleString()}/yr`}
+                            </span>
+                            <span>·</span>
+                            <span className="capitalize">{result.program.language}</span>
+                            {result.distance !== undefined && (
+                              <>
+                                <span>·</span>
+                                <span>{Math.round(result.distance)} km away</span>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
                   ))}
                 </div>
               ) : (
-                <p className="text-center text-slate-500">No matching programs found.</p>
+                <Card className="p-8 text-center">
+                  <p className="text-muted-foreground">No matching programs found.</p>
+                </Card>
               )}
 
               <div className="flex justify-center">
-                <button
+                <Button
+                  variant="outline"
                   onClick={() => {
                     setCurrentStep(1)
                     setResults([])
                   }}
-                  className="text-primary-600 hover:text-primary-700"
                 >
                   Start Over
-                </button>
+                </Button>
               </div>
             </div>
           )}
@@ -618,25 +622,20 @@ export default function OnboardingPage() {
         {/* Navigation Buttons */}
         {currentStep < 5 && (
           <div className="flex justify-between mt-6">
-            <button
+            <Button
+              variant="outline"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg ${
-                currentStep === 1
-                  ? 'text-slate-300 cursor-not-allowed'
-                  : 'text-slate-600 hover:bg-slate-100'
-              }`}
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4 mr-2" />
               Back
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={nextStep}
-              className="flex items-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-lg hover:bg-primary-700 transition-colors"
             >
               {currentStep === 4 ? 'Calculate Results' : 'Continue'}
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
           </div>
         )}
       </main>

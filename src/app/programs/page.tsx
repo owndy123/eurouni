@@ -5,7 +5,8 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { GraduationCap, Search, SlidersHorizontal, X, Globe, BookOpen, Award, MapPin } from 'lucide-react'
 import { programs, universities, getUniversity, getCountries } from '@/data/mockData'
-import DistanceMap from '@/components/distance-map'
+import dynamic from 'next/dynamic'
+const DistanceMap = dynamic(() => import('@/components/distance-map'), { ssr: false })
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
