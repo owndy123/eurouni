@@ -1,18 +1,31 @@
 /**
  * EuroUni Data Source System
+ * 
+ * Architecture (tiered fallback):
+ * 1. Supabase (production) - when NEXT_PUBLIC_SUPABASE_URL is configured
+ * 2. JSON file (data/programs.json) - legacy versioning system
+ * 3. Mock data (development) - fallback when nothing else is available
  *
- * Architecture:
- * 1. JSON file (data/programs.json) - source of truth with versioning
- * 2. In-memory cache with reload() for scraper integration
- *
- * The JSON file is the authoritative source. All code imports from here,
- * not from mockData.ts. This layer provides the same exports that pages
- * already expect (universities, programs, getUniversity, etc.) so the
- * transition is seamless.
+ * All pages import from here. This layer provides the same exports that
+ * pages already expect (universities, programs, getUniversity, etc.)
+ * so the transition to Supabase is completely transparent.
  */
 
-import * as fs from 'fs'
-import * as path from 'path'
+import { isSupabaseConfigured } from './supabase'
+
+// Lazy load db module to avoid SSR issues with Supabase
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let dbModule: any = null
+
+async function getDb(): Promise<typeof import('./db')> {
+  if (!dbModule) {
+    dbModule = await import('./db')
+  }
+  return dbModule
+}
+
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { UNIVERSITY_LOGOS } = require('../data/universityLogos')
 
 // ============ Types (mirror mockData.ts interfaces) ============
 
@@ -42,7 +55,7 @@ export interface Program {
   lastUpdated: string
 }
 
-// ============ Internal JSON types ============
+// ============ Internal JSON types (for JSON file fallback) ============
 
 interface VersionedUniversity {
   id: string
@@ -90,25 +103,25 @@ interface ProgramsJSON {
   }
 }
 
-// ============ Data Loading ============
-
-const DATA_FILE = path.join(process.cwd(), 'data', 'programs.json')
+// ============ Data Storage ============
 
 let _universities: University[] = []
 let _programs: Program[] = []
-let _jsonMeta: ProgramsJSON['meta'] | null = null
+let _jsonMeta: { lastUpdated: string; version: string } | null = null
+let _dataMode: 'supabase' | 'json' | 'mock' = 'mock'
+let _initialized = false
 
-function loadFromJSON(): { universities: University[]; programs: Program[]; meta: ProgramsJSON['meta'] } {
+// ============ JSON File Loader ============
+
+function loadFromJSONFile(): { universities: University[]; programs: Program[]; meta: { lastUpdated: string; version: string } } {
+  // Dynamic import for Node.js modules (server-side only)
+  const path = require('path')
+  const fs = require('fs')
+  
+  const DATA_FILE = path.join(process.cwd(), 'data', 'programs.json')
+
   if (!fs.existsSync(DATA_FILE)) {
-    // Fallback: try importing from mockData for dev scenarios
-    console.warn(`[dataSource] ${DATA_FILE} not found, falling back to mockData`)
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const mock = require('../data/mockData')
-      return { universities: mock.universities, programs: mock.programs, meta: { lastUpdated: new Date().toISOString().split('T')[0], version: 'fallback' } }
-    } catch {
-      throw new Error(`[dataSource] No data source found. Run: node scripts/migrate-to-json.mjs`)
-    }
+    throw new Error(`JSON data file not found: ${DATA_FILE}`)
   }
 
   const raw = fs.readFileSync(DATA_FILE, 'utf-8')
@@ -151,62 +164,131 @@ function loadFromJSON(): { universities: University[]; programs: Program[]; meta
   return { universities, programs, meta: data.meta }
 }
 
-// Initial load
-try {
-  const loaded = loadFromJSON()
-  _universities = loaded.universities
-  _programs = loaded.programs
-  _jsonMeta = loaded.meta
-} catch (e) {
-  console.error('[dataSource] Initial load failed:', e)
+// ============ Mock Data Loader ============
+
+function loadFromMockData(): { universities: University[]; programs: Program[]; meta: { lastUpdated: string; version: string } } {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const mock = require('../data/mockData')
+  return {
+    universities: mock.universities,
+    programs: mock.programs,
+    meta: { lastUpdated: new Date().toISOString().split('T')[0], version: 'mock' },
+  }
+}
+
+// ============ Initialization ============
+
+function initialize(): void {
+  if (_initialized) return
+
+  // Try Supabase first (async only - can't await in module init)
+  if (isSupabaseConfigured) {
+    // Note: For SSR, we load mock data first and refresh async
+    const mockData = loadFromMockData()
+    _universities = mockData.universities
+    _programs = mockData.programs
+    _initialized = true
+    
+    // Schedule async Supabase load
+    if (typeof window !== 'undefined') {
+      // Client-side: refresh with Supabase data
+      refreshFromSupabase().catch(console.error)
+    } else if (process.env.NODE_ENV === 'development') {
+      // Development server: refresh with Supabase data
+      refreshFromSupabase().catch(console.error)
+    }
+    
+    return
+  }
+
+  // Try JSON file
+  try {
+    const jsonData = loadFromJSONFile()
+    _universities = jsonData.universities
+    _programs = jsonData.programs
+    _jsonMeta = jsonData.meta
+    _dataMode = 'json'
+    _initialized = true
+    console.log('[dataSource] Loaded from JSON file')
+    return
+  } catch (e) {
+    console.warn('[dataSource] JSON file not available:', (e as Error).message)
+  }
+
+  // Fallback to mock data
+  const mockData = loadFromMockData()
+  _universities = mockData.universities
+  _programs = mockData.programs
+  _jsonMeta = mockData.meta
+  _dataMode = 'mock'
+  _initialized = true
+  console.log('[dataSource] Loaded from mock data')
+}
+
+async function refreshFromSupabase(): Promise<void> {
+  if (!isSupabaseConfigured) return
+  
+  try {
+    const db = await getDb()
+    const [unis, progs] = await Promise.all([
+      db.getUniversities(),
+      db.getPrograms(),
+    ])
+    _universities = unis
+    _programs = progs
+    _dataMode = 'supabase'
+    console.log('[dataSource] Refreshed from Supabase')
+  } catch (e) {
+    console.warn('[dataSource] Supabase refresh failed:', e)
+  }
 }
 
 // ============ Exports (same API as mockData.ts) ============
+
+// Initialize immediately on module load
+initialize()
 
 export const universities: University[] = _universities
 export const programs: Program[] = _programs
 
 export function getUniversity(id: string): University | undefined {
-  return universities.find(u => u.id === id)
+  return _universities.find(u => u.id === id)
 }
 
 export function getProgramsForUniversity(universityId: string): Program[] {
-  return programs.filter(p => p.universityId === universityId)
+  return _programs.filter(p => p.universityId === universityId)
 }
 
 export function getProgramsByField(field: string): Program[] {
-  return programs.filter(p => p.field.toLowerCase().includes(field.toLowerCase()))
+  return _programs.filter(p => p.field.toLowerCase().includes(field.toLowerCase()))
 }
 
 export function getProgramsByLanguage(language: string): Program[] {
-  return programs.filter(p => p.language === language)
+  return _programs.filter(p => p.language === language)
 }
 
 export function getCountries(): string[] {
-  return Array.from(new Set(universities.map(u => u.country)))
+  return Array.from(new Set(_universities.map(u => u.country)))
 }
 
 export function getStats() {
   return {
-    totalUniversities: universities.length,
-    totalPrograms: programs.length,
+    totalUniversities: _universities.length,
+    totalPrograms: _programs.length,
     countries: getCountries().length,
-    englishPrograms: programs.filter(p => p.language === 'english').length,
-    freeTuition: programs.filter(p => p.tuitionEur === 0).length,
+    englishPrograms: _programs.filter(p => p.language === 'english').length,
+    freeTuition: _programs.filter(p => p.tuitionEur === 0).length,
   }
 }
 
-// ============ Logo helper (re-exported from universityLogos) ============
-
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const { UNIVERSITY_LOGOS } = require('../data/universityLogos')
+// ============ Logo helper ============
 
 export function getLogo(uniId: string): string {
   return UNIVERSITY_LOGOS[uniId] || '🎓'
 }
 
 export function getUniversityWithLogo(id: string): University | undefined {
-  const uni = universities.find(u => u.id === id)
+  const uni = _universities.find(u => u.id === id)
   if (!uni) return undefined
   return { ...uni, logo: UNIVERSITY_LOGOS[uni.id] || uni.logo }
 }
@@ -214,15 +296,31 @@ export function getUniversityWithLogo(id: string): University | undefined {
 // ============ Reload function (for scraper integration) ============
 
 /**
- * Reload data from the JSON file.
- * Called by the ETL/scraper pipeline after updating data/programs.json.
+ * Reload data from source.
+ * When using Supabase, refreshes from database.
+ * When using JSON, re-reads the file.
  */
-export function reload(): void {
-  const loaded = loadFromJSON()
-  _universities = loaded.universities
-  _programs = loaded.programs
-  _jsonMeta = loaded.meta
-  console.log(`[dataSource] Reloaded: ${_universities.length} universities, ${_programs.length} programs`)
+export async function reload(): Promise<void> {
+  if (isSupabaseConfigured) {
+    await refreshFromSupabase()
+  } else {
+    // Try JSON file
+    try {
+      const jsonData = loadFromJSONFile()
+      _universities = jsonData.universities
+      _programs = jsonData.programs
+      _jsonMeta = jsonData.meta
+      _dataMode = 'json'
+    } catch {
+      // Fall back to mock
+      const mockData = loadFromMockData()
+      _universities = mockData.universities
+      _programs = mockData.programs
+      _jsonMeta = mockData.meta
+      _dataMode = 'mock'
+    }
+  }
+  console.log(`[dataSource] Reloaded (${_dataMode}): ${_universities.length} universities, ${_programs.length} programs`)
 }
 
 // ============ Legacy exports (for backward compat with etl-pipeline.ts) ============
@@ -276,6 +374,11 @@ export const scraperConfig = {
   ],
 }
 
+// Get current data mode (for debugging)
+export function getDataMode(): 'supabase' | 'json' | 'mock' {
+  return _dataMode
+}
+
 export default {
   universities,
   programs,
@@ -292,4 +395,5 @@ export default {
   needsRefresh,
   getDataFreshness,
   scraperConfig,
+  getDataMode,
 }
