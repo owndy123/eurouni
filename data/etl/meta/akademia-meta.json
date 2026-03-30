@@ -1,0 +1,8 @@
+{
+  "universityId": "akademia",
+  "url": "https://www.akademia.sk/en/",
+  "lastScrapeTime": "2026-03-30T16:01:23.651Z",
+  "programCount": 0,
+  "success": false,
+  "error": "fetch failed"
+}

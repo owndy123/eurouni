@@ -1,0 +1,8 @@
+{
+  "universityId": "cuni",
+  "url": "https://cuni.cz/UKEN_313.html",
+  "lastScrapeTime": "2026-03-30T16:01:23.667Z",
+  "programCount": 0,
+  "success": false,
+  "error": "HTTP 404: Not Found"
+}

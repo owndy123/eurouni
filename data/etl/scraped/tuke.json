@@ -1,0 +1,198 @@
+{
+  "universityId": "tuke",
+  "programs": [
+    {
+      "name": "University",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-0",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Applicants",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-1",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Address",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-2",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Central office",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-3",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Rector's Office",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-4",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Billing information",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-5",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "TUKE News",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-6",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Ulysseus News",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-7",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "TUKE in Numbers",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-8",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Get to Know Our Faculties and Ulysseus",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-9",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Supercomputer PERUN is fully operational",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-10",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "110 609",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-11",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "110 609",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-12",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Mining, Ecology, Process Control and Geotechnologies",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-13",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Mechanical Engineering",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-14",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Civil Engineering",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-15",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Manufacturing Technologies",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-16",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Aeronautics",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-17",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Materials, Metallurgy and Recycling",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-18",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Electrical Engineering and Informatics",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-19",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Economics",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-20",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Faculty of Arts",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-21",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "Ulysseus",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-22",
+      "lastUpdated": "2026-03-30"
+    },
+    {
+      "name": "ULYSSEUS at TUKE",
+      "description": "",
+      "field": "Unknown",
+      "universityId": "tuke",
+      "id": "tuke-scraped-23",
+      "lastUpdated": "2026-03-30"
+    }
+  ],
+  "savedAt": "2026-03-30T16:01:19.907Z"
+}
