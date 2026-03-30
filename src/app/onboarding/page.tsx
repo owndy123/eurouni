@@ -84,7 +84,7 @@ export default function OnboardingPage() {
       homeLocation: homeCoords || undefined,
     }
 
-    const scores = calculateAllScores(profileWithLocation, programs, weights, universities)
+    const scores = calculateAllScores(profileWithLocation, programs, weights, universities, data.fieldOfStudy)
 
     const resultsWithDetails = scores.slice(0, 10).map((score) => ({
       program: programs.find(p => p.id === score.programId)!,
