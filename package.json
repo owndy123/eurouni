@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "scrape": "npx ts-node scripts/run-etl.ts",
+    "scrape:force": "npx ts-node scripts/run-etl.ts --force",
+    "guides:list": "npx tsx scripts/moderate-guides.ts --list",
+    "guides:approve": "npx tsx scripts/moderate-guides.ts --approve",
+    "guides:reject": "npx tsx scripts/moderate-guides.ts --reject",
+    "guides:submit-test": "npx tsx scripts/moderate-guides.ts --submit-test"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -14,6 +20,8 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@types/cheerio": "^0.22.35",
+    "cheerio": "^1.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.0",
