@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://eurouni.dev'),
+  metadataBase: new URL('https://eurouni.vercel.app'),
   title: {
     default: 'EuroUni - Find Your Perfect University in Europe',
     template: '%s | EuroUni',
@@ -17,16 +17,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://eurouni.dev',
+    url: 'https://eurouni.vercel.app',
     siteName: 'EuroUni',
     title: 'EuroUni - Find Your Perfect University in Europe',
     description: 'Discover European universities that match your profile. Use our Student Calculator to find programs that fit your academic goals, language skills, and budget.',
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'EuroUni - European University Matching Platform',
+        url: '/favicon.svg',
+        width: 100,
+        height: 100,
+        alt: 'EuroUni',
       },
     ],
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'EuroUni - Find Your Perfect University in Europe',
     description: 'Discover European universities that match your profile. Use our Student Calculator to find programs that fit your academic goals, language skills, and budget.',
-    images: ['/og-image.png'],
+    images: ['/favicon.svg'],
   },
   robots: {
     index: true,
