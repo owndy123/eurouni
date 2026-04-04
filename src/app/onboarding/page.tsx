@@ -2,16 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { useForm, Controller } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { ArrowRight, ArrowLeft, Check, GraduationCap, MapPin, Languages, Wallet, Target } from 'lucide-react'
-import { calculateAllScores, DEFAULT_WEIGHTS, WeightConfig, getCoordinatesForCity } from '@/lib/calculator'
-import { programs, universities, getUniversity, Program, University } from '@/data/mockData'
-import ProgramCard from '@/components/program-card'
-import CalculatorUI from '@/components/calculator-ui'
+import { ArrowRight, ArrowLeft, Check, GraduationCap, MapPin, Languages, Wallet, Sparkles } from 'lucide-react'
+import { calculateAllScores, DEFAULT_WEIGHTS, WeightConfig, getCoordinatesForCity, StudentProfile } from '@/lib/calculator'
+import { programs, universities } from '@/data/mockData'
 import { UniversityAvatar } from '@/components/university-avatar'
 import { Slider } from '@/components/ui/slider'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -20,90 +14,139 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
 
-const steps = [
+const STEPS = [
   { id: 1, title: 'Academic Profile', icon: GraduationCap },
   { id: 2, title: 'Location', icon: MapPin },
-  { id: 3, title: 'Language & Budget', icon: Wallet },
-  { id: 4, title: 'Career Goals', icon: Target },
-  { id: 5, title: 'Results', icon: Check },
+  { id: 3, title: 'Language', icon: Languages },
+  { id: 4, title: 'Budget', icon: Wallet },
+  { id: 5, title: 'Results', icon: Sparkles },
 ]
 
-const formSchema = z.object({
+interface FormData {
   // Step 1: Academic
-  gpa: z.number().min(0).max(100),
-  mathLevel: z.number().min(0).max(100),
-  scienceLevel: z.number().min(0).max(100),
+  gpa: number      // 1-5
+  mathLevel: number // 0-100
+  scienceLevel: number // 0-100
 
   // Step 2: Location
-  preferredCitySize: z.number().min(0).max(100),
-  homeCountry: z.string().optional(),
-  homeCity: z.string().optional(),
-  distanceMax: z.number().min(50).max(1000),
+  homeCountry: string
+  homeCity: string
+  preferredCitySize: number // 0-100
 
-  // Step 3: Language & Budget
-  englishLevel: z.number().min(0).max(100),
-  willingToLearnLocal: z.number().min(0).max(100),
-  monthlyBudget: z.number().min(0).max(3000),
+  // Step 3: Language
+  englishLevel: number // 0-100
+  willingToLearnLocal: number // 0-100
 
-  // Step 4: Career
-  careerFocus: z.number().min(0).max(100),
-  fieldOfStudy: z.string(),
-})
-
-type FormData = z.infer<typeof formSchema>
+  // Step 4: Budget
+  monthlyBudget: number // 0-2000 EUR
+  distanceMax: number   // 50-2000 km
+}
 
 const defaultValues: FormData = {
-  gpa: 75,
+  gpa: 3,
   mathLevel: 70,
   scienceLevel: 65,
-  preferredCitySize: 70,
-  homeCountry: '',
+  homeCountry: 'Slovakia',
   homeCity: 'bratislava',
+  preferredCitySize: 70,
   englishLevel: 80,
   willingToLearnLocal: 50,
   monthlyBudget: 1000,
-  careerFocus: 60,
-  fieldOfStudy: 'Computer Science',
   distanceMax: 500,
 }
 
+type ResultEntry = {
+  program: typeof programs[number]
+  university: typeof universities[number]
+  score: number
+  distance?: number
+}
+
+const COUNTRIES = ['Slovakia', 'Czech Republic', 'Austria', 'Poland', 'Hungary', 'Germany', 'Netherlands'] as const
+
+const CITIES: Record<string, { value: string; label: string }[]> = {
+  Slovakia: [
+    { value: 'bratislava', label: 'Bratislava' },
+    { value: 'kosice', label: 'Košice' },
+    { value: 'nitra', label: 'Nitra' },
+    { value: 'zilina', label: 'Žilina' },
+    { value: 'banska-bystrica', label: 'Banská Bystrica' },
+    { value: 'presov', label: 'Prešov' },
+    { value: 'trnava', label: 'Trnava' },
+  ],
+  'Czech Republic': [
+    { value: 'prague', label: 'Prague' },
+    { value: 'brno', label: 'Brno' },
+    { value: 'ostrava', label: 'Ostrava' },
+    { value: 'plzen', label: 'Plzeň' },
+    { value: 'olomouc', label: 'Olomouc' },
+  ],
+  Austria: [
+    { value: 'vienna', label: 'Vienna' },
+    { value: 'graz', label: 'Graz' },
+    { value: 'linz', label: 'Linz' },
+    { value: 'innsbruck', label: 'Innsbruck' },
+  ],
+  Poland: [
+    { value: 'warsaw', label: 'Warsaw' },
+    { value: 'krakow', label: 'Kraków' },
+    { value: 'wroclaw', label: 'Wrocław' },
+    { value: 'poznan', label: 'Poznań' },
+    { value: 'gdansk', label: 'Gdańsk' },
+  ],
+  Hungary: [
+    { value: 'budapest', label: 'Budapest' },
+    { value: 'debrecen', label: 'Debrecen' },
+    { value: 'szeged', label: 'Szeged' },
+    { value: 'pecs', label: 'Pécs' },
+  ],
+  Germany: [
+    { value: 'munich', label: 'Munich' },
+    { value: 'berlin', label: 'Berlin' },
+    { value: 'hamburg', label: 'Hamburg' },
+    { value: 'frankfurt', label: 'Frankfurt' },
+  ],
+  Netherlands: [
+    { value: 'amsterdam', label: 'Amsterdam' },
+    { value: 'rotterdam', label: 'Rotterdam' },
+    { value: 'utrecht', label: 'Utrecht' },
+  ],
+}
+
+const FIELDS_OF_STUDY = [
+  'Computer Science',
+  'Engineering',
+  'Business',
+  'Medicine',
+  'Economics',
+  'Law',
+  'Physics',
+  'Psychology',
+  'Mathematics',
+  'Biology',
+  'Chemistry',
+  'Environmental Science',
+  'Art',
+  'Other',
+]
+
 export default function OnboardingPage() {
-  const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1)
-  const [weights, setWeights] = useState<WeightConfig>(DEFAULT_WEIGHTS)
-  const [results, setResults] = useState<Array<{ program: Program; university: University; score: number; distance?: number }>>([])
+  const [formData, setFormData] = useState<FormData>(defaultValues)
+  const [results, setResults] = useState<ResultEntry[]>([])
+  const [fieldOfStudy] = useState('Computer Science')
+  const [weights] = useState<WeightConfig>(DEFAULT_WEIGHTS)
 
-  const { control, handleSubmit, watch, formState: { errors } } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues,
-  })
-
-  const onSubmit = (data: FormData) => {
-    const homeCoords = data.homeCity ? getCoordinatesForCity(data.homeCity) : null
-
-    const profileWithLocation = {
-      ...data,
-      homeLocation: homeCoords || undefined,
-    }
-
-    const scores = calculateAllScores(profileWithLocation, programs, weights, universities, data.fieldOfStudy)
-
-    const resultsWithDetails = scores.slice(0, 10).map((score) => ({
-      program: programs.find(p => p.id === score.programId)!,
-      university: universities.find(u => u.id === score.universityId)!,
-      score: score.score,
-      distance: score.distance,
-    })).filter(r => r.program && r.university)
-
-    setResults(resultsWithDetails)
-    setCurrentStep(5)
+  const updateField = <K extends keyof FormData>(key: K, value: FormData[K]) => {
+    setFormData(prev => ({ ...prev, [key]: value }))
   }
 
   const nextStep = () => {
-    if (currentStep < 4) {
+    if (currentStep < 5) {
       setCurrentStep(currentStep + 1)
-    } else {
-      handleSubmit(onSubmit)()
+    }
+    if (currentStep === 4) {
+      calculateResults()
     }
   }
 
@@ -113,7 +156,63 @@ export default function OnboardingPage() {
     }
   }
 
-  const progress = (currentStep / 4) * 100
+  const calculateResults = () => {
+    const homeCoords = getCoordinatesForCity(formData.homeCity) ?? undefined
+
+    // Build StudentProfile — GPA normalized from 1-5 to 0-100
+    const profile: StudentProfile = {
+      gpa: ((formData.gpa - 1) / 4) * 100, // 1-5 → 0-100
+      mathLevel: formData.mathLevel,
+      scienceLevel: formData.scienceLevel,
+      preferredCitySize: formData.preferredCitySize,
+      distanceMax: formData.distanceMax,
+      homeLocation: homeCoords,
+      englishLevel: formData.englishLevel,
+      willingToLearnLocal: formData.willingToLearnLocal,
+      monthlyBudget: formData.monthlyBudget,
+      careerFocus: 50, // neutral default
+    }
+
+    const scored = calculateAllScores(
+      profile,
+      programs,
+      weights,
+      universities,
+      fieldOfStudy
+    )
+
+    const top10 = scored.slice(0, 10).map(s => ({
+      program: programs.find(p => p.id === s.programId)!,
+      university: universities.find(u => u.id === s.universityId)!,
+      score: s.score,
+      distance: s.distance,
+    })).filter(r => r.program && r.university)
+
+    setResults(top10)
+  }
+
+  const progress = ((currentStep - 1) / 4) * 100
+
+  const gpaLabel = (v: number) => {
+    if (v <= 1) return 'Poor'
+    if (v <= 2) return 'Below Average'
+    if (v <= 3) return 'Average'
+    if (v <= 4) return 'Good'
+    return 'Excellent'
+  }
+
+  const citySizeLabel = (v: number) => {
+    if (v < 33) return 'Small Town'
+    if (v < 66) return 'City'
+    return 'Metropolis'
+  }
+
+  const englishLabel = (v: number) => {
+    if (v < 25) return 'Beginner'
+    if (v < 50) return 'Intermediate'
+    if (v < 75) return 'Advanced'
+    return 'Fluent'
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -124,43 +223,48 @@ export default function OnboardingPage() {
             <GraduationCap className="w-6 h-6 text-primary-600" />
             <span className="text-lg font-bold text-slate-900">EuroUni</span>
           </Link>
-          <span className="text-sm text-slate-500">Step {currentStep} of 4</span>
+          <span className="text-sm text-slate-500">
+            {currentStep <= 4 ? `Step ${currentStep} of 4` : 'Your Results'}
+          </span>
         </div>
       </header>
 
       {/* Progress Bar */}
-      <div className="h-1 bg-slate-200">
-        <motion.div
-          className="h-full bg-primary-600"
-          initial={{ width: 0 }}
-          animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.3 }}
-        />
-      </div>
+      {currentStep <= 4 && (
+        <div className="h-1 bg-slate-200">
+          <motion.div
+            className="h-full bg-primary-600"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          />
+        </div>
+      )}
 
-      {/* Step Navigation */}
+      {/* Step Indicator */}
       <nav className="py-6 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between">
-            {steps.slice(0, 4).map((step, index) => (
-              <div
-                key={step.id}
-                className={`flex items-center ${index < 3 ? 'flex-1' : ''}`}
-              >
-                <div className={`flex items-center gap-2 ${
+            {STEPS.slice(0, 4).map((step, idx) => (
+              <div key={step.id} className="flex items-center flex-1">
+                <div className={`flex flex-col items-center gap-1 ${
                   currentStep >= step.id ? 'text-primary-600' : 'text-slate-400'
                 }`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                    currentStep > step.id ? 'bg-primary-600 text-white' :
-                    currentStep === step.id ? 'bg-primary-100 text-primary-600 border-2 border-primary-600' :
-                    'bg-slate-100 text-slate-400'
+                  <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold transition-colors ${
+                    currentStep > step.id
+                      ? 'bg-primary-600 text-white'
+                      : currentStep === step.id
+                      ? 'bg-primary-100 text-primary-600 border-2 border-primary-600'
+                      : 'bg-slate-100 text-slate-400'
                   }`}>
                     {currentStep > step.id ? <Check className="w-4 h-4" /> : <step.icon className="w-4 h-4" />}
                   </div>
-                  <span className="text-sm hidden sm:block">{step.title}</span>
+                  <span className="text-xs hidden sm:block font-medium">{step.title}</span>
                 </div>
-                {index < 3 && (
-                  <div className={`flex-1 h-0.5 mx-4 ${currentStep > step.id ? 'bg-primary-600' : 'bg-slate-200'}`} />
+                {idx < 3 && (
+                  <div className={`flex-1 h-0.5 mx-3 ${
+                    currentStep > step.id ? 'bg-primary-600' : 'bg-slate-200'
+                  }`} />
                 )}
               </div>
             ))}
@@ -168,12 +272,13 @@ export default function OnboardingPage() {
         </div>
       </nav>
 
-      {/* Form Content */}
-      <main className="max-w-2xl mx-auto px-4 pb-20">
+      {/* Step Content */}
+      <main className="max-w-2xl mx-auto px-4 pb-24">
         <motion.div
           key={currentStep}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.25 }}
         >
           {/* Step 1: Academic Profile */}
           {currentStep === 1 && (
@@ -183,82 +288,65 @@ export default function OnboardingPage() {
                 <CardDescription>Tell us about your academic background.</CardDescription>
               </CardHeader>
               <CardContent className="px-0 space-y-8">
-                <div className="space-y-4">
-                  <div>
-                    <Label className="mb-2 block">Overall GPA (%)</Label>
-                    <Controller
-                      name="gpa"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={100}
-                            step={1}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>0%</span>
-                            <span className="font-medium text-primary-600">{field.value}%</span>
-                            <span>100%</span>
-                          </div>
-                        </div>
-                      )}
-                    />
-                  </div>
 
-                  <div>
-                    <Label className="mb-2 block">Math Proficiency (%)</Label>
-                    <Controller
-                      name="mathLevel"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={100}
-                            step={1}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>0%</span>
-                            <span className="font-medium text-primary-600">{field.value}%</span>
-                            <span>100%</span>
-                          </div>
-                        </div>
-                      )}
+                <div>
+                  <Label className="mb-3 block">
+                    GPA (1–5 scale)
+                  </Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={1}
+                      max={5}
+                      step={0.1}
+                      value={[formData.gpa]}
+                      onValueChange={([v]) => updateField('gpa', v)}
                     />
-                  </div>
-
-                  <div>
-                    <Label className="mb-2 block">Science Proficiency (%)</Label>
-                    <Controller
-                      name="scienceLevel"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={100}
-                            step={1}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>0%</span>
-                            <span className="font-medium text-primary-600">{field.value}%</span>
-                            <span>100%</span>
-                          </div>
-                        </div>
-                      )}
-                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>1.0</span>
+                      <span className="font-semibold text-primary-600 text-base">
+                        {formData.gpa.toFixed(1)} — {gpaLabel(formData.gpa)}
+                      </span>
+                      <span>5.0</span>
+                    </div>
                   </div>
                 </div>
+
+                <div>
+                  <Label className="mb-3 block">Math Proficiency (%)</Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={0}
+                      max={100}
+                      step={1}
+                      value={[formData.mathLevel]}
+                      onValueChange={([v]) => updateField('mathLevel', v)}
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>0%</span>
+                      <span className="font-medium text-primary-600">{formData.mathLevel}%</span>
+                      <span>100%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <Label className="mb-3 block">Science Proficiency (%)</Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={0}
+                      max={100}
+                      step={1}
+                      value={[formData.scienceLevel]}
+                      onValueChange={([v]) => updateField('scienceLevel', v)}
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>0%</span>
+                      <span className="font-medium text-primary-600">{formData.scienceLevel}%</span>
+                      <span>100%</span>
+                    </div>
+                  </div>
+                </div>
+
               </CardContent>
             </Card>
           )}
@@ -267,274 +355,167 @@ export default function OnboardingPage() {
           {currentStep === 2 && (
             <Card className="p-8">
               <CardHeader className="px-0 pt-0">
-                <CardTitle className="text-2xl">Location Preferences</CardTitle>
-                <CardDescription>Where would you like to study?</CardDescription>
+                <CardTitle className="text-2xl">Location</CardTitle>
+                <CardDescription>Where are you from and where would you like to study?</CardDescription>
               </CardHeader>
               <CardContent className="px-0 space-y-8">
-                <div className="space-y-4">
-                  <div>
-                    <Label className="mb-2 block">Preferred City Size</Label>
-                    <Controller
-                      name="preferredCitySize"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={100}
-                            step={1}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>Village</span>
-                            <span className="font-medium text-primary-600">
-                              {field.value < 33 ? 'Small Town' : field.value < 66 ? 'City' : 'Metropolis'}
-                            </span>
-                            <span>Metropolis</span>
-                          </div>
-                        </div>
-                      )}
-                    />
-                  </div>
 
+                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label className="mb-2 block">Your Home City (for distance-based recommendations)</Label>
-                    <Controller
-                      name="homeCity"
-                      control={control}
-                      render={({ field }) => (
-                        <Select value={field.value} onValueChange={field.onChange}>
-                          <SelectTrigger className="w-full">
-                            <SelectValue placeholder="Select your city" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="bratislava">Bratislava (Slovakia)</SelectItem>
-                            <SelectItem value="kosice">Košice (Slovakia)</SelectItem>
-                            <SelectItem value="nitra">Nitra (Slovakia)</SelectItem>
-                            <SelectItem value="zilina">Žilina (Slovakia)</SelectItem>
-                            <SelectItem value="banska-bystrica">Banská Bystrica (Slovakia)</SelectItem>
-                            <SelectItem value="presov">Prešov (Slovakia)</SelectItem>
-                            <SelectItem value="trnava">Trnava (Slovakia)</SelectItem>
-                            <SelectItem value="prague">Prague (Czech Republic)</SelectItem>
-                            <SelectItem value="brno">Brno (Czech Republic)</SelectItem>
-                            <SelectItem value="ostrava">Ostrava (Czech Republic)</SelectItem>
-                            <SelectItem value="plzen">Plzeň (Czech Republic)</SelectItem>
-                            <SelectItem value="olomouc">Olomouc (Czech Republic)</SelectItem>
-                            <SelectItem value="vienna">Vienna (Austria)</SelectItem>
-                            <SelectItem value="graz">Graz (Austria)</SelectItem>
-                            <SelectItem value="linz">Linz (Austria)</SelectItem>
-                            <SelectItem value="innsbruck">Innsbruck (Austria)</SelectItem>
-                            <SelectItem value="warsaw">Warsaw (Poland)</SelectItem>
-                            <SelectItem value="krakow">Kraków (Poland)</SelectItem>
-                            <SelectItem value="wroclaw">Wrocław (Poland)</SelectItem>
-                            <SelectItem value="poznan">Poznań (Poland)</SelectItem>
-                            <SelectItem value="gdansk">Gdańsk (Poland)</SelectItem>
-                            <SelectItem value="budapest">Budapest (Hungary)</SelectItem>
-                            <SelectItem value="debrecen">Debrecen (Hungary)</SelectItem>
-                            <SelectItem value="szeged">Szeged (Hungary)</SelectItem>
-                            <SelectItem value="pecs">Pécs (Hungary)</SelectItem>
-                            <SelectItem value="munich">Munich (Germany)</SelectItem>
-                            <SelectItem value="berlin">Berlin (Germany)</SelectItem>
-                            <SelectItem value="hamburg">Hamburg (Germany)</SelectItem>
-                            <SelectItem value="frankfurt">Frankfurt (Germany)</SelectItem>
-                            <SelectItem value="amsterdam">Amsterdam (Netherlands)</SelectItem>
-                            <SelectItem value="rotterdam">Rotterdam (Netherlands)</SelectItem>
-                            <SelectItem value="utrecht">Utrecht (Netherlands)</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      )}
-                    />
+                    <Label className="mb-2 block">Home Country</Label>
+                    <Select value={formData.homeCountry} onValueChange={(v) => {
+                      updateField('homeCountry', v)
+                      updateField('homeCity', CITIES[v][0].value)
+                    }}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {COUNTRIES.map(c => (
+                          <SelectItem key={c} value={c}>{c}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
-
                   <div>
-                    <Label className="mb-2 block">Maximum Distance: {watch('distanceMax')} km</Label>
-                    <Controller
-                      name="distanceMax"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={50}
-                            max={1000}
-                            step={50}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>50 km</span>
-                            <span className="font-medium text-primary-600">
-                              {field.value < 200 ? 'Nearby' : field.value < 500 ? 'Region' : 'Country +'}
-                            </span>
-                            <span>1000 km</span>
-                          </div>
-                        </div>
-                      )}
-                    />
+                    <Label className="mb-2 block">Home City</Label>
+                    <Select value={formData.homeCity} onValueChange={(v) => updateField('homeCity', v)}>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {(CITIES[formData.homeCountry] || []).map(c => (
+                          <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                 </div>
+
+                <div>
+                  <Label className="mb-3 block">Preferred City Size</Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={0}
+                      max={100}
+                      step={1}
+                      value={[formData.preferredCitySize]}
+                      onValueChange={([v]) => updateField('preferredCitySize', v)}
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>Village</span>
+                      <span className="font-medium text-primary-600">
+                        {citySizeLabel(formData.preferredCitySize)}
+                      </span>
+                      <span>Metropolis</span>
+                    </div>
+                  </div>
+                </div>
+
               </CardContent>
             </Card>
           )}
 
-          {/* Step 3: Language & Budget */}
+          {/* Step 3: Language */}
           {currentStep === 3 && (
             <Card className="p-8">
               <CardHeader className="px-0 pt-0">
-                <CardTitle className="text-2xl">Language & Budget</CardTitle>
-                <CardDescription>Your language skills and budget.</CardDescription>
+                <CardTitle className="text-2xl">Language</CardTitle>
+                <CardDescription>Your language skills and adaptability.</CardDescription>
               </CardHeader>
               <CardContent className="px-0 space-y-8">
-                <div className="space-y-4">
-                  <div>
-                    <Label className="mb-2 block">English Level (%)</Label>
-                    <Controller
-                      name="englishLevel"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={100}
-                            step={1}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>None</span>
-                            <span className="font-medium text-primary-600">
-                              {field.value < 25 ? 'Beginner' : field.value < 50 ? 'Intermediate' : field.value < 75 ? 'Advanced' : 'Fluent'}
-                            </span>
-                            <span>Fluent</span>
-                          </div>
-                        </div>
-                      )}
-                    />
-                  </div>
 
-                  <div>
-                    <Label className="mb-2 block">Willing to Learn Local Language (%)</Label>
-                    <Controller
-                      name="willingToLearnLocal"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={100}
-                            step={1}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>No</span>
-                            <span className="font-medium text-primary-600">{field.value}%</span>
-                            <span>Yes</span>
-                          </div>
-                        </div>
-                      )}
+                <div>
+                  <Label className="mb-3 block">English Level (%)</Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={0}
+                      max={100}
+                      step={1}
+                      value={[formData.englishLevel]}
+                      onValueChange={([v]) => updateField('englishLevel', v)}
                     />
-                  </div>
-
-                  <div>
-                    <Label className="mb-2 block">Monthly Budget (EUR)</Label>
-                    <Controller
-                      name="monthlyBudget"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={3000}
-                            step={100}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>€0</span>
-                            <span className="font-medium text-primary-600">€{field.value}/month</span>
-                            <span>€3000</span>
-                          </div>
-                        </div>
-                      )}
-                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>None</span>
+                      <span className="font-medium text-primary-600">
+                        {englishLabel(formData.englishLevel)} ({formData.englishLevel}%)
+                      </span>
+                      <span>Fluent</span>
+                    </div>
                   </div>
                 </div>
+
+                <div>
+                  <Label className="mb-3 block">Willing to Learn Local Language (%)</Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={0}
+                      max={100}
+                      step={1}
+                      value={[formData.willingToLearnLocal]}
+                      onValueChange={([v]) => updateField('willingToLearnLocal', v)}
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>Not interested</span>
+                      <span className="font-medium text-primary-600">{formData.willingToLearnLocal}%</span>
+                      <span>Fully willing</span>
+                    </div>
+                  </div>
+                </div>
+
               </CardContent>
             </Card>
           )}
 
-          {/* Step 4: Career Goals */}
+          {/* Step 4: Budget */}
           {currentStep === 4 && (
             <Card className="p-8">
               <CardHeader className="px-0 pt-0">
-                <CardTitle className="text-2xl">Career Goals</CardTitle>
-                <CardDescription>What do you want to study?</CardDescription>
+                <CardTitle className="text-2xl">Budget</CardTitle>
+                <CardDescription>Your financial constraints for studying abroad.</CardDescription>
               </CardHeader>
               <CardContent className="px-0 space-y-8">
-                <div className="space-y-4">
-                  <div>
-                    <Label className="mb-2 block">How focused are you on a specific field? (%)</Label>
-                    <Controller
-                      name="careerFocus"
-                      control={control}
-                      render={({ field }) => (
-                        <div className="space-y-2">
-                          <Slider
-                            min={0}
-                            max={100}
-                            step={1}
-                            value={[field.value]}
-                            onValueChange={(vals) => field.onChange(vals[0])}
-                            className="py-1"
-                          />
-                          <div className="flex justify-between text-sm text-muted-foreground">
-                            <span>Flexible</span>
-                            <span className="font-medium text-primary-600">{field.value}%</span>
-                            <span>Specific</span>
-                          </div>
-                        </div>
-                      )}
-                    />
-                  </div>
 
-                  <div>
-                    <Label className="mb-2 block">Field of Study</Label>
-                    <Controller
-                      name="fieldOfStudy"
-                      control={control}
-                      render={({ field }) => (
-                        <Select value={field.value} onValueChange={field.onChange}>
-                          <SelectTrigger className="w-full">
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="Computer Science">Computer Science</SelectItem>
-                            <SelectItem value="Engineering">Engineering</SelectItem>
-                            <SelectItem value="Business">Business</SelectItem>
-                            <SelectItem value="Medicine">Medicine</SelectItem>
-                            <SelectItem value="Economics">Economics</SelectItem>
-                            <SelectItem value="Law">Law</SelectItem>
-                            <SelectItem value="Physics">Physics</SelectItem>
-                            <SelectItem value="Psychology">Psychology</SelectItem>
-                            <SelectItem value="Mathematics">Mathematics</SelectItem>
-                            <SelectItem value="Other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      )}
+                <div>
+                  <Label className="mb-3 block">Monthly Budget (€)</Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={0}
+                      max={2000}
+                      step={50}
+                      value={[formData.monthlyBudget]}
+                      onValueChange={([v]) => updateField('monthlyBudget', v)}
                     />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>€0</span>
+                      <span className="font-semibold text-primary-600 text-base">
+                        €{formData.monthlyBudget}/month
+                      </span>
+                      <span>€2,000</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Weight Configuration */}
-                <div className="pt-4 border-t border-border">
-                  <CalculatorUI weights={weights} onWeightsChange={setWeights} />
+                <div>
+                  <Label className="mb-3 block">Maximum Distance from Home (km)</Label>
+                  <div className="space-y-3">
+                    <Slider
+                      min={50}
+                      max={2000}
+                      step={50}
+                      value={[formData.distanceMax]}
+                      onValueChange={([v]) => updateField('distanceMax', v)}
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground">
+                      <span>50 km</span>
+                      <span className="font-semibold text-primary-600 text-base">
+                        {formData.distanceMax < 200 ? 'Nearby' : formData.distanceMax < 500 ? 'Region' : formData.distanceMax < 1000 ? 'Country' : 'Any distance'}
+                      </span>
+                      <span>2,000 km</span>
+                    </div>
+                  </div>
                 </div>
+
               </CardContent>
             </Card>
           )}
@@ -542,80 +523,114 @@ export default function OnboardingPage() {
           {/* Step 5: Results */}
           {currentStep === 5 && (
             <div className="space-y-6">
-              <div className="text-center">
+              <div className="text-center py-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Check className="w-8 h-8 text-green-600" />
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">Your Top Matches</h2>
-                <p className="text-slate-600">
+                <p className="text-slate-600 text-sm">
                   Based on your profile, here are the programs that best fit you.
                 </p>
               </div>
 
               {results.length > 0 ? (
                 <div className="grid gap-4">
-                  {results.map((result, index) => (
-                    <Card key={result.program.id} className="p-0 overflow-hidden">
-                      <div className="flex">
-                        {/* Rank badge */}
-                        <div className={`w-12 flex flex-col items-center justify-center shrink-0 ${
-                          index === 0 ? 'bg-yellow-400' : index === 1 ? 'bg-slate-300' : index === 2 ? 'bg-amber-600' : 'bg-muted'
-                        }`}>
-                          <span className="text-sm font-bold text-white">{index + 1}</span>
-                        </div>
+                  {results.map((result, idx) => {
+                    const rankColors = ['bg-yellow-400', 'bg-slate-300', 'bg-amber-600', 'bg-muted', 'bg-muted']
+                    const scoreColor =
+                      result.score >= 80 ? 'bg-green-500' :
+                      result.score >= 60 ? 'bg-blue-500' :
+                      result.score >= 40 ? 'bg-yellow-500' : 'bg-red-500'
 
-                        {/* Content */}
-                        <div className="flex-1 p-4">
-                          <div className="flex items-start justify-between gap-4">
-                            <div className="flex items-center gap-3 flex-1 min-w-0">
-                              <UniversityAvatar name={result.university.name} country={result.university.country} size="sm" />
-                              <div className="min-w-0">
-                                <h3 className="font-semibold text-slate-900 truncate">{result.program.name}</h3>
-                                <p className="text-sm text-muted-foreground">{result.university.name} · {result.university.country}</p>
+                    return (
+                      <Card key={result.program.id} className="overflow-hidden p-0">
+                        <div className="flex">
+                          {/* Rank */}
+                          <div className={`w-12 shrink-0 flex flex-col items-center justify-center ${rankColors[idx] ?? 'bg-muted'}`}>
+                            <span className="text-sm font-bold text-white">{idx + 1}</span>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1 p-4">
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="flex items-center gap-3 flex-1 min-w-0">
+                                <UniversityAvatar
+                                  name={result.university.name}
+                                  country={result.university.country}
+                                  size="sm"
+                                />
+                                <div className="min-w-0">
+                                  <h3 className="font-semibold text-slate-900 truncate text-sm leading-tight">
+                                    {result.program.name}
+                                  </h3>
+                                  <p className="text-xs text-muted-foreground truncate">
+                                    {result.university.name} · {result.university.country}
+                                  </p>
+                                </div>
+                              </div>
+
+                              {/* Score badge */}
+                              <div className={`shrink-0 w-12 h-12 rounded-full flex flex-col items-center justify-center ${scoreColor}`}>
+                                <span className="text-white text-sm font-bold">{Math.round(result.score)}</span>
+                                <span className="text-white text-[9px]">match</span>
                               </div>
                             </div>
 
-                            {/* Score badge */}
-                            <Badge variant={result.score >= 80 ? 'default' : result.score >= 60 ? 'secondary' : 'outline'} className="shrink-0 text-base px-3 py-1">
-                              {Math.round(result.score)}%
-                            </Badge>
-                          </div>
+                            {/* Details row */}
+                            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+                              <span>{result.program.ects} ECTS</span>
+                              <span>·</span>
+                              <span>{result.program.durationMonths} mo</span>
+                              <span>·</span>
+                              <span className={result.program.tuitionEur === 0 ? 'text-green-600 font-medium' : ''}>
+                                {result.program.tuitionEur === 0 ? 'Free tuition' : `€${result.program.tuitionEur.toLocaleString()}/yr`}
+                              </span>
+                              <span>·</span>
+                              <span className="capitalize">{result.program.language}</span>
+                              {result.distance !== undefined && (
+                                <>
+                                  <span>·</span>
+                                  <span>{Math.round(result.distance)} km</span>
+                                </>
+                              )}
+                            </div>
 
-                          <div className="flex flex-wrap items-center gap-4 mt-3 text-sm text-muted-foreground">
-                            <span>{result.program.ects} ECTS</span>
-                            <span>·</span>
-                            <span>{result.program.durationMonths} months</span>
-                            <span>·</span>
-                            <span className={result.program.tuitionEur === 0 ? 'text-green-600 font-medium' : ''}>
-                              {result.program.tuitionEur === 0 ? 'Free' : `€${result.program.tuitionEur.toLocaleString()}/yr`}
-                            </span>
-                            <span>·</span>
-                            <span className="capitalize">{result.program.language}</span>
-                            {result.distance !== undefined && (
-                              <>
-                                <span>·</span>
-                                <span>{Math.round(result.distance)} km away</span>
-                              </>
+                            {/* Entry requirements preview */}
+                            {result.program.entryRequirements.length > 0 && (
+                              <div className="mt-2 flex flex-wrap gap-1">
+                                {result.program.entryRequirements.slice(0, 3).map((req, i) => (
+                                  <Badge key={i} variant="secondary" className="text-[10px] px-1.5 py-0">
+                                    {req}
+                                  </Badge>
+                                ))}
+                              </div>
                             )}
                           </div>
                         </div>
-                      </div>
-                    </Card>
-                  ))}
+                      </Card>
+                    )
+                  })}
                 </div>
               ) : (
                 <Card className="p-8 text-center">
-                  <p className="text-muted-foreground">No matching programs found.</p>
+                  <p className="text-muted-foreground">No matching programs found. Try expanding your distance or budget.</p>
                 </Card>
               )}
 
-              <div className="flex justify-center">
+              <div className="flex flex-col items-center gap-3 pt-2">
+                <Link href="/programs">
+                  <Button variant="outline" className="gap-2">
+                    View All Programs
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   onClick={() => {
                     setCurrentStep(1)
                     setResults([])
                   }}
+                  className="text-sm text-muted-foreground"
                 >
                   Start Over
                 </Button>
@@ -635,9 +650,7 @@ export default function OnboardingPage() {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
             </Button>
-            <Button
-              onClick={nextStep}
-            >
+            <Button onClick={nextStep}>
               {currentStep === 4 ? 'Calculate Results' : 'Continue'}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>

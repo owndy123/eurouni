@@ -1,0 +1,96 @@
+{
+  "universityId": "utwente",
+  "programs": [
+    {
+      "id": "utwente-computer-science",
+      "universityId": "utwente",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Modern CS program with focus on software technology, data science, and AI. UT has Netherlands' most modern tech campus. Twente region is known for high-tech startups and engineering firms.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+ (IELTS 6.0 or TOEFL 80)",
+        "Entrance exam if VWO incomplete"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "utwente-mechanical-engineering",
+      "universityId": "utwente",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Design engineering, production technology, and mechanical systems. UT has excellent labs and industry partnerships in the Twente manufacturing region.",
+      "entryRequirements": [
+        "Mathematics and Physics at VWO level",
+        "English B2+",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "utwente-psychology",
+      "universityId": "utwente",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Applied psychology with specializations in technology, work, and health psychology. Unique focus on human-technology interaction. Smaller university with personal approach.",
+      "entryRequirements": [
+        "English B2+",
+        "Biology or psychology at secondary level",
+        "Numerus fixus applies"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "utwente-electrical-engineering",
+      "universityId": "utwente",
+      "name": "Electrical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Signal processing, embedded systems, and sustainable energy. Research-focused with labs in robotics and renewable energy.",
+      "entryRequirements": [
+        "Electrical Engineering bachelor or equivalent",
+        "English B2+",
+        "GPA 7.0+"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "utwente-business-information-technology",
+      "universityId": "utwente",
+      "name": "Business Information Technology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Intersection of technology and business. IT architecture, digital transformation, and enterprise systems. Prepares for CIO and digital leadership roles.",
+      "entryRequirements": [
+        "IT, Business, or Engineering bachelor",
+        "English B2+",
+        "GPA 7.0+"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.820Z"
+}

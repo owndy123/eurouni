@@ -1,0 +1,152 @@
+{
+  "universityId": "univie",
+  "programs": [
+    {
+      "id": "univie-computer-science",
+      "universityId": "univie",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Austria's largest CS program at the University of Vienna's Faculty of Computer Science. Covers algorithms, software engineering, databases, AI, and human-computer interaction. Strong research output with connections to Vienna's tech industry.",
+      "entryRequirements": [
+        "German language proficiency (C1 level for German-taught programs)",
+        "Mathematics at secondary school level",
+        "Austrian university entrance exam (Matura) or equivalent"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "univie-data-science",
+      "universityId": "univie",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Interdisciplinary program combining computer science, statistics, and mathematics. Focus on machine learning, big data analytics, and data-driven decision making. Research-oriented with industry collaborations in Vienna.",
+      "entryRequirements": [
+        "Bachelor in Computer Science, Mathematics, or Statistics (or equivalent)",
+        "English B2 (CEFR)",
+        "Mathematics at university level",
+        "Entrance exam may be required"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "univie-psychology",
+      "universityId": "univie",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Comprehensive psychology program covering clinical psychology, work and organizational psychology, and research methodology. Vienna location offers access to major healthcare institutions and research centers.",
+      "entryRequirements": [
+        "German C1",
+        "Biology at secondary school",
+        "Austrian Matura or equivalent",
+        "Entrance exam (biology and psychology aptitude)"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "univie-business-administration",
+      "universityId": "univie",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Comprehensive business studies covering management, finance, marketing, and entrepreneurship. Vienna as a business hub provides excellent internship and employment opportunities.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics at secondary school",
+        "Austrian Matura or equivalent"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "univie-english-and-american-studies",
+      "universityId": "univie",
+      "name": "English and American Studies",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Advanced study of English literature, linguistics, and cultural studies. Research-focused curriculum with opportunities for teaching and academic careers.",
+      "entryRequirements": [
+        "English C1 (CAE or equivalent)",
+        "Bachelor in English, Linguistics, or related field",
+        "Entrance exam"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "univie-chemistry",
+      "universityId": "univie",
+      "name": "Chemistry",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Organic, inorganic, physical, and analytical chemistry with modern laboratory training. Good preparation for pharmaceutical and chemical industry careers in Central Europe.",
+      "entryRequirements": [
+        "German C1",
+        "Chemistry and Mathematics at secondary school",
+        "Austrian Matura or equivalent"
+      ],
+      "field": "Chemistry",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "univie-law",
+      "universityId": "univie",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 727,
+      "description": "Traditional four-year law program (Magister iuris) in German. Austrian civil law, EU law, constitutional law, and international law. Vienna's legal community offers excellent networking opportunities.",
+      "entryRequirements": [
+        "German C1 (legal German exam may be required for foreigners)",
+        "Austrian Matura or equivalent",
+        "GPA 2.5 or better"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "univie-international-relations",
+      "universityId": "univie",
+      "name": "International Relations",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Study of global politics, diplomacy, and European integration. Vienna hosts major international organizations (UN, OPEC, OSCE) providing unique internship opportunities.",
+      "entryRequirements": [
+        "English B2",
+        "Social sciences bachelor or equivalent",
+        "Entrance exam and interview"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:08:57.479Z"
+}

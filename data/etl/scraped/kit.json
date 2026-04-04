@@ -1,0 +1,99 @@
+{
+  "universityId": "kit",
+  "programs": [
+    {
+      "id": "kit-computer-science",
+      "universityId": "kit",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Top-tier CS program at one of Germany's leading technical universities. Software engineering, algorithms, AI, and IT security. Karlsruhe is home to Germany's national research center for CS (FZI) and a growing tech scene.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF",
+        "Mathematics advanced",
+        "Numerus Clausus applies",
+        "English B2 recommended"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "kit-electrical-engineering",
+      "universityId": "kit",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power systems, microelectronics, and telecommunications. KIT combines university education with research at the KIT Institute. Strong in energy technology and renewable energy systems.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics advanced",
+        "Numerus Clausus applies"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "kit-mechanical-engineering",
+      "universityId": "kit",
+      "name": "Mechanical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mechanical engineering with specializations in energy technology, automotive, and production engineering. Research-led with excellent lab facilities.",
+      "entryRequirements": [
+        "Mechanical Engineering bachelor or equivalent",
+        "English B2",
+        "GPA 2.5+"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "kit-applied-mathematics",
+      "universityId": "kit",
+      "name": "Applied Mathematics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Mathematical modeling, scientific computing, and optimization. Applications in engineering, physics, and economics. Excellent research environment at one of Germany's leading technical universities.",
+      "entryRequirements": [
+        "Mathematics or related quantitative bachelor",
+        "English B2",
+        "GPA 2.5+",
+        "Mathematics entrance exam"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "kit-meteorology-and-climate-science",
+      "universityId": "kit",
+      "name": "Meteorology and Climate Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of atmospheric processes, weather prediction, and climate modeling. KIT has Germany's leading meteorology research program.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics at advanced level",
+        "Chemistry preferred",
+        "Numerus Clausus"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.774Z"
+}

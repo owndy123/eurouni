@@ -1,0 +1,97 @@
+{
+  "universityId": "pg",
+  "programs": [
+    {
+      "id": "pg-computer-science",
+      "universityId": "pg",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Gdańsk's leading technical CS program. Software engineering, AI, and data science. Faculty of Electronics, Telecommunications and Informatics. Baltic tech hub connections.",
+      "entryRequirements": [
+        "Mathematics at advanced secondary level",
+        "Physics preferred",
+        "English B2",
+        "Entrance exam (mathematics)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pg-civil-engineering",
+      "universityId": "pg",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Structural engineering and infrastructure design. Gdańsk's maritime and bridge engineering tradition. Focus on modern construction and sustainable infrastructure.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pg-mechanical-engineering",
+      "universityId": "pg",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Marine engineering, automotive, and production technology. Gdańsk shipyard and automotive industry heritage. Faculty of Mechanical Engineering.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pg-electrical-engineering",
+      "universityId": "pg",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power systems, electronics, and telecommunications. Modern labs and industry partnerships. Prepares for careers in energy, manufacturing, and telecom.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pg-biomedical-engineering",
+      "universityId": "pg",
+      "name": "Biomedical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Medical devices, bioinformatics, and health technology. Interdisciplinary between engineering and medicine. Growing healthcare tech sector.",
+      "entryRequirements": [
+        "Engineering or Life Sciences bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.892Z"
+}

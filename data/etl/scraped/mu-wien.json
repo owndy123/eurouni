@@ -1,0 +1,98 @@
+{
+  "universityId": "mu-wien",
+  "programs": [
+    {
+      "id": "mu-wien-human-medicine",
+      "universityId": "mu-wien",
+      "name": "Human Medicine",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 727,
+      "description": "Six-year medical program (Dr. med. univ.) at Austria's largest medical university. Vienna General Hospital (AKH) is one of Europe's largest teaching hospitals, providing exceptional clinical training opportunities.",
+      "entryRequirements": [
+        "German C1 (medical German exam required for foreigners)",
+        "Biology, Chemistry, and Physics at secondary school (A-level equivalent)",
+        "Austrian Matura or equivalent",
+        "Entrance exam (MedAT) — biology, chemistry, physics, and a text comprehension/numerical reasoning test"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "mu-wien-dentistry",
+      "universityId": "mu-wien",
+      "name": "Dentistry",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 727,
+      "description": "Five-year dental program (Dr. med. dent.) at Austria's leading dental school. Comprehensive training in restorative dentistry, oral surgery, and prosthodontics. Vienna's healthcare system provides extensive patient contact.",
+      "entryRequirements": [
+        "German C1",
+        "Biology and Chemistry at A-level",
+        "Entrance exam (MedAT) — same as medicine"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "mu-wien-molecular-medicine",
+      "universityId": "mu-wien",
+      "name": "Molecular Medicine",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "English-taught MSc in molecular and translational medicine. Cancer research, immunology, and genetics. Research-oriented with access to cutting-edge labs at MedUni Vienna.",
+      "entryRequirements": [
+        "Life Sciences bachelor (Biology, Chemistry, or Medicine)",
+        "English B2 (CEFR)",
+        "Entrance exam (interview and motivation)"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "mu-wien-medical-informatics",
+      "universityId": "mu-wien",
+      "name": "Medical Informatics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Health informatics, medical data science, and clinical IT systems. English-taught. Growing field as healthcare systems digitize; Vienna's hospital network provides excellent internship opportunities.",
+      "entryRequirements": [
+        "Computer Science, Medicine, or Life Sciences bachelor",
+        "English B2",
+        "Programming or medical background (depending on track)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "mu-wien-nursing-science",
+      "universityId": "mu-wien",
+      "name": "Nursing Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Bachelor program in nursing and healthcare science. Clinical nursing, health promotion, and healthcare management. Austria's healthcare system is facing nursing shortages, creating excellent employment prospects.",
+      "entryRequirements": [
+        "German C1",
+        "Secondary school diploma",
+        "Health-related experience preferred",
+        "Entrance exam"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:08:57.481Z"
+}

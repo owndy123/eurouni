@@ -1,0 +1,150 @@
+{
+  "universityId": "uw",
+  "programs": [
+    {
+      "id": "uw-computer-science",
+      "universityId": "uw",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Poland's largest university's CS program. Algorithms, software engineering, AI, and data science. Strong research output and Warsaw tech hub connections.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2 (CEFR)",
+        "Entrance exam (mathematics and computer science basics)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uw-economics",
+      "universityId": "uw",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "International economics with focus on European integration, econometrics, and finance. Faculty of Economic Sciences. Warsaw financial district proximity.",
+      "entryRequirements": [
+        "Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uw-law",
+      "universityId": "uw",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "local",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Master of Law (Mgr) program in Polish. Constitutional law, civil law, criminal law, EU law, and international law. Prestigious Faculty of Law and Administration.",
+      "entryRequirements": [
+        "Polish language exam (C1 for foreigners)",
+        "History or social sciences",
+        "Entrance exam in law basics"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uw-psychology",
+      "universityId": "uw",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "polish",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Clinical psychology, counseling, and research methods. One of Poland's most competitive psychology programs. Empirical approach with extensive practice.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Polish C1",
+        "Entrance exam (biology and psychology)"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uw-international-relations",
+      "universityId": "uw",
+      "name": "International Relations",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Global politics, EU affairs, diplomacy, and security studies. Warsaw location near EU institutions and NATO headquarters. Faculty of Political Science and International Studies.",
+      "entryRequirements": [
+        "English B2",
+        "Social sciences background preferred",
+        "Entrance exam"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uw-physics",
+      "universityId": "uw",
+      "name": "Physics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Theoretical and experimental physics. Modern labs and research opportunities. Pathways to astrophysics, particle physics, and condensed matter research.",
+      "entryRequirements": [
+        "Mathematics and Physics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uw-mathematics",
+      "universityId": "uw",
+      "name": "Mathematics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced mathematics with specializations in pure mathematics, applied mathematics, and statistics. Research-oriented with collaborations in Warsaw's academic community.",
+      "entryRequirements": [
+        "Mathematics bachelor or equivalent",
+        "English B2",
+        "Entrance exam in mathematics"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uw-data-science",
+      "universityId": "uw",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, statistics, and big data analytics. Interdisciplinary program at the intersection of mathematics and computer science. Growing Warsaw data science job market.",
+      "entryRequirements": [
+        "CS, Math, or Stats bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.890Z"
+}

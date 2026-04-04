@@ -1,0 +1,96 @@
+{
+  "universityId": "put",
+  "programs": [
+    {
+      "id": "put-computer-science",
+      "universityId": "put",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Modern CS program at Poznań's leading technical university. Software development, databases, networks, and AI. Growing tech hub in Greater Poland region.",
+      "entryRequirements": [
+        "Mathematics at advanced secondary level",
+        "English B2",
+        "Entrance exam (mathematics)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "put-mechanical-engineering",
+      "universityId": "put",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Automotive engineering, production technology, and mechanical design. Faculty of Mechanical Engineering. Strong ties to automotive industry in the Poznań region.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "put-electrical-engineering",
+      "universityId": "put",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power systems, electronics, and telecommunications. Combines theoretical foundations with practical laboratory work. Prepares for careers in energy and manufacturing.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "put-civil-engineering",
+      "universityId": "put",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Structural engineering, transportation, and infrastructure. Accredited program with focus on sustainable construction and modern building technologies.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "put-management",
+      "universityId": "put",
+      "name": "Management",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Strategic management, innovation, and entrepreneurship. Combines business fundamentals with technical university perspective. Case studies with regional companies.",
+      "entryRequirements": [
+        "Any bachelor degree",
+        "English B2",
+        "Entrance exam or interview"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.891Z"
+}

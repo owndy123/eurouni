@@ -1,0 +1,155 @@
+{
+  "universityId": "uva",
+  "programs": [
+    {
+      "id": "uva-computer-science",
+      "universityId": "uva",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Comprehensive CS program at the Netherlands' largest research university. Software engineering, AI, data science, and computer systems. Amsterdam's tech hub (Booking.com, Uber, Netflix EU) provides excellent industry connections.",
+      "entryRequirements": [
+        "Mathematics at VWO (secondary school) level",
+        "English proficiency (B2 minimum, C1 recommended)",
+        "Numerus fixus may apply for some specializations"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uva-economics-and-business-economics",
+      "universityId": "uva",
+      "name": "Economics and Business Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Study of economics with a focus on business applications, finance, and international trade. UVA's economics faculty is internationally recognized. Amsterdam is Europe's financial hub.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "Motivation letter",
+        "Numerus fixus may apply"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uva-psychology",
+      "universityId": "uva",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Research-oriented psychology covering clinical, social, and cognitive psychology. Strong empirical training and research methods. Amsterdam's mental health ecosystem provides internship opportunities.",
+      "entryRequirements": [
+        "Biology or Psychology at secondary school",
+        "English C1",
+        "Numerus fixus applies (competitive)"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uva-law",
+      "universityId": "uva",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "International and European law program taught in English. Constitutional law, international trade law, and human rights law. Amsterdam is seat of international courts and legal institutions.",
+      "entryRequirements": [
+        "English C1",
+        "Secondary school diploma equivalent",
+        "Motivation letter",
+        "Essay/writing sample"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uva-data-science-and-business-analytics",
+      "universityId": "uva",
+      "name": "Data Science and Business Analytics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Machine learning, statistical modeling, and business intelligence. Combines computer science and business perspectives. Amsterdam's data-driven business ecosystem.",
+      "entryRequirements": [
+        "Bachelor in CS, Mathematics, Economics, or related",
+        "English C1",
+        "GPA minimum 7.0/10",
+        "Mathematics proficiency"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uva-international-relations",
+      "universityId": "uva",
+      "name": "International Relations",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Study of global politics, international security, and diplomatic studies. Specializations in European integration, conflict studies, and human rights. Amsterdam location near EU institutions.",
+      "entryRequirements": [
+        "Social Sciences bachelor",
+        "English C1",
+        "GPA minimum 7.0",
+        "Motivation letter and writing sample"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uva-medicine",
+      "universityId": "uva",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "dutch",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 2300,
+      "description": "Six-year medical program in Dutch at Amsterdam UMC. Clinical training in one of the Netherlands' largest hospital systems. Extremely competitive numerus fixus.",
+      "entryRequirements": [
+        "VWO with Biology, Chemistry, Physics, Mathematics",
+        "Dutch language proficiency (for Dutch programs)",
+        "Numerus fixus highly competitive",
+        "BMSAT test required"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uva-political-science",
+      "universityId": "uva",
+      "name": "Political Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Study of comparative politics, political theory, and international relations. Research-oriented with quantitative methods training. Strong in European and Dutch politics.",
+      "entryRequirements": [
+        "English B2+",
+        "Social sciences background preferred",
+        "Numerus fixus may apply"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.819Z"
+}

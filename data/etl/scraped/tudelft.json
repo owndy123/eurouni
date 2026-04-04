@@ -1,0 +1,139 @@
+{
+  "universityId": "tudelft",
+  "programs": [
+    {
+      "id": "tudelft-aerospace-engineering",
+      "universityId": "tudelft",
+      "name": "Aerospace Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Premier aerospace program in the Netherlands. Aircraft design, aerospace structures, and propulsion technology. TUDelft has Europe's largest aerospace engineering faculty with direct ties to Dutch aerospace industry (Airbus Netherlands, Fokker, NLR).",
+      "entryRequirements": [
+        "Mathematics and Physics at VWO level",
+        "English B2+ (IELTS 6.5 or TOEFL 92)",
+        "TUDelft admission test (mathematics and physics)",
+        "Numerus fixus applies"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tudelft-computer-science",
+      "universityId": "tudelft",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Top CS program in the Netherlands with strong engineering focus. Software engineering, AI, data science, and computer systems. Delft's tech ecosystem and proximity to The Hague and Rotterdam.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "TUDelft entrance exam",
+        "Numerus fixus may apply"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tudelft-architecture-urbanism-and-building-sciences",
+      "universityId": "tudelft",
+      "name": "Architecture, Urbanism and Building Sciences",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Integrated architecture program covering building design, urban planning, and sustainable construction. Studio-based learning with hands-on design projects. Delft architecture tradition is internationally renowned.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "TUDelft math exam required",
+        "Portfolio required (for admission)",
+        "Talent test may apply"
+      ],
+      "field": "Architecture",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tudelft-electrical-engineering",
+      "universityId": "tudelft",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Power systems, microelectronics, and telecommunications. Modern facilities and strong research in sustainable energy and smart grid technology.",
+      "entryRequirements": [
+        "Mathematics and Physics at VWO level",
+        "English B2+",
+        "TUDelft entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tudelft-mechanical-engineering",
+      "universityId": "tudelft",
+      "name": "Mechanical Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Advanced mechanical design, materials science, and thermal engineering. Specializations in energy, maritime, and precision engineering. TUDelft is Netherlands' top mechanical engineering research institution.",
+      "entryRequirements": [
+        "Mechanical Engineering bachelor or equivalent",
+        "English B2+",
+        "GPA minimum 7.0/10",
+        "GRE recommended for non-EU"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tudelft-computer-science",
+      "universityId": "tudelft",
+      "name": "Computer Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Specializations in AI, software technology, and interactive technologies. Research-led with industry collaborations in the Hague tech corridor.",
+      "entryRequirements": [
+        "CS bachelor or equivalent",
+        "English B2+",
+        "GPA 7.0+",
+        "GRE recommended"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tudelft-cyber-security",
+      "universityId": "tudelft",
+      "name": "Cyber Security",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Technical and managerial cyber security covering cryptography, network security, and ethical hacking. Growing field as digital infrastructure becomes critical. Netherlands is home to major cybersecurity firms.",
+      "entryRequirements": [
+        "CS or Electrical Engineering bachelor",
+        "English B2+",
+        "GPA 7.0+",
+        "Background in networking preferred"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.820Z"
+}

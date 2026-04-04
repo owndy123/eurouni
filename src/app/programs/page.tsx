@@ -1,206 +1,332 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { GraduationCap, Search, SlidersHorizontal, X, Globe, BookOpen, Award, MapPin } from 'lucide-react'
-import { programs, universities, getUniversity, getCountries } from '@/data/mockData'
+import {
+  Search,
+  SlidersHorizontal,
+  X,
+  Globe,
+  BookOpen,
+  GraduationCap,
+  Euro,
+  ChevronDown,
+  ChevronUp,
+  ArrowUpDown,
+  Check,
+  MapPin,
+  Languages,
+  Clock,
+  School,
+  Loader2,
+} from 'lucide-react'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
-const DistanceMap = dynamic(() => import('@/components/distance-map'), { ssr: false })
+import { programs, universities, getUniversity } from '@/data/mockData'
+import ProgramCard from '@/components/program-card'
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
-import { UniversityAvatar } from '@/components/university-avatar'
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Input } from '@/components/ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
+import { Separator } from '@/components/ui/separator'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 
-// Language map
-const languageMap: Record<string, string> = {
+const DistanceMap = dynamic(() => import('@/components/distance-map'), { ssr: false })
+
+const ITEMS_PER_PAGE = 20
+
+// Unique fields from programs
+const ALL_FIELDS = Array.from(new Set(programs.map(p => p.field))).sort()
+
+// Language display map
+const LANGUAGE_MAP: Record<string, string> = {
   english: 'English',
-  local: 'Local',
+  local: 'Local Language',
   both: 'English & Local',
   german: 'German',
   polish: 'Polish',
+  hungarian: 'Hungarian',
+  slovak: 'Slovak',
 }
 
-// Degree options
-const degreeOptions = [
-  { value: 'bachelor', label: "Bachelor's" },
-  { value: 'master', label: "Master's" },
-]
-
-// Language options
-const languageOptions = [
-  { value: 'english', label: 'English' },
-  { value: 'local', label: 'Local Language' },
-  { value: 'both', label: 'Both' },
-]
-
 export default function ProgramsPage() {
+  // Filter state
   const [search, setSearch] = useState('')
   const [selectedCountry, setSelectedCountry] = useState<string>('')
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('')
   const [selectedDegree, setSelectedDegree] = useState<string>('')
-  const [maxDistance, setMaxDistance] = useState<number[]>([500])
-  const [isSheetOpen, setIsSheetOpen] = useState(false)
+  const [selectedLanguage, setSelectedLanguage] = useState<string>('')
+  const [selectedField, setSelectedField] = useState<string>('')
+  const [selectedUniversity, setSelectedUniversity] = useState<string>('')
+  const [maxTuition, setMaxTuition] = useState<number[]>([20000])
+  const [freeOnly, setFreeOnly] = useState(false)
+  const [sortBy, setSortBy] = useState<string>('name-asc')
+  const [showFilters, setShowFilters] = useState(false)
+  const [page, setPage] = useState(1)
 
-  const countries = useMemo(() => Array.from(new Set(universities.map(u => u.country))), [])
+  // Derived data
+  const countries = useMemo(() => Array.from(new Set(universities.map(u => u.country))).sort(), [])
 
-  // Count active filters
+  // Active filter count
   const activeFilterCount = useMemo(() => {
     let count = 0
     if (selectedCountry) count++
-    if (selectedLanguage) count++
     if (selectedDegree) count++
-    if (maxDistance[0] < 1000) count++
+    if (selectedLanguage) count++
+    if (selectedField) count++
+    if (selectedUniversity) count++
+    if (maxTuition[0] < 20000) count++
+    if (freeOnly) count++
     return count
-  }, [selectedCountry, selectedLanguage, selectedDegree, maxDistance])
+  }, [selectedCountry, selectedDegree, selectedLanguage, selectedField, selectedUniversity, maxTuition, freeOnly])
 
+  // Filter + sort programs
   const filteredPrograms = useMemo(() => {
-    return programs.filter(program => {
+    let result = programs.filter(program => {
       const university = getUniversity(program.universityId)
       if (!university) return false
 
-      // Search
-      if (search && !program.name.toLowerCase().includes(search.toLowerCase()) &&
-          !university.name.toLowerCase().includes(search.toLowerCase())) {
-        return false
+      // Text search
+      if (search) {
+        const q = search.toLowerCase()
+        if (
+          !program.name.toLowerCase().includes(q) &&
+          !university.name.toLowerCase().includes(q) &&
+          !program.field.toLowerCase().includes(q)
+        ) {
+          return false
+        }
       }
 
       // Country
-      if (selectedCountry && university.country !== selectedCountry) {
-        return false
-      }
-
-      // Language
-      if (selectedLanguage && program.language !== selectedLanguage) {
-        return false
-      }
+      if (selectedCountry && university.country !== selectedCountry) return false
 
       // Degree
-      if (selectedDegree && program.degree !== selectedDegree) {
-        return false
-      }
+      if (selectedDegree && program.degree !== selectedDegree) return false
+
+      // Language
+      if (selectedLanguage && program.language !== selectedLanguage) return false
+
+      // Field
+      if (selectedField && program.field !== selectedField) return false
+
+      // University
+      if (selectedUniversity && program.universityId !== selectedUniversity) return false
+
+      // Tuition
+      if (freeOnly && program.tuitionEur > 0) return false
+      if (program.tuitionEur > maxTuition[0]) return false
 
       return true
     })
-  }, [search, selectedCountry, selectedLanguage, selectedDegree])
 
-  // Stats
-  const stats = useMemo(() => ({
-    total: programs.length,
-    englishTaught: programs.filter(p => p.language === 'english').length,
-    freeTuition: programs.filter(p => p.tuitionEur === 0).length,
-  }), [])
+    // Sort
+    const [field, dir] = sortBy.split('-') as [string, 'asc' | 'desc']
+    result = [...result].sort((a, b) => {
+      if (field === 'name') {
+        const uniA = getUniversity(a.universityId)?.name ?? ''
+        const uniB = getUniversity(b.universityId)?.name ?? ''
+        const cmp = uniA.localeCompare(uniB)
+        return dir === 'asc' ? cmp : -cmp
+      }
+      if (field === 'tuition') {
+        return dir === 'asc' ? a.tuitionEur - b.tuitionEur : b.tuitionEur - a.tuitionEur
+      }
+      if (field === 'ects') {
+        return dir === 'asc' ? a.ects - b.ects : b.ects - a.ects
+      }
+      return 0
+    })
+
+    return result
+  }, [search, selectedCountry, selectedDegree, selectedLanguage, selectedField, selectedUniversity, maxTuition, freeOnly, sortBy])
+
+  const visiblePrograms = filteredPrograms.slice(0, page * ITEMS_PER_PAGE)
+  const hasMore = visiblePrograms.length < filteredPrograms.length
 
   const clearFilters = () => {
     setSelectedCountry('')
-    setSelectedLanguage('')
     setSelectedDegree('')
-    setMaxDistance([500])
+    setSelectedLanguage('')
+    setSelectedField('')
+    setSelectedUniversity('')
+    setMaxTuition([20000])
+    setFreeOnly(false)
   }
 
-  // Filter Sidebar Component (for desktop and mobile sheet)
-  const FilterSidebar = () => (
-    <div className="space-y-6">
+  const handleFilterChange = () => setPage(1)
+
+  // Filter Panel Component
+  const FilterPanel = ({ className = '' }: { className?: string }) => (
+    <div className={`space-y-5 ${className}`}>
       <div className="flex items-center justify-between">
-        <h2 className="font-semibold text-slate-900">Filters</h2>
+        <h3 className="font-semibold text-slate-900 flex items-center gap-2">
+          <SlidersHorizontal className="w-4 h-4" />
+          Filters
+        </h3>
         {activeFilterCount > 0 && (
-          <Badge variant="secondary" className="bg-primary/10 text-primary">
-            {activeFilterCount} active
-          </Badge>
+          <button
+            onClick={clearFilters}
+            className="text-xs text-primary hover:text-primary-700 flex items-center gap-1"
+          >
+            <X className="w-3 h-3" />
+            Clear all
+          </button>
         )}
       </div>
 
-      {/* Country Filter */}
+      {activeFilterCount > 0 && (
+        <Badge className="bg-primary/10 text-primary border-primary/20">
+          {activeFilterCount} filter{activeFilterCount > 1 ? 's' : ''} active
+        </Badge>
+      )}
+
+      {/* Country */}
       <div className="space-y-2">
         <label className="text-sm font-medium text-slate-700 flex items-center gap-1.5">
-          <Globe className="w-3.5 h-3.5" />
+          <Globe className="w-3.5 h-3.5 text-slate-400" />
           Country
         </label>
-        <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-          <SelectTrigger className="w-full">
+        <Select value={selectedCountry} onValueChange={(v) => { setSelectedCountry(v); handleFilterChange(); }}>
+          <SelectTrigger className="w-full text-sm">
             <SelectValue placeholder="All Countries" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="">All Countries</SelectItem>
-            {countries.map(country => (
-              <SelectItem key={country} value={country}>{country}</SelectItem>
+            {countries.map(c => (
+              <SelectItem key={c} value={c}>{c}</SelectItem>
             ))}
           </SelectContent>
         </Select>
       </div>
 
-      {/* Language Filter */}
+      {/* Degree */}
       <div className="space-y-2">
         <label className="text-sm font-medium text-slate-700 flex items-center gap-1.5">
-          <BookOpen className="w-3.5 h-3.5" />
-          Language
-        </label>
-        <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="All Languages" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="">All Languages</SelectItem>
-            {languageOptions.map(opt => (
-              <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Degree Filter */}
-      <div className="space-y-2">
-        <label className="text-sm font-medium text-slate-700 flex items-center gap-1.5">
-          <Award className="w-3.5 h-3.5" />
+          <GraduationCap className="w-3.5 h-3.5 text-slate-400" />
           Degree
         </label>
-        <Select value={selectedDegree} onValueChange={setSelectedDegree}>
-          <SelectTrigger className="w-full">
+        <Select value={selectedDegree} onValueChange={(v) => { setSelectedDegree(v); handleFilterChange(); }}>
+          <SelectTrigger className="w-full text-sm">
             <SelectValue placeholder="All Degrees" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="">All Degrees</SelectItem>
-            {degreeOptions.map(opt => (
-              <SelectItem key={opt.value} value={opt.value}>{opt.label}</SelectItem>
+            <SelectItem value="bachelor">Bachelor&apos;s</SelectItem>
+            <SelectItem value="master">Master&apos;s</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Language */}
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-slate-700 flex items-center gap-1.5">
+          <Languages className="w-3.5 h-3.5 text-slate-400" />
+          Language
+        </label>
+        <Select value={selectedLanguage} onValueChange={(v) => { setSelectedLanguage(v); handleFilterChange(); }}>
+          <SelectTrigger className="w-full text-sm">
+            <SelectValue placeholder="All Languages" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="">All Languages</SelectItem>
+            {Object.entries(LANGUAGE_MAP).map(([val, label]) => (
+              <SelectItem key={val} value={val}>{label}</SelectItem>
             ))}
           </SelectContent>
         </Select>
       </div>
 
-      {/* Max Distance Slider */}
+      {/* Field of Study */}
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-slate-700 flex items-center gap-1.5">
+          <School className="w-3.5 h-3.5 text-slate-400" />
+          Field of Study
+        </label>
+        <Select value={selectedField} onValueChange={(v) => { setSelectedField(v); handleFilterChange(); }}>
+          <SelectTrigger className="w-full text-sm">
+            <SelectValue placeholder="All Fields" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="">All Fields</SelectItem>
+            {ALL_FIELDS.map(f => (
+              <SelectItem key={f} value={f}>{f}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* University */}
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-slate-700 flex items-center gap-1.5">
+          <MapPin className="w-3.5 h-3.5 text-slate-400" />
+          University
+        </label>
+        <Select value={selectedUniversity} onValueChange={(v) => { setSelectedUniversity(v); handleFilterChange(); }}>
+          <SelectTrigger className="w-full text-sm">
+            <SelectValue placeholder="All Universities" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="">All Universities</SelectItem>
+            {universities.map(u => (
+              <SelectItem key={u.id} value={u.id}>{u.name}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      <Separator />
+
+      {/* Tuition Slider */}
       <div className="space-y-3">
         <label className="text-sm font-medium text-slate-700 flex items-center justify-between">
           <span className="flex items-center gap-1.5">
-            <MapPin className="w-3.5 h-3.5" />
-            Max Distance
+            <Euro className="w-3.5 h-3.5 text-slate-400" />
+            Max Tuition
           </span>
-          <span className="text-primary font-medium">{maxDistance[0]}km</span>
+          <span className="text-primary font-medium text-sm">
+            {freeOnly ? 'Free only' : maxTuition[0] === 20000 ? 'Any' : `€${maxTuition[0].toLocaleString()}/yr`}
+          </span>
         </label>
         <Slider
-          value={maxDistance}
-          onValueChange={setMaxDistance}
-          min={50}
-          max={1000}
-          step={50}
+          value={maxTuition}
+          onValueChange={(v) => { setMaxTuition(v); handleFilterChange(); }}
+          min={0}
+          max={20000}
+          step={500}
+          disabled={freeOnly}
           className="w-full"
         />
         <div className="flex justify-between text-xs text-slate-400">
-          <span>50km</span>
-          <span>1000km</span>
+          <span>€0</span>
+          <span>€20,000</span>
         </div>
       </div>
 
-      {/* Clear Filters */}
+      {/* Free Only Toggle */}
+      <button
+        onClick={() => { setFreeOnly(!freeOnly); handleFilterChange(); }}
+        className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg border text-sm font-medium transition-all ${
+          freeOnly
+            ? 'bg-green-50 border-green-200 text-green-700'
+            : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
+        }`}
+      >
+        <span className="flex items-center gap-2">
+          <Check className={`w-4 h-4 ${freeOnly ? 'opacity-100' : 'opacity-0'}`} />
+          Tuition-Free Only
+        </span>
+        {freeOnly && <Badge variant="secondary" className="bg-green-100 text-green-700 text-xs">Active</Badge>}
+      </button>
+
       {activeFilterCount > 0 && (
         <Button
           variant="outline"
           size="sm"
           onClick={clearFilters}
-          className="w-full text-slate-600"
+          className="w-full text-slate-500 border-slate-200"
         >
           <X className="w-3.5 h-3.5 mr-1" />
           Clear Filters
@@ -209,290 +335,275 @@ export default function ProgramsPage() {
     </div>
   )
 
-  // Program Card Component
-  const ProgramCardComponent = ({ program, index }: { program: typeof programs[0], index: number }) => {
-    const university = getUniversity(program.universityId)
-    if (!university) return null
-
-    const languageLabel = languageMap[program.language] || 'Mixed'
-    const degreeLabel = program.degree === 'bachelor' ? "Bachelor's" : "Master's"
-
-    return (
-      <motion.div
-        key={program.id}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.03 }}
-      >
-        <Card className="group hover:border-primary/30 hover:shadow-md transition-all duration-200">
-          <CardHeader className="pb-2">
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex items-center gap-3 min-w-0">
-                <UniversityAvatar name={university.name} country={university.country} size="md" />
-                <div className="min-w-0">
-                  <CardTitle className="text-base leading-tight line-clamp-1">
-                    {program.name}
-                  </CardTitle>
-                  <CardDescription className="text-xs mt-0.5">
-                    {university.name}
-                  </CardDescription>
-                </div>
-              </div>
-            </div>
-          </CardHeader>
-
-          <CardContent className="space-y-4">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-1.5">
-              <Badge variant="secondary" className="text-xs">
-                {degreeLabel}
-              </Badge>
-              <Badge variant="outline" className="text-xs bg-primary/5 text-primary border-primary/20">
-                {languageLabel}
-              </Badge>
-              <Badge variant="ghost" className="text-xs">
-                {program.field}
-              </Badge>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-2 text-xs">
-              <div className="bg-slate-50 rounded-lg p-2 text-center">
-                <div className="font-medium text-slate-900">{program.ects}</div>
-                <div className="text-slate-500">ECTS</div>
-              </div>
-              <div className="bg-slate-50 rounded-lg p-2 text-center">
-                <div className="font-medium text-slate-900">{program.durationMonths}mo</div>
-                <div className="text-slate-500">Duration</div>
-              </div>
-              <div className="bg-slate-50 rounded-lg p-2 text-center">
-                <div className="font-medium text-slate-900">
-                  {program.tuitionEur === 0 ? 'Free' : `€${program.tuitionEur}`}
-                </div>
-                <div className="text-slate-500">/year</div>
-              </div>
-            </div>
-
-            {/* Expanded Info on Hover */}
-            <div className="grid grid-cols-2 gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 -translate-y-1 group-hover:translate-y-0">
-              <div className="bg-slate-50 rounded-lg p-2.5">
-                <div className="text-[10px] font-semibold text-slate-400 uppercase mb-1">Location</div>
-                <div className="text-xs text-slate-700">
-                  {university.city}, {university.country}
-                </div>
-              </div>
-              <div className="bg-slate-50 rounded-lg p-2.5">
-                <div className="text-[10px] font-semibold text-slate-400 uppercase mb-1">Workload</div>
-                <div className="text-xs text-slate-700">
-                  ~{Math.round(program.ects * 27.5)} hrs/yr
-                </div>
-              </div>
-              <div className="col-span-2 bg-slate-50 rounded-lg p-2.5">
-                <div className="text-[10px] font-semibold text-slate-400 uppercase mb-1">Entry Requirements</div>
-                <div className="text-xs text-slate-700 line-clamp-2">
-                  {program.entryRequirements.join(', ')}
-                </div>
-              </div>
-            </div>
-          </CardContent>
-
-          <CardFooter className="pt-2 border-t border-slate-100">
-            <Button variant="outline" size="sm" className="w-full" asChild>
-              <Link href={university.website} target="_blank">
-                View Program
-              </Link>
-            </Button>
-          </CardFooter>
-        </Card>
-      </motion.div>
-    )
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-slate-50/50">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="bg-white border-b sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <GraduationCap className="w-8 h-8 text-primary" />
+            <GraduationCap className="w-7 h-7 text-primary" />
             <span className="text-xl font-bold text-slate-900">EuroUni</span>
           </div>
-          <div className="flex items-center gap-4">
-            <Link href="/onboarding" className="text-slate-600 hover:text-slate-900">
-              Start Matching
-            </Link>
-            <Link
-              href="/onboarding"
-              className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
-            >
-              Calculate Match
-            </Link>
-          </div>
+          <nav className="flex items-center gap-5 text-sm">
+            <Link href="/programs" className="text-primary font-medium">Programs</Link>
+            <Link href="/universities" className="text-slate-600 hover:text-slate-900">Universities</Link>
+            <Link href="/onboarding" className="text-slate-600 hover:text-slate-900">Match Me</Link>
+          </nav>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="py-10 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl font-bold text-slate-900 mb-3">
-            Browse European University Programs
-          </h1>
-          <p className="text-slate-600 mb-6">
-            {programs.length} programs across {universities.length} universities in {countries.length} countries
-          </p>
+      {/* Hero Section */}
+      <section className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="max-w-2xl">
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+              Browse European University Programs
+            </h1>
+            <p className="text-slate-500 text-sm mb-6">
+              Discover {programs.length} programs across {universities.length} universities in {countries.length} countries
+            </p>
 
-          {/* Search Bar */}
-          <div className="relative max-w-xl mx-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-            <input
-              type="text"
-              placeholder="Search programs or universities..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-12 pr-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white"
-            />
+            {/* Search Bar */}
+            <div className="relative">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <Input
+                type="text"
+                placeholder="Search programs, universities, or fields..."
+                value={search}
+                onChange={(e) => { setSearch(e.target.value); handleFilterChange(); }}
+                className="pl-10 h-11 bg-slate-50 border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary"
+              />
+              {search && (
+                <button
+                  onClick={() => { setSearch(''); handleFilterChange(); }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Quick stats row */}
+          <div className="flex flex-wrap gap-4 mt-6">
+            <div className="flex items-center gap-1.5 text-sm text-slate-600">
+              <Badge variant="secondary" className="font-medium">{programs.length}</Badge>
+              <span>programs</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-sm text-slate-600">
+              <Badge variant="secondary" className="font-medium bg-green-50 text-green-700 border-green-100">
+                {programs.filter(p => p.tuitionEur === 0).length}
+              </Badge>
+              <span>tuition-free</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-sm text-slate-600">
+              <Badge variant="secondary" className="font-medium bg-blue-50 text-blue-700 border-blue-100">
+                {programs.filter(p => p.language === 'english').length}
+              </Badge>
+              <span>English-taught</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="px-4 pb-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
-            {/* Desktop Filter Sidebar */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-24">
-                <div className="bg-white rounded-xl border border-slate-200 p-5">
-                  <FilterSidebar />
-                </div>
-              </div>
-            </aside>
+      {/* Main Layout */}
+      <section className="max-w-7xl mx-auto px-4 py-6">
+        <div className="lg:grid lg:grid-cols-[260px_1fr] lg:gap-8">
+          {/* Desktop Sidebar */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-20">
+              <Card className="p-5">
+                <FilterPanel />
+              </Card>
 
-            {/* Main Column */}
-            <div className="space-y-6">
-              {/* Mobile Filter Header */}
-              <div className="lg:hidden flex items-center justify-between">
-                <p className="text-sm text-slate-600">
-                  <span className="font-medium text-slate-900">{filteredPrograms.length}</span> of {programs.length} programs
-                </p>
-                <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+              {/* Map Card */}
+              <Card className="mt-4 p-4">
+                <h4 className="text-sm font-semibold text-slate-700 mb-3 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                  University Map
+                </h4>
+                <div className="rounded-lg overflow-hidden h-48">
+                  <DistanceMap maxDistance={1000} />
+                </div>
+              </Card>
+
+              {/* CTA */}
+              <Card className="mt-4 overflow-hidden">
+                <div className="bg-gradient-to-br from-primary-600 to-accent-600 p-5 text-white">
+                  <h4 className="font-semibold text-base mb-1">Find Your Perfect Match</h4>
+                  <p className="text-white/80 text-sm mb-4">
+                    Take our 3-min assessment for personalized recommendations.
+                  </p>
+                  <Link
+                    href="/onboarding"
+                    className="block text-center bg-white text-primary font-medium py-2 rounded-lg text-sm hover:bg-slate-100 transition-colors"
+                  >
+                    Start Matching
+                  </Link>
+                </div>
+              </Card>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <div className="min-w-0">
+            {/* Top bar: results count + sort + mobile filter */}
+            <div className="flex items-center justify-between mb-4 gap-3">
+              <p className="text-sm text-slate-600">
+                <span className="font-semibold text-slate-900">{filteredPrograms.length}</span>
+                {' '}program{filteredPrograms.length !== 1 ? 's' : ''}
+                {search && <span className="text-slate-400"> for &quot;{search}&quot;</span>}
+              </p>
+
+              <div className="flex items-center gap-2">
+                {/* Sort */}
+                <Select value={sortBy} onValueChange={(v) => { setSortBy(v); handleFilterChange(); }}>
+                  <SelectTrigger className="h-9 w-auto text-sm border-slate-200">
+                    <ArrowUpDown className="w-3.5 h-3.5 mr-1.5 text-slate-400" />
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="name-asc">Name A–Z</SelectItem>
+                    <SelectItem value="name-desc">Name Z–A</SelectItem>
+                    <SelectItem value="tuition-asc">Lowest Tuition</SelectItem>
+                    <SelectItem value="tuition-desc">Highest Tuition</SelectItem>
+                    <SelectItem value="ects-asc">Fewest ECTS</SelectItem>
+                    <SelectItem value="ects-desc">Most ECTS</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                {/* Mobile Filter Sheet */}
+                <Sheet open={showFilters} onOpenChange={setShowFilters}>
                   <SheetTrigger asChild>
-                    <Button variant="outline" size="sm">
-                      <SlidersHorizontal className="w-4 h-4 mr-1.5" />
+                    <Button variant="outline" size="sm" className="lg:hidden h-9 border-slate-200 text-sm">
+                      <SlidersHorizontal className="w-3.5 h-3.5 mr-1" />
                       Filters
                       {activeFilterCount > 0 && (
-                        <Badge variant="secondary" className="ml-1.5 bg-primary/10 text-primary">
+                        <Badge variant="secondary" className="ml-1 bg-primary/10 text-primary text-xs">
                           {activeFilterCount}
                         </Badge>
                       )}
                     </Button>
                   </SheetTrigger>
-                  <SheetContent side="left" className="w-80">
-                    <SheetHeader>
+                  <SheetContent side="left" className="w-80 overflow-y-auto">
+                    <SheetHeader className="pb-4">
                       <SheetTitle>Filters</SheetTitle>
                     </SheetHeader>
-                    <div className="mt-6">
-                      <FilterSidebar />
-                    </div>
+                    <FilterPanel />
                   </SheetContent>
                 </Sheet>
               </div>
+            </div>
 
-              {/* Stats Summary - Desktop */}
-              <div className="hidden lg:grid lg:grid-cols-3 gap-4">
-                <Card className="bg-primary/5 border-primary/10">
-                  <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-primary">{stats.total}</div>
-                    <div className="text-sm text-slate-600">Total Programs</div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-green-50 border-green-100">
-                  <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-green-600">{stats.englishTaught}</div>
-                    <div className="text-sm text-slate-600">English-Taught</div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-blue-50 border-blue-100">
-                  <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-blue-600">{stats.freeTuition}</div>
-                    <div className="text-sm text-slate-600">Tuition-Free</div>
-                  </CardContent>
-                </Card>
+            {/* Active filter pills */}
+            {activeFilterCount > 0 && (
+              <div className="flex flex-wrap gap-2 mb-4">
+                {selectedCountry && (
+                  <FilterPill label={selectedCountry} onRemove={() => { setSelectedCountry(''); handleFilterChange(); }} />
+                )}
+                {selectedDegree && (
+                  <FilterPill label={selectedDegree === 'bachelor' ? "Bachelor's" : "Master's"} onRemove={() => { setSelectedDegree(''); handleFilterChange(); }} />
+                )}
+                {selectedLanguage && (
+                  <FilterPill label={LANGUAGE_MAP[selectedLanguage] || selectedLanguage} onRemove={() => { setSelectedLanguage(''); handleFilterChange(); }} />
+                )}
+                {selectedField && (
+                  <FilterPill label={selectedField} onRemove={() => { setSelectedField(''); handleFilterChange(); }} />
+                )}
+                {selectedUniversity && (
+                  <FilterPill label={getUniversity(selectedUniversity)?.name ?? selectedUniversity} onRemove={() => { setSelectedUniversity(''); handleFilterChange(); }} />
+                )}
+                {freeOnly && (
+                  <FilterPill label="Tuition-Free" onRemove={() => { setFreeOnly(false); handleFilterChange(); }} />
+                )}
+                {maxTuition[0] < 20000 && !freeOnly && (
+                  <FilterPill label={`Max €${maxTuition[0].toLocaleString()}/yr`} onRemove={() => setMaxTuition([20000])} />
+                )}
               </div>
+            )}
 
-              {/* Programs Grid */}
-              <div className="lg:hidden">
-                <AnimatePresence mode="wait">
-                  {filteredPrograms.length > 0 ? (
-                    <motion.div
-                      key="grid"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="grid gap-4 sm:grid-cols-2"
-                    >
-                      {filteredPrograms.slice(0, 20).map((program, index) => (
-                        <ProgramCardComponent key={program.id} program={program} index={index} />
-                      ))}
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="empty"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="text-center py-12"
-                    >
-                      <p className="text-slate-500">No programs match your filters.</p>
-                      <Button variant="link" onClick={clearFilters} className="mt-2">
-                        Clear filters
-                      </Button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+            {/* Programs Grid */}
+            {filteredPrograms.length === 0 ? (
+              /* Empty State */
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center py-20"
+              >
+                <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Search className="w-8 h-8 text-slate-300" />
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">No programs found</h3>
+                <p className="text-slate-500 text-sm mb-6 max-w-xs mx-auto">
+                  Try adjusting your filters or search terms to find more programs.
+                </p>
+                <Button variant="outline" onClick={() => { clearFilters(); setSearch(''); }}>
+                  <X className="w-4 h-4 mr-1" />
+                  Clear all filters
+                </Button>
+              </motion.div>
+            ) : (
+              <>
+                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                  <AnimatePresence mode="popLayout">
+                    {visiblePrograms.map((program, i) => {
+                      const university = getUniversity(program.universityId)
+                      if (!university) return null
+                      return (
+                        <motion.div
+                          key={program.id}
+                          initial={{ opacity: 0, y: 12 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: Math.min(i * 0.025, 0.3) }}
+                          layout
+                        >
+                          <ProgramCard program={program} university={university} />
+                        </motion.div>
+                      )
+                    })}
+                  </AnimatePresence>
+                </div>
 
-              <div className="hidden lg:block">
-                {filteredPrograms.length > 0 ? (
-                  <div className="grid gap-4 xl:grid-cols-2">
-                    {filteredPrograms.map((program, index) => (
-                      <ProgramCardComponent key={program.id} program={program} index={index} />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center py-12">
-                    <p className="text-slate-500">No programs match your filters.</p>
-                    <Button variant="link" onClick={clearFilters} className="mt-2">
-                      Clear filters
+                {/* Load More */}
+                {hasMore && (
+                  <div className="mt-8 flex justify-center">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      onClick={() => setPage(p => p + 1)}
+                      className="px-8 border-slate-200 text-slate-700 hover:bg-slate-50"
+                    >
+                      Load More Programs
+                      <ChevronDown className="w-4 h-4 ml-1" />
                     </Button>
                   </div>
                 )}
-              </div>
-            </div>
 
-            {/* Desktop Sticky Sidebar */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-24 space-y-6">
-                {/* Map */}
-                <DistanceMap maxDistance={maxDistance[0]} />
-
-                {/* Sidebar CTA */}
-                <div className="bg-gradient-to-br from-primary to-accent rounded-xl p-6 text-white">
-                  <h3 className="font-semibold mb-2">Find Your Perfect Match</h3>
-                  <p className="text-sm text-white/80 mb-4">
-                    Take our assessment to get personalized program recommendations.
+                {!hasMore && filteredPrograms.length > ITEMS_PER_PAGE && (
+                  <p className="text-center text-sm text-slate-400 mt-6">
+                    Showing all {filteredPrograms.length} programs
                   </p>
-                  <Link
-                    href="/onboarding"
-                    className="block text-center bg-white text-primary py-2 rounded-lg font-medium hover:bg-slate-100 transition-colors"
-                  >
-                    Start Matching
-                  </Link>
-                </div>
-              </div>
-            </aside>
+                )}
+              </>
+            )}
           </div>
         </div>
       </section>
     </div>
+  )
+}
+
+// Small filter pill component
+function FilterPill({ label, onRemove }: { label: string; onRemove: () => void }) {
+  return (
+    <span className="inline-flex items-center gap-1 pl-2.5 pr-1.5 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">
+      {label}
+      <button
+        onClick={onRemove}
+        className="hover:bg-primary/20 rounded-full p-0.5 transition-colors"
+      >
+        <X className="w-3 h-3" />
+      </button>
+    </span>
   )
 }

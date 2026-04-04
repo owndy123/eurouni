@@ -1,0 +1,117 @@
+{
+  "universityId": "tue",
+  "programs": [
+    {
+      "id": "tue-computer-science-and-engineering",
+      "universityId": "tue",
+      "name": "Computer Science and Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Engineering-focused CS program at the Netherlands' leading technology university. Software design, embedded systems, AI, and data science. Eindhoven is home to Philips, ASML, and a major tech startup ecosystem.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+ (IELTS 6.5 or TOEFL 92)",
+        "Physics preferred",
+        "Numerus fixus may apply"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tue-mechanical-engineering",
+      "universityId": "tue",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Design engineering, automotive technology, and production systems. TUE is the Netherlands' premier mechanical engineering school with direct industry ties to high-tech manufacturing in Brainport Eindhoven region.",
+      "entryRequirements": [
+        "Mathematics and Physics at VWO level",
+        "English B2+",
+        "TUE-specific entrance exam in mathematics and physics"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tue-electrical-engineering",
+      "universityId": "tue",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Power electronics, telecommunications, and sustainable energy systems. Cutting-edge research in electrical engineering for healthcare and sustainable energy. Excellent lab facilities.",
+      "entryRequirements": [
+        "Mathematics and Physics at VWO level",
+        "English B2+",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tue-data-science",
+      "universityId": "tue",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Artificial intelligence, machine learning, and data analytics. Focus on real-world applications in health, mobility, and sustainability. Research collaborations with ASML, Philips, and high-tech firms.",
+      "entryRequirements": [
+        "CS, Mathematics, or Statistics bachelor",
+        "English B2+ (IELTS 6.5)",
+        "GPA minimum 7.0/10",
+        "Programming skills required"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tue-automotive-technology",
+      "universityId": "tue",
+      "name": "Automotive Technology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Electric mobility, autonomous driving, and vehicle dynamics. TUE's automotive research is world-class, linked to the Brainport Eindhoven automotive cluster (VDL, DAF, BMW, etc.).",
+      "entryRequirements": [
+        "Mechanical, Electrical, or Automotive Engineering bachelor",
+        "English B2+",
+        "GPA 7.0+"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tue-human-technology-interaction",
+      "universityId": "tue",
+      "name": "Human-Technology Interaction",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Study of how humans interact with technology. UX research, cognitive science, and interactive system design. Applications in AI, AR/VR, and healthcare technology.",
+      "entryRequirements": [
+        "Psychology, CS, or Design bachelor",
+        "English B2+",
+        "GPA 7.0+",
+        "Portfolio for design track"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.819Z"
+}

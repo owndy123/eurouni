@@ -1,0 +1,96 @@
+{
+  "universityId": "ug",
+  "programs": [
+    {
+      "id": "ug-international-relations",
+      "universityId": "ug",
+      "name": "International Relations",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "European studies, political science, and diplomacy. Faculty of Social Sciences. Gdańsk's Baltic and EU perspective provides unique geopolitical context.",
+      "entryRequirements": [
+        "English B2",
+        "Social sciences background preferred",
+        "Entrance exam"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "ug-psychology",
+      "universityId": "ug",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "polish",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Clinical and counseling psychology. Faculty of Psychology. Empirical approach with practical training. Growing Baltic region healthcare sector.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Polish C1 for foreigners",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "ug-biology",
+      "universityId": "ug",
+      "name": "Biology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Marine biology, ecology, and molecular biology. Gdańsk coastal location offers unique marine biology opportunities. Modern labs and research at the Baltic Sea.",
+      "entryRequirements": [
+        "Biology and Chemistry at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "ug-law",
+      "universityId": "ug",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "local",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Master of Law program in Polish. Constitutional law, EU law, and international law. Faculty of Law. Gdańsk has strong maritime law tradition.",
+      "entryRequirements": [
+        "Polish language C1 for foreigners",
+        "History or social sciences",
+        "Entrance exam"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "ug-economics",
+      "universityId": "ug",
+      "name": "Economics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "International economics, finance, and econometrics. Faculty of Economics. Gdańsk's port and trade history provides unique economic perspective.",
+      "entryRequirements": [
+        "Economics or related bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.892Z"
+}

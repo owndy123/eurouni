@@ -1,0 +1,117 @@
+{
+  "universityId": "heidelberg",
+  "programs": [
+    {
+      "id": "heidelberg-medicine",
+      "universityId": "heidelberg",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 0,
+      "description": "Six-year medical program (Staatsexamen) at Germany's oldest university. Clinical training at University Hospital Heidelberg (one of Germany's top medical centers). Extremely competitive with very high Numerus Clausus.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF 4x4",
+        "Numerus Clausus extremely competitive (<1.0)",
+        "Biology and Chemistry advanced",
+        "TMS test strongly recommended"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "heidelberg-physics",
+      "universityId": "heidelberg",
+      "name": "Physics",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of theoretical and experimental physics at one of Europe's leading physics departments. Excellent research facilities and connections to Max Planck Institutes. Specializations in quantum physics, astrophysics, and condensed matter.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics advanced",
+        "Numerus Clausus applies"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "heidelberg-chemistry",
+      "universityId": "heidelberg",
+      "name": "Chemistry",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Organic, inorganic, physical, and analytical chemistry. Modern labs in the Chemistry Institute. Good preparation for pharma and chemical industry careers.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Chemistry and Mathematics at secondary level",
+        "Numerus Clausus applies"
+      ],
+      "field": "Chemistry",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "heidelberg-english-and-american-studies",
+      "universityId": "heidelberg",
+      "name": "English and American Studies",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of English literature, linguistics, and cultural studies. Taught in English with native-speaker faculty. Strong tradition in philology and cultural studies.",
+      "entryRequirements": [
+        "English C1 (CAE or equivalent)",
+        "German DSH-2 for enrollment",
+        "Literature or linguistics background preferred"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "heidelberg-applied-computer-science",
+      "universityId": "heidelberg",
+      "name": "Applied Computer Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Practical and applied computer science covering software engineering, databases, and IT systems. English-taught with German cultural experience in the historic city of Heidelberg.",
+      "entryRequirements": [
+        "CS or related bachelor",
+        "English B2",
+        "GPA 2.5+",
+        "Programming skills required"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "heidelberg-molecular-biotechnology",
+      "universityId": "heidelberg",
+      "name": "Molecular Biotechnology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Focus on molecular biology, gene technology, and pharmaceutical biotechnology. Heidelberg has Germany's leading life sciences research cluster (BioScience).",
+      "entryRequirements": [
+        "Biology, Biochemistry, or Chemistry bachelor",
+        "English B2",
+        "GPA 2.5+",
+        "Lab experience preferred"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.775Z"
+}

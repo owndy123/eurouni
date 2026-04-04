@@ -1,0 +1,135 @@
+{
+  "universityId": "rug",
+  "programs": [
+    {
+      "id": "rug-computer-science",
+      "universityId": "rug",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Top CS program in the northern Netherlands. Software engineering, AI, and data science. Groningen is a young, vibrant university city with growing tech scene.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+ (IELTS 6.5)",
+        "Numerus fixus may apply for AI specializations"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rug-medicine",
+      "universityId": "rug",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "dutch",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 2300,
+      "description": "Three-year bachelor + three-year master medical program in Dutch. Clinical training at University Medical Center Groningen (UMCG) — one of Europe's largest hospitals. Numerus fixus highly competitive.",
+      "entryRequirements": [
+        "VWO with Biology, Chemistry, Physics, Mathematics",
+        "Dutch language proficiency (B2 for numerus fixus track)",
+        "Numerus fixus very competitive",
+        "BMSAT test"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rug-economics",
+      "universityId": "rug",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "International economics, finance, and econometrics. RUG's economics faculty is internationally recognized. Strong in behavioral and experimental economics.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "Numerus fixus may apply"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rug-artificial-intelligence",
+      "universityId": "rug",
+      "name": "Artificial Intelligence",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Dedicated AI program covering machine learning, cognitive science, and robotics. One of the few standalone AI bachelor programs in Europe. Highly competitive admission.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "Numerus fixus applies (very competitive)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rug-pharmacy",
+      "universityId": "rug",
+      "name": "Pharmacy",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Three-year bachelor in Pharmaceutical Sciences. Pharmacology, drug development, and clinical pharmacy. Prepares for master in Pharmacy or pharmaceutical industry careers.",
+      "entryRequirements": [
+        "Chemistry and Biology at VWO level",
+        "English B2+",
+        "Numerus fixus applies"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rug-international-business",
+      "universityId": "rug",
+      "name": "International Business",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Cross-cultural management, international finance, and global strategy. Groningen's international business program is consistently ranked among Europe's best.",
+      "entryRequirements": [
+        "Business, Economics, or Management bachelor",
+        "English B2+ (IELTS 6.5)",
+        "GPA 7.0+",
+        "Motivation letter"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rug-law",
+      "universityId": "rug",
+      "name": "Law",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "International and European law. Specializations in international trade law, energy law, and human rights law. Strong moot court program.",
+      "entryRequirements": [
+        "Law bachelor (180 ECTS)",
+        "English C1",
+        "GPA 7.0+",
+        "Motivation letter"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.820Z"
+}

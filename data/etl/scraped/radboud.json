@@ -1,0 +1,119 @@
+{
+  "universityId": "radboud",
+  "programs": [
+    {
+      "id": "radboud-computing-science",
+      "universityId": "radboud",
+      "name": "Computing Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "CS program at Nijmegen with strong research orientation. Algorithms, AI, and data science. Radboud has Netherlands' leading AI research group and Donders Institute for Brain research.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+ (IELTS 6.0)",
+        "Numerus fixus may apply"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "radboud-medicine",
+      "universityId": "radboud",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "dutch",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 2300,
+      "description": "Six-year medical program in Dutch. Radboud's medical faculty (Radboudumc) is internationally recognized for research. Numerus fixus highly competitive.",
+      "entryRequirements": [
+        "VWO with Biology, Chemistry, Physics, Mathematics",
+        "Dutch language proficiency required",
+        "Numerus fixus very competitive",
+        "BMSAT"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "radboud-artificial-intelligence",
+      "universityId": "radboud",
+      "name": "Artificial Intelligence",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Dedicated AI program with cognitive computing, machine learning, and robotics. Strong ties to Donders Institute for Brain, Cognition and Behaviour — one of Europe's leading neuroscience research centers.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "Numerus fixus applies (competitive)",
+        "Physics or Computer Science preferred"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "radboud-molecular-life-sciences",
+      "universityId": "radboud",
+      "name": "Molecular Life Sciences",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Biochemistry, molecular biology, and biomedical research. Radboudumc provides excellent research opportunities. Focus on cancer research, neuroscience, and stem cell biology.",
+      "entryRequirements": [
+        "Biology, Biochemistry, or Chemistry bachelor",
+        "English B2+",
+        "GPA 7.0+",
+        "Lab research experience preferred"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "radboud-psychology",
+      "universityId": "radboud",
+      "name": "Psychology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Specializations in clinical psychology, cognitive neuroscience, and social psychology. Radboud has Netherlands' leading Donders Institute providing research and clinical training.",
+      "entryRequirements": [
+        "Psychology bachelor",
+        "English B2+",
+        "GPA 7.0+",
+        "Research thesis required"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "radboud-international-economics",
+      "universityId": "radboud",
+      "name": "International Economics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "International trade, economic development, and emerging markets. Research-focused with opportunities for policy work at EU institutions.",
+      "entryRequirements": [
+        "Economics bachelor",
+        "English B2+",
+        "GPA 7.0+",
+        "Mathematics proficiency"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.820Z"
+}

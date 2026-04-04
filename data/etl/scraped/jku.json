@@ -1,0 +1,114 @@
+{
+  "universityId": "jku",
+  "programs": [
+    {
+      "id": "jku-computer-science",
+      "universityId": "jku",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Austria's fastest-growing CS program at JKU Linz in Upper Austria. Software engineering, AI, and data science. Linz is Austria's tech capital with strong industry presence (Linz AG, voestalpine, NVIDIA).",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics at secondary school",
+        "Austrian Matura or equivalent"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "jku-artificial-intelligence",
+      "universityId": "jku",
+      "name": "Artificial Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Machine learning, neural networks, and cognitive systems. English-taught. JKU has Austria's largest AI research group (Institute for Machine Learning). Research collaborations with international tech companies.",
+      "entryRequirements": [
+        "Computer Science, Mathematics, or Engineering bachelor",
+        "English B2",
+        "Mathematics and programming prerequisites"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "jku-business-administration",
+      "universityId": "jku",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "JKU's School of Business combines business education with technology focus. Management, finance, marketing, and entrepreneurship. Linz's industrial base (steel, manufacturing, tech) provides career opportunities.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics at secondary school",
+        "Austrian Matura or equivalent"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "jku-law",
+      "universityId": "jku",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 727,
+      "description": "Traditional Austrian law program (Diplom-Rechtswissen-schaften). Austrian civil law, commercial law, EU law. JKU's law faculty has a strong focus on economic law relevant to Upper Austria's industrial sector.",
+      "entryRequirements": [
+        "German C1 (legal German exam required for foreigners)",
+        "Austrian Matura or equivalent",
+        "GPA 2.5+"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "jku-technical-physics",
+      "universityId": "jku",
+      "name": "Technical Physics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Applied physics with specializations in materials science, semiconductor physics, and renewable energy. Research-oriented with collaborations in Upper Austrian technology and materials industry.",
+      "entryRequirements": [
+        "Physics or Engineering Physics bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "jku-social-sciences",
+      "universityId": "jku",
+      "name": "Social Sciences",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Sociology, political science, and communication studies. Interdisciplinary program at JKU's Faculty of Social Sciences. Combines theory with practical research methods.",
+      "entryRequirements": [
+        "German C1",
+        "Social sciences or humanities secondary education",
+        "Entrance exam"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:08:57.480Z"
+}

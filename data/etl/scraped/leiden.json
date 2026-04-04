@@ -1,0 +1,118 @@
+{
+  "universityId": "leiden",
+  "programs": [
+    {
+      "id": "leiden-international-relations-and-organisations",
+      "universityId": "leiden",
+      "name": "International Relations and Organisations",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Study of global governance, international organizations, and diplomacy. Specializations in UN studies, EU politics, and human rights. Leiden has Netherlands' oldest and most prestigious political science faculty.",
+      "entryRequirements": [
+        "English B2+ (IELTS 6.5 or equivalent)",
+        "Background in social sciences preferred",
+        "Numerus fixus may apply"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "leiden-computer-science",
+      "universityId": "leiden",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "CS with strong research focus. Algorithms, AI, bioinformatics, and computer graphics. Leiden has excellent research in computational biology and bioinformatics.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "GPA equivalent to 7.0+"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "leiden-law",
+      "universityId": "leiden",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "International and European law. Leiden is Netherlands' premier law school with exceptional international law faculty. The Hague (International Court of Justice, ICC) is nearby.",
+      "entryRequirements": [
+        "English C1",
+        "Secondary school diploma with strong academic record",
+        "Motivation letter",
+        "Essay"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "leiden-psychology",
+      "universityId": "leiden",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Research-oriented psychology with specializations in clinical, social, and cognitive psychology. Leiden is Netherlands' oldest psychology department with strong empirical tradition.",
+      "entryRequirements": [
+        "Biology or Psychology at secondary school",
+        "English B2+",
+        "Numerus fixus applies (highly competitive)",
+        "GPA equivalent to 7.5+"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "leiden-political-science",
+      "universityId": "leiden",
+      "name": "Political Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Advanced comparative politics, political economy, and political behavior. Research methods training with opportunities for internships in Dutch and EU political institutions.",
+      "entryRequirements": [
+        "Social Sciences bachelor (Political Science preferred)",
+        "English C1",
+        "GPA 7.0+",
+        "Motivation letter and writing sample"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "leiden-archaeology",
+      "universityId": "leiden",
+      "name": "Archaeology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "World archaeology with specializations in European prehistory, Near Eastern archaeology, and digital archaeology. Leiden is one of Europe's leading archaeology research centers.",
+      "entryRequirements": [
+        "Archaeology, History, or Anthropology bachelor",
+        "English B2+",
+        "GPA 7.0+",
+        "Field experience preferred"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.820Z"
+}

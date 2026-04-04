@@ -19,6 +19,10 @@ import { scrapeAndSave, shouldRescrape, loadScrapedData, getLastScrapeTime } fro
 import { universities, reload } from '../src/lib/dataSource'
 import { scrapeSlovakia as realScrapeSlovakia } from './countries/slovakia'
 import { scrapeCzech as realScrapeCzechRep } from './countries/czech'
+import { scrapeGermany as realScrapeGermany } from './countries/germany'
+import { scrapeNetherlands as realScrapeNetherlands } from './countries/netherlands'
+import { scrapePoland as realScrapePoland } from './countries/poland'
+import { scrapeAustria as realScrapeAustria } from './countries/austria'
 
 // University program URLs — map university IDs to their program listing URLs
 const UNIVERSITY_PROGRAM_URLS: Record<string, string> = {
@@ -225,40 +229,114 @@ async function scrapeCzech(): Promise<ScrapeResult[]> {
 }
 
 async function scrapeAustria(): Promise<ScrapeResult[]> {
-  console.log('[SCRAPER] Austria — not yet implemented')
-  // TODO: Implement scraping for Austrian universities:
-  //   - univie.ac.at (University of Vienna)
-  //   - tuwien.ac.at (TU Wien)
-  //   - tugraz.at (TU Graz)
-  //   - jku.at (JKU Linz)
-  //   - uibk.ac.at (University of Innsbruck)
-  //   - plus.ac.at (University of Salzburg)
-  //   - wu.ac.at (Vienna University of Economics)
-  //   - meduniwien.ac.at (Medical University of Vienna)
-  const results: ScrapeResult[] = []
-  for (const uni of universities.filter(u => u.country === 'Austria')) {
-    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  console.log('[SCRAPER] Austria — running real scraper...')
+  const fs = await import('fs')
+  const path = await import('path')
+
+  let programs: import('./countries/austria').Program[] = []
+  try {
+    programs = await realScrapeAustria()
+  } catch (err) {
+    console.error('[SCRAPER] Austria scraper crashed:', err instanceof Error ? err.message : String(err))
+    return universities.filter(u => u.country === 'Austria').map(uni => ({
+      universityId: uni.id, success: false, programCount: 0, skipped: false,
+      error: err instanceof Error ? err.message : String(err),
+    }))
   }
+
+  const results: ScrapeResult[] = []
+
+  const byUni = new Map<string, import('./countries/austria').Program[]>()
+  for (const p of programs) {
+    if (!byUni.has(p.universityId)) byUni.set(p.universityId, [])
+    byUni.get(p.universityId)!.push(p)
+  }
+
+  for (const [uniId, progs] of byUni) {
+    results.push({ universityId: uniId, success: true, programCount: progs.length, skipped: false })
+
+    const scrapedDir = path.join(process.cwd(), 'data', 'etl', 'scraped')
+    if (!fs.existsSync(scrapedDir)) fs.mkdirSync(scrapedDir, { recursive: true })
+    fs.writeFileSync(
+      path.join(scrapedDir, `${uniId}.json`),
+      JSON.stringify({ universityId: uniId, programs: progs, savedAt: new Date().toISOString() }, null, 2),
+      'utf-8'
+    )
+  }
+
+  try {
+    const programsPath = path.join(process.cwd(), 'data', 'programs.json')
+    const existing = JSON.parse(fs.readFileSync(programsPath, 'utf-8'))
+    const existingProgramIds = new Set(existing.programs.map((p: { id: string }) => p.id))
+    existing.programs = existing.programs.filter((p: { universityId: string }) => p.universityId && !['univie','tuw','tu-graz','jku','uibk','sbg','wu-wien','mu-wien'].includes(p.universityId))
+    const newProgs = programs.filter((p: import('./countries/austria').Program) => !existingProgramIds.has(p.id))
+    existing.programs.push(...newProgs)
+    existing.meta.lastUpdated = new Date().toISOString()
+    fs.writeFileSync(programsPath, JSON.stringify(existing, null, 2), 'utf-8')
+    console.log(`[SCRAPER] Austria — merged ${newProgs.length} new programs into data/programs.json`)
+  } catch (err) {
+    console.warn('[SCRAPER] Could not merge into programs.json:', err instanceof Error ? err.message : String(err))
+  }
+
   return results
 }
 
 async function scrapePoland(): Promise<ScrapeResult[]> {
-  console.log('[SCRAPER] Poland — not yet implemented')
-  // TODO: Implement scraping for Polish universities:
-  //   - uw.edu.pl (University of Warsaw)
-  //   - pw.edu.pl (Warsaw University of Technology)
-  //   - uj.edu.pl (Jagiellonian University)
-  //   - agh.edu.pl (AGH University of Science and Technology)
-  //   - put.poznan.pl (Poznań University of Technology)
-  //   - amu.edu.pl (Adam Mickiewicz University)
-  //   - uw.edu.pl (University of Wrocław)
-  //   - pwr.edu.pl (Wrocław University of Science and Technology)
-  //   - ug.edu.pl (University of Gdańsk)
-  //   - pg.edu.pl (Gdańsk University of Technology)
-  const results: ScrapeResult[] = []
-  for (const uni of universities.filter(u => u.country === 'Poland')) {
-    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  console.log('[SCRAPER] Poland — running real scraper...')
+  const fs = await import('fs')
+  const path = await import('path')
+
+  let programs: import('./countries/poland').Program[] = []
+  try {
+    programs = await realScrapePoland()
+  } catch (err) {
+    console.error('[SCRAPER] Poland scraper crashed:', err instanceof Error ? err.message : String(err))
+    return universities.filter(u => u.country === 'Poland').map(uni => ({
+      universityId: uni.id, success: false, programCount: 0, skipped: false,
+      error: err instanceof Error ? err.message : String(err),
+    }))
   }
+
+  const results: ScrapeResult[] = []
+
+  // Group programs by universityId
+  const byUni = new Map<string, import('./countries/poland').Program[]>()
+  for (const p of programs) {
+    if (!byUni.has(p.universityId)) byUni.set(p.universityId, [])
+    byUni.get(p.universityId)!.push(p)
+  }
+
+  for (const [uniId, progs] of byUni) {
+    results.push({ universityId: uniId, success: true, programCount: progs.length, skipped: false })
+
+    // Save to ETL scraped data dir
+    const scrapedDir = path.join(process.cwd(), 'data', 'etl', 'scraped')
+    if (!fs.existsSync(scrapedDir)) fs.mkdirSync(scrapedDir, { recursive: true })
+    fs.writeFileSync(
+      path.join(scrapedDir, `${uniId}.json`),
+      JSON.stringify({ universityId: uniId, programs: progs, savedAt: new Date().toISOString() }, null, 2),
+      'utf-8'
+    )
+  }
+
+  // Merge into programs.json
+  try {
+    const programsPath = path.join(process.cwd(), 'data', 'programs.json')
+    const existing = JSON.parse(fs.readFileSync(programsPath, 'utf-8'))
+    const existingProgramIds = new Set(existing.programs.map((p: { id: string }) => p.id))
+
+    // Remove old Polish programs and add new ones
+    const polishUniIds = ['uw', 'pw', 'uj', 'agh', 'put', 'amu', 'pwr', 'ug', 'pg']
+    existing.programs = existing.programs.filter((p: { universityId: string }) => p.universityId && !polishUniIds.includes(p.universityId))
+    const newProgs = programs.filter((p: import('./countries/poland').Program) => !existingProgramIds.has(p.id))
+    existing.programs.push(...newProgs)
+    existing.meta.lastUpdated = new Date().toISOString()
+    fs.writeFileSync(programsPath, JSON.stringify(existing, null, 2), 'utf-8')
+    console.log(`[SCRAPER] Poland — merged ${newProgs.length} new programs into data/programs.json`)
+  } catch (err) {
+    console.warn('[SCRAPER] Could not merge into programs.json:', err instanceof Error ? err.message : String(err))
+  }
+
   return results
 }
 
@@ -281,40 +359,108 @@ async function scrapeHungary(): Promise<ScrapeResult[]> {
 }
 
 async function scrapeGermany(): Promise<ScrapeResult[]> {
-  console.log('[SCRAPER] Germany — not yet implemented')
-  // TODO: Implement scraping for German universities:
-  //   - tum.de (Technical University of Munich)
-  //   - wsi.tum.de (TUM School of Management)
-  //   - tu-berlin.de (TU Berlin)
-  //   - rwth-aachen.de (RWTH Aachen)
-  //   - kit.edu (Karlsruhe Institute of Technology)
-  //   - ph.tum.de (TUM Department of Physics)
-  //   - fu-berlin.de (Freie Universität Berlin)
-  //   - hu-berlin.de (Humboldt University of Berlin)
-  //   - lmu.de (Ludwig Maximilian University of Munich)
-  //   - uni-heidelberg.de (Heidelberg University)
-  const results: ScrapeResult[] = []
-  for (const uni of universities.filter(u => u.country === 'Germany')) {
-    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  console.log('[SCRAPER] Germany — running real scraper...')
+  const fs = await import('fs')
+  const path = await import('path')
+
+  let programs: import('./countries/germany').Program[] = []
+  try {
+    programs = await realScrapeGermany()
+  } catch (err) {
+    console.error('[SCRAPER] Germany scraper crashed:', err instanceof Error ? err.message : String(err))
+    return universities.filter(u => u.country === 'Germany').map(uni => ({
+      universityId: uni.id, success: false, programCount: 0, skipped: false,
+      error: err instanceof Error ? err.message : String(err),
+    }))
   }
+
+  const results: ScrapeResult[] = []
+
+  const byUni = new Map<string, import('./countries/germany').Program[]>()
+  for (const p of programs) {
+    if (!byUni.has(p.universityId)) byUni.set(p.universityId, [])
+    byUni.get(p.universityId)!.push(p)
+  }
+
+  for (const [uniId, progs] of byUni) {
+    results.push({ universityId: uniId, success: true, programCount: progs.length, skipped: false })
+
+    const scrapedDir = path.join(process.cwd(), 'data', 'etl', 'scraped')
+    if (!fs.existsSync(scrapedDir)) fs.mkdirSync(scrapedDir, { recursive: true })
+    fs.writeFileSync(
+      path.join(scrapedDir, `${uniId}.json`),
+      JSON.stringify({ universityId: uniId, programs: progs, savedAt: new Date().toISOString() }, null, 2),
+      'utf-8'
+    )
+  }
+
+  try {
+    const programsPath = path.join(process.cwd(), 'data', 'programs.json')
+    const existing = JSON.parse(fs.readFileSync(programsPath, 'utf-8'))
+    const existingProgramIds = new Set(existing.programs.map((p: { id: string }) => p.id))
+    existing.programs = existing.programs.filter((p: { universityId: string }) => p.universityId && !['tum','tu-berlin','rwth','kit','fub','hu-berlin','lmu','heidelberg'].includes(p.universityId))
+    const newProgs = programs.filter((p: import('./countries/germany').Program) => !existingProgramIds.has(p.id))
+    existing.programs.push(...newProgs)
+    existing.meta.lastUpdated = new Date().toISOString()
+    fs.writeFileSync(programsPath, JSON.stringify(existing, null, 2), 'utf-8')
+    console.log(`[SCRAPER] Germany — merged ${newProgs.length} new programs into data/programs.json`)
+  } catch (err) {
+    console.warn('[SCRAPER] Could not merge into programs.json:', err instanceof Error ? err.message : String(err))
+  }
+
   return results
 }
 
 async function scrapeNetherlands(): Promise<ScrapeResult[]> {
-  console.log('[SCRAPER] Netherlands — not yet implemented')
-  // TODO: Implement scraping for Dutch universities:
-  //   - uva.nl (University of Amsterdam)
-  //   - tue.nl (Eindhoven University of Technology)
-  //   - tudelft.nl (Delft University of Technology)
-  //   - universiteitleiden.nl (Leiden University)
-  //   - utwente.nl (University of Twente)
-  //   - rug.nl (University of Groningen)
-  //   - vu.nl (Vrije Universiteit Amsterdam)
-  //   - ru.nl (Radboud University)
-  const results: ScrapeResult[] = []
-  for (const uni of universities.filter(u => u.country === 'Netherlands')) {
-    results.push({ universityId: uni.id, success: true, programCount: 0, skipped: true })
+  console.log('[SCRAPER] Netherlands — running real scraper...')
+  const fs = await import('fs')
+  const path = await import('path')
+
+  let programs: import('./countries/netherlands').Program[] = []
+  try {
+    programs = await realScrapeNetherlands()
+  } catch (err) {
+    console.error('[SCRAPER] Netherlands scraper crashed:', err instanceof Error ? err.message : String(err))
+    return universities.filter(u => u.country === 'Netherlands').map(uni => ({
+      universityId: uni.id, success: false, programCount: 0, skipped: false,
+      error: err instanceof Error ? err.message : String(err),
+    }))
   }
+
+  const results: ScrapeResult[] = []
+
+  const byUni = new Map<string, import('./countries/netherlands').Program[]>()
+  for (const p of programs) {
+    if (!byUni.has(p.universityId)) byUni.set(p.universityId, [])
+    byUni.get(p.universityId)!.push(p)
+  }
+
+  for (const [uniId, progs] of byUni) {
+    results.push({ universityId: uniId, success: true, programCount: progs.length, skipped: false })
+
+    const scrapedDir = path.join(process.cwd(), 'data', 'etl', 'scraped')
+    if (!fs.existsSync(scrapedDir)) fs.mkdirSync(scrapedDir, { recursive: true })
+    fs.writeFileSync(
+      path.join(scrapedDir, `${uniId}.json`),
+      JSON.stringify({ universityId: uniId, programs: progs, savedAt: new Date().toISOString() }, null, 2),
+      'utf-8'
+    )
+  }
+
+  try {
+    const programsPath = path.join(process.cwd(), 'data', 'programs.json')
+    const existing = JSON.parse(fs.readFileSync(programsPath, 'utf-8'))
+    const existingProgramIds = new Set(existing.programs.map((p: { id: string }) => p.id))
+    existing.programs = existing.programs.filter((p: { universityId: string }) => p.universityId && !['uva','tue','tudelft','leiden','utwente','rug','vu','radboud'].includes(p.universityId))
+    const newProgs = programs.filter((p: import('./countries/netherlands').Program) => !existingProgramIds.has(p.id))
+    existing.programs.push(...newProgs)
+    existing.meta.lastUpdated = new Date().toISOString()
+    fs.writeFileSync(programsPath, JSON.stringify(existing, null, 2), 'utf-8')
+    console.log(`[SCRAPER] Netherlands — merged ${newProgs.length} new programs into data/programs.json`)
+  } catch (err) {
+    console.warn('[SCRAPER] Could not merge into programs.json:', err instanceof Error ? err.message : String(err))
+  }
+
   return results
 }
 

@@ -1,0 +1,117 @@
+{
+  "universityId": "vu",
+  "programs": [
+    {
+      "id": "vu-computer-science",
+      "universityId": "vu",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "CS program at VU's Faculty of Sciences. Software engineering, data science, and AI. VU shares a campus with UvA's Faculty of Science, giving access to joint programs.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "Numerus fixus may apply"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "vu-medicine",
+      "universityId": "vu",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "dutch",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 2300,
+      "description": "Six-year medical program in Dutch at Amsterdam UMC (location VUmc). Clinical training in one of Netherlands' leading hospitals. Highly competitive numerus fixus.",
+      "entryRequirements": [
+        "VWO with Biology, Chemistry, Physics, Mathematics",
+        "Dutch B2",
+        "Numerus fixus extremely competitive",
+        "BMSAT test"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "vu-economics",
+      "universityId": "vu",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Economics with specializations in finance, econometrics, and international economics. VU's economics is known for quantitative rigor and research output.",
+      "entryRequirements": [
+        "Mathematics at VWO level",
+        "English B2+",
+        "Numerus fixus may apply"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "vu-psychology",
+      "universityId": "vu",
+      "name": "Psychology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Clinical psychology, work and organizational psychology, and cognitive neuroscience. Amsterdam UMC affiliation provides excellent clinical training opportunities.",
+      "entryRequirements": [
+        "Psychology bachelor (120 ECTS)",
+        "English B2+",
+        "GPA 7.0+",
+        "Research experience preferred"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "vu-business-analytics",
+      "universityId": "vu",
+      "name": "Business Analytics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 2300,
+      "description": "Mathematical optimization, statistics, and business intelligence. Prepares for data-driven decision-making roles. Close ties to Amsterdam business community.",
+      "entryRequirements": [
+        "Economics, CS, or Math bachelor with quantitative focus",
+        "English B2+",
+        "GPA 7.0+",
+        "Mathematics proficiency"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "vu-political-science",
+      "universityId": "vu",
+      "name": "Political Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 2300,
+      "description": "Study of political systems, policy analysis, and international relations. Strong in Dutch and European politics. Unique combination of political science and public administration.",
+      "entryRequirements": [
+        "English B2+",
+        "Social sciences preferred",
+        "Numerus fixus may apply"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:17.820Z"
+}

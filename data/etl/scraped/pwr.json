@@ -1,0 +1,117 @@
+{
+  "universityId": "pwr",
+  "programs": [
+    {
+      "id": "pwr-computer-science",
+      "universityId": "pwr",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Wrocław's premier technical CS program. Software engineering, AI, cybersecurity, and data science. Faculty of Electronics. Strong ties to IT sector in Lower Silesia.",
+      "entryRequirements": [
+        "Mathematics at advanced secondary level",
+        "Physics preferred",
+        "English B2",
+        "Entrance exam (mathematics)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pwr-artificial-intelligence",
+      "universityId": "pwr",
+      "name": "Artificial Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, deep learning, and data science. Research-focused with modern AI labs. Growing tech community in Wrocław.",
+      "entryRequirements": [
+        "CS or Engineering bachelor",
+        "Mathematics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pwr-mechanical-engineering",
+      "universityId": "pwr",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Automotive engineering, design, and production technology. Faculty of Mechanical Engineering. Strong in industrial design and modern manufacturing.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pwr-civil-engineering",
+      "universityId": "pwr",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Structural engineering and infrastructure design. Sustainable construction focus with modern labs. Wrocław infrastructure investments provide practical training opportunities.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pwr-electrical-engineering",
+      "universityId": "pwr",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power systems, electronics, and telecommunications. Faculty of Electrical Engineering. Combines theory with practical lab work.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pwr-cybernetics",
+      "universityId": "pwr",
+      "name": "Cybernetics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Control systems, robotics, and automation. Modern labs for embedded systems and Industry 4.0. Research-oriented with industry collaboration.",
+      "entryRequirements": [
+        "Engineering or CS bachelor",
+        "Mathematics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.892Z"
+}

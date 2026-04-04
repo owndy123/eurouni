@@ -1,0 +1,139 @@
+{
+  "universityId": "tum",
+  "programs": [
+    {
+      "id": "tum-computer-science",
+      "universityId": "tum",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "One of Germany's top CS programs at Germany's top technical university. Covers algorithms, software engineering, AI, and data science. Strong industry partnerships with Munich tech and automotive companies (BMW, Audi, Siemens).",
+      "entryRequirements": [
+        "German language proficiency (DSH-2 or TestDaF 4x4)",
+        "Mathematics at advanced level",
+        "English B2 recommended",
+        "Numerus clausus (NC) applies"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tum-data-engineering-and-analytics",
+      "universityId": "tum",
+      "name": "Data Engineering and Analytics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Interdisciplinary program between Computer Science and Mathematics. Focus on big data, machine learning, and data pipelines. Research-oriented with industry collaborations in Munich's tech hub.",
+      "entryRequirements": [
+        "Bachelor in Computer Science, Mathematics, or related field",
+        "English B2 (no German required)",
+        "GPA minimum 2.5",
+        "GRE recommended for non-EU"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tum-mechanical-engineering",
+      "universityId": "tum",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Premier mechanical engineering program with specializations in automotive engineering, aerospace, and energy systems. TUM is ranked among the top engineering schools in Europe. Strong ties to German automotive and manufacturing industry.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF",
+        "Mathematics and Physics at advanced secondary level",
+        "Numerus clausus applies",
+        "Technical aptitude"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tum-robotics-cognition-intelligence",
+      "universityId": "tum",
+      "name": "Robotics, Cognition, Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced robotics program combining mechanical engineering, electrical engineering, and computer science. Covers autonomous systems, machine perception, and human-robot interaction. Located in Munich's robotics research ecosystem.",
+      "entryRequirements": [
+        "Bachelor in Engineering, CS, or related",
+        "English B2",
+        "Mathematics and physics background",
+        "GPA 2.5+"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tum-medicine",
+      "universityId": "tum",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 0,
+      "description": "Six-year medical program (Staatsexamen) taught in German. Clinical training at TUM University Hospital (Klinikum rechts der Isar). One of Germany's most competitive medical programs with very high Numerus Clausus requirements.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF 4x4",
+        "Numerus Clausus typically <1.0 (best grades)",
+        "Biology and Chemistry at advanced level",
+        "TMS test (Test for Medical Studies) recommended"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tum-electrical-and-computer-engineering",
+      "universityId": "tum",
+      "name": "Electrical and Computer Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced program in electrical engineering with specializations in energy systems, semiconductor technology, and communications. Research-led with labs in microelectronics and power engineering.",
+      "entryRequirements": [
+        "Electrical Engineering bachelor or equivalent",
+        "English B2",
+        "GPA 2.5+",
+        "GRE recommended"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tum-software-engineering",
+      "universityId": "tum",
+      "name": "Software Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced software engineering covering distributed systems, cloud computing, and software architecture. Industry-aligned curriculum with project work for Munich tech companies.",
+      "entryRequirements": [
+        "CS or Software Engineering bachelor",
+        "English B2",
+        "Programming experience required",
+        "GPA 2.5+"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.773Z"
+}

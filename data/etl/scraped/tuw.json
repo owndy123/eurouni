@@ -1,0 +1,151 @@
+{
+  "universityId": "tuw",
+  "programs": [
+    {
+      "id": "tuw-computer-science",
+      "universityId": "tuw",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Austria's premier technical CS program at TU Wien. Software engineering, algorithms, computer graphics, and information systems. Strong industry ties with Vienna's tech sector and research collaborations.",
+      "entryRequirements": [
+        "German C1 (most undergraduate programs are in German)",
+        "Mathematics and Physics at secondary school",
+        "Austrian Matura or equivalent",
+        "Entrance exam (Mathematik) for restricted programs"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tuw-software-engineering-and-internet-computing",
+      "universityId": "tuw",
+      "name": "Software Engineering and Internet Computing",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Advanced software engineering covering distributed systems, web technologies, cloud computing, and DevOps. English-taught for international students. Industry projects with Austrian and European tech companies.",
+      "entryRequirements": [
+        "Computer Science bachelor or equivalent (with mathematics and programming prerequisites)",
+        "English B2 (CEFR)",
+        "Entrance exam for non-EU students"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tuw-electrical-engineering",
+      "universityId": "tuw",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Power engineering, electronics, telecommunications, and automation. Faculty of Electrical Engineering is TU Wien's largest. Strong in sustainable energy and smart grid technologies.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics and Physics at advanced secondary level",
+        "Entrance exam (Mathematik)"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tuw-mechanical-engineering",
+      "universityId": "tuw",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 727,
+      "description": "Design engineering, thermodynamics, and manufacturing. Four-year program with strong automotive and industrial partnerships. Austria's manufacturing sector provides excellent career prospects.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics and Physics",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tuw-physics",
+      "universityId": "tuw",
+      "name": "Physics",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Theoretical and experimental physics with specializations in quantum physics, condensed matter, and astrophysics. Atominstitut provides research facilities for nuclear physics and radiation research.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics and Physics at advanced secondary level",
+        "Entrance exam"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tuw-mathematics",
+      "universityId": "tuw",
+      "name": "Mathematics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Pure and applied mathematics with specializations in cryptography, statistics, and mathematical modeling. English-taught. Research-oriented with applications in finance and data science.",
+      "entryRequirements": [
+        "Mathematics bachelor or equivalent",
+        "English B2",
+        "Entrance exam in mathematics"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tuw-civil-engineering",
+      "universityId": "tuw",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 727,
+      "description": "Structural engineering, transportation, and infrastructure design. Modern facilities and focus on sustainable construction. Strong Austrian construction industry provides career opportunities.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics and Physics",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tuw-artificial-intelligence",
+      "universityId": "tuw",
+      "name": "Artificial Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Machine learning, deep learning, robotics, and computer vision. Research-focused with labs in visual computing and computational intelligence. Vienna AI ecosystem provides industry connections.",
+      "entryRequirements": [
+        "Computer Science, Engineering, or Mathematics bachelor",
+        "English B2",
+        "Mathematics and programming prerequisites"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:08:57.479Z"
+}

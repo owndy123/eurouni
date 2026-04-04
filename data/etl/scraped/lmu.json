@@ -1,0 +1,139 @@
+{
+  "universityId": "lmu",
+  "programs": [
+    {
+      "id": "lmu-medicine",
+      "universityId": "lmu",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 0,
+      "description": "Six-year medical program (Staatsexamen) at one of Germany's most prestigious medical schools. Clinical training at LMU Hospital (Klinikum der Universität München). Extremely competitive with very high Numerus Clausus threshold.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF 4x4",
+        "Numerus Clausus extremely competitive (typically <1.0)",
+        "Biology and Chemistry advanced",
+        "TMS highly recommended"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "lmu-psychology",
+      "universityId": "lmu",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Research-oriented psychology covering clinical, cognitive, and social psychology. LMU is one of Germany's leading psychology departments. Empirical approach with extensive research training.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Biology or Mathematics at secondary level",
+        "Numerus Clausus competitive",
+        "English B2 recommended"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "lmu-law",
+      "universityId": "lmu",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Traditional German law program (Staatsexamen) at Germany's largest university by enrollment. Constitutional, civil, criminal, and EU law. Munich is Germany's leading legal education center.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF 4x4",
+        "Numerus Clausus typically <2.0",
+        "Excellent German language skills",
+        "History and politics background preferred"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "lmu-physics",
+      "universityId": "lmu",
+      "name": "Physics",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of theoretical and experimental physics. LMU has Germany's strongest physics department with Nobel laureates. Close collaboration with Max Planck Institutes in Munich.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics at advanced level",
+        "Numerus Clausus applies",
+        "English B2 for master"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "lmu-business-administration",
+      "universityId": "lmu",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "English-taught business program at LMU Munich School of Management. Finance, marketing, management, and entrepreneurship. Munich's business hub provides excellent career opportunities.",
+      "entryRequirements": [
+        "German DSH-2 or English B2 (if program in English)",
+        "Mathematics at secondary level",
+        "Numerus Clausus applies",
+        "GMAT recommended for master"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "lmu-computer-science",
+      "universityId": "lmu",
+      "name": "Computer Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced CS with specializations in AI, distributed systems, and IT security. LMU's computer science department is internationally recognized. Munich's tech ecosystem (Google, Apple, Microsoft R&D) offers great career prospects.",
+      "entryRequirements": [
+        "Computer Science bachelor or equivalent",
+        "English B2",
+        "GPA 2.5+",
+        "GRE recommended for non-EU"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "lmu-ethnology",
+      "universityId": "lmu",
+      "name": "Ethnology",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of cultural anthropology and ethnology. Fieldwork methods, cultural analysis, and comparative studies. LMU has one of Germany's leading anthropology departments.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Interest in cultural studies",
+        "Numerus Clausus applies",
+        "English B2 recommended"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.774Z"
+}

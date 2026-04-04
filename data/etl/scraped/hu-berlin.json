@@ -1,0 +1,120 @@
+{
+  "universityId": "hu-berlin",
+  "programs": [
+    {
+      "id": "hu-berlin-law",
+      "universityId": "hu-berlin",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Traditional German law program (Staatsexamen) preparing for legal professions across the EU. Constitutional law, civil law, criminal law, and EU law. Located in central Berlin.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF 4x4",
+        "Numerus Clausus very competitive (typically <1.3)",
+        "Excellent German writing skills",
+        "History and politics background preferred"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "hu-berlin-economics",
+      "universityId": "hu-berlin",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Economics with strong mathematical and quantitative components. HU Berlin's economics faculty is internationally recognized. Berlin's financial sector provides career opportunities.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics at advanced level",
+        "Numerus Clausus applies",
+        "English B2 recommended"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "hu-berlin-physics",
+      "universityId": "hu-berlin",
+      "name": "Physics",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Experimental and theoretical physics. Modern research labs and connection to major physics institutes in Berlin (Humboldt University, Free University, BESSY).",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics advanced",
+        "Numerus Clausus",
+        "English B2 recommended for master"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "hu-berlin-history",
+      "universityId": "hu-berlin",
+      "name": "History",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of European and world history from antiquity to contemporary. Historiography, source analysis, and archival research methods. Berlin's archives provide exceptional research resources.",
+      "entryRequirements": [
+        "German DSH-2",
+        "History at secondary school",
+        "C1 German for academic writing",
+        "Numerus Clausus"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "hu-berlin-data-science",
+      "universityId": "hu-berlin",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, statistics, and computational methods. Interdisciplinary between Computer Science, Mathematics, and Economics. Growing demand for data scientists in Berlin's tech sector.",
+      "entryRequirements": [
+        "CS, Math, or Economics bachelor with quantitative focus",
+        "English B2",
+        "GPA 2.5+",
+        "Mathematics proficiency"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "hu-berlin-global-history",
+      "universityId": "hu-berlin",
+      "name": "Global History",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Comparative and transnational history with global perspectives. International faculty and student body. Research-oriented with seminars on colonial history, global migrations, and world economies.",
+      "entryRequirements": [
+        "History or Social Sciences bachelor",
+        "English B2",
+        "German A2 recommended",
+        "Motivation letter and writing sample"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.774Z"
+}

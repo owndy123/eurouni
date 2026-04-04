@@ -1,0 +1,116 @@
+{
+  "universityId": "tu-berlin",
+  "programs": [
+    {
+      "id": "tu-berlin-computer-science",
+      "universityId": "tu-berlin",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Comprehensive CS program at Berlin's premier technical university. Software engineering, algorithms, AI, and media informatics. Berlin's growing startup ecosystem provides internship and career opportunities.",
+      "entryRequirements": [
+        "German language proficiency (DSH-2 or TestDaF)",
+        "Mathematics at advanced level",
+        "Numerus clausus applies"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-berlin-architecture",
+      "universityId": "tu-berlin",
+      "name": "Architecture",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Five-year integrated program in Architecture. Studio-based design work, building theory, structural engineering, and urban planning. Berlin offers a vibrant architecture scene with many historic and contemporary buildings.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics",
+        "Talent/aptitude test (design)",
+        "Numerus clausus applies"
+      ],
+      "field": "Architecture",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-berlin-electrical-engineering",
+      "universityId": "tu-berlin",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power engineering, electronics, and telecommunications. Faculty of Electrical Engineering and Computer Science. Berlin's location offers connections to German energy and manufacturing sectors.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics advanced",
+        "Entrance exam possible",
+        "Numerus clausus"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-berlin-urban-and-regional-planning",
+      "universityId": "tu-berlin",
+      "name": "Urban and Regional Planning",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Focus on sustainable urban development, spatial planning, and metropolitan management. English-taught with international student body. Berlin as a case study for urban innovation.",
+      "entryRequirements": [
+        "Urban Planning, Geography, Architecture, or Civil Engineering bachelor",
+        "English B2",
+        "Portfolio or motivation letter"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-berlin-computer-engineering",
+      "universityId": "tu-berlin",
+      "name": "Computer Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Hardware-software co-design, embedded systems, and computer architecture. Combines electrical engineering and computer science perspectives.",
+      "entryRequirements": [
+        "CS or Electrical Engineering bachelor",
+        "English B2",
+        "GPA 2.5+"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-berlin-mechanical-engineering",
+      "universityId": "tu-berlin",
+      "name": "Mechanical Engineering",
+      "degree": "master",
+      "language": "german",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Specializations in energy technology, production technology, and automotive engineering. TU Berlin's mechanical engineering faculty is highly regarded in German industry.",
+      "entryRequirements": [
+        "Mechanical Engineering bachelor or equivalent",
+        "German DSH-2",
+        "GPA 2.5+"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.773Z"
+}

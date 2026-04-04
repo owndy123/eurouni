@@ -1,0 +1,132 @@
+{
+  "universityId": "agh",
+  "programs": [
+    {
+      "id": "agh-computer-science",
+      "universityId": "agh",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Leading technical university's CS program in Kraków. Software engineering, AI, cybersecurity, and data science. Faculty of Electrical, Electronic, Computer and Telecommunications Engineering. Strong industry links.",
+      "entryRequirements": [
+        "Mathematics at advanced secondary level",
+        "Physics preferred",
+        "English B2",
+        "Entrance exam (mathematics and physics)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "agh-artificial-intelligence",
+      "universityId": "agh",
+      "name": "Artificial Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, deep learning, computer vision, and natural language processing. State-of-the-art AI research labs. Industry partnerships in Kraków's growing tech sector.",
+      "entryRequirements": [
+        "CS, Engineering, or Math bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "agh-mining-engineering",
+      "universityId": "agh",
+      "name": "Mining Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 210,
+      "durationMonths": 42,
+      "tuitionEur": 0,
+      "description": "Traditional mining, geology, and quarrying engineering. AGH is Poland's leading institution in mining and geosciences. Field work and practical training in Silesian mining region.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "agh-geology",
+      "universityId": "agh",
+      "name": "Geology",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "General geology, hydrogeology, and environmental geology. Field work in Poland's geological diversity. Prepares for careers in mining, environmental consulting, and research.",
+      "entryRequirements": [
+        "Geography or Sciences at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Natural Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "agh-petroleum-engineering",
+      "universityId": "agh",
+      "name": "Petroleum Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Oil and gas extraction, reservoir engineering, and drilling technology. Unique program in Poland. Prepares for careers in energy sector across Central and Eastern Europe.",
+      "entryRequirements": [
+        "Mining, Geology, or Chemical Engineering bachelor",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "agh-materials-engineering",
+      "universityId": "agh",
+      "name": "Materials Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Metallurgy, polymers, ceramics, and composite materials. Modern materials characterization labs. Applications in manufacturing, automotive, and aerospace industries.",
+      "entryRequirements": [
+        "Chemistry and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "agh-energy-engineering",
+      "universityId": "agh",
+      "name": "Energy Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Renewable energy, power systems, and energy efficiency. Growing field as Poland transitions from coal. Prepares for careers in energy sector transformation.",
+      "entryRequirements": [
+        "Engineering bachelor (any field)",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.891Z"
+}

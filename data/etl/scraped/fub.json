@@ -1,0 +1,97 @@
+{
+  "universityId": "fub",
+  "programs": [
+    {
+      "id": "fub-biology",
+      "universityId": "fub",
+      "name": "Biology",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Comprehensive biology program covering molecular biology, ecology, and biodiversity. Dahlem campus has excellent research facilities and green spaces for field biology.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF",
+        "Biology and Chemistry at secondary level",
+        "Numerus Clausus applies"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "fub-political-science",
+      "universityId": "fub",
+      "name": "Political Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of political systems, international relations, and public policy. Berlin offers unique access to German and EU political institutions. Strong research in European integration.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Social sciences background preferred",
+        "Numerus Clausus",
+        "English B2 recommended"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "fub-philosophy",
+      "universityId": "fub",
+      "name": "Philosophy",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of theoretical philosophy, ethics, and history of philosophy. FUB's philosophy department is internationally renowned, particularly in critical theory and hermeneutics.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Interest in philosophical argumentation",
+        "Numerus Clausus applies"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "fub-earth-sciences",
+      "universityId": "fub",
+      "name": "Earth Sciences",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Geology, mineralogy, and environmental earth sciences. Field-based and laboratory research. Strong in climate science and sustainable resource management.",
+      "entryRequirements": [
+        "Earth Sciences, Geography, or Geology bachelor",
+        "English B2",
+        "GPA 2.5+"
+      ],
+      "field": "Physics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "fub-biochemistry",
+      "universityId": "fub",
+      "name": "Biochemistry",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced biochemistry covering molecular biology, structural biology, and biochemical pharmacology. Research-oriented with labs at Dahlem science campus.",
+      "entryRequirements": [
+        "Biochemistry, Biology, or Chemistry bachelor",
+        "English B2",
+        "GPA 2.5+"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.774Z"
+}

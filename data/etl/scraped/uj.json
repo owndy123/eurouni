@@ -1,0 +1,132 @@
+{
+  "universityId": "uj",
+  "programs": [
+    {
+      "id": "uj-medicine",
+      "universityId": "uj",
+      "name": "Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 360,
+      "durationMonths": 72,
+      "tuitionEur": 6000,
+      "description": "Poland's oldest university (founded 1364) and top medical program. Six-year MD program in English. Clinical training at University Hospital in Kraków. Recognized across EU and internationally.",
+      "entryRequirements": [
+        "Biology and Chemistry at secondary school A-level",
+        "English B2 (minimum B2 for medicine)",
+        "Entrance exam (biology and chemistry)"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uj-dental-medicine",
+      "universityId": "uj",
+      "name": "Dental Medicine",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 6000,
+      "description": "Five-year dental program (MDDr) in English. Comprehensive training in restorative dentistry, oral surgery, and prosthodontics. Modern dental simulation center.",
+      "entryRequirements": [
+        "Biology and Chemistry at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Medicine",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uj-pharmacy",
+      "universityId": "uj",
+      "name": "Pharmacy",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 300,
+      "durationMonths": 60,
+      "tuitionEur": 4000,
+      "description": "Five-year pharmacy program (Mgr Farm) in English. Pharmaceutical sciences, pharmacology, and clinical pharmacy. Prepares for careers in pharmacy, pharma industry, and research.",
+      "entryRequirements": [
+        "Chemistry and Biology at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Pharmacy",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uj-law",
+      "universityId": "uj",
+      "name": "Law",
+      "degree": "bachelor",
+      "language": "local",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Prestigious five-year Master of Law program in Polish. Constitutional law, EU law, civil law, and criminal law. Faculty of Law and Administration is one of Poland's best.",
+      "entryRequirements": [
+        "Polish language C1 for foreigners",
+        "History or social sciences",
+        "Entrance exam"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uj-philosophy",
+      "universityId": "uj",
+      "name": "Philosophy",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced study in continental philosophy, ethics, phenomenology, and political philosophy. Jagiellonian has a rich philosophical tradition dating back centuries. Research-oriented.",
+      "entryRequirements": [
+        "Philosophy or relevant humanities bachelor",
+        "English C1",
+        "Entrance exam and interview"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uj-history",
+      "universityId": "uj",
+      "name": "History",
+      "degree": "bachelor",
+      "language": "polish",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Study of world, European, and Polish history from antiquity to modern era. Historiography and archival research. Prepares for careers in academia, archives, and cultural institutions.",
+      "entryRequirements": [
+        "History knowledge assessment",
+        "Polish C1 for foreigners",
+        "Entrance exam"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "uj-biotechnology",
+      "universityId": "uj",
+      "name": "Biotechnology",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Molecular biology, genetic engineering, and bioprocess technology. Research-focused with modern labs. Applications in medicine, agriculture, and environmental science.",
+      "entryRequirements": [
+        "Biology, Chemistry, or Biotechnology bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Biology",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.890Z"
+}

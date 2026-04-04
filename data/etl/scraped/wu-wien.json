@@ -1,0 +1,153 @@
+{
+  "universityId": "wu-wien",
+  "programs": [
+    {
+      "id": "wu-wien-business-administration",
+      "universityId": "wu-wien",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "WU Vienna's flagship undergraduate program. Comprehensive coverage of management, finance, marketing, and economics. Vienna's financial hub location provides excellent career prospects.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics at secondary school (above average)",
+        "Austrian Matura or equivalent",
+        "Numerical and verbal reasoning test (Eignungstest)"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "wu-wien-economics",
+      "universityId": "wu-wien",
+      "name": "Economics",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Economics program with strong quantitative focus. Microeconomics, macroeconomics, econometrics, and economic policy. WU's economics faculty is internationally recognized.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics (advanced level)",
+        "Entrance exam (mathematics focus)"
+      ],
+      "field": "Economics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "wu-wien-international-business-administration",
+      "universityId": "wu-wien",
+      "name": "International Business Administration",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "English-taught MSc in international business. Strategy, cross-cultural management, and global business. Highly international cohort with exchange opportunities.",
+      "entryRequirements": [
+        "Business bachelor or equivalent (with minimum 60 ECTS in business subjects)",
+        "English C1 (CAE, TOEFL, or equivalent)",
+        "GMAT score (recommended minimum 600)",
+        "Entrance exam"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "wu-wien-finance-and-accounting",
+      "universityId": "wu-wien",
+      "name": "Finance and Accounting",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Advanced finance, corporate finance, investment analysis, and accounting. English-taught. Prepares for CFA, ACCA, and careers in banking, asset management, and auditing.",
+      "entryRequirements": [
+        "Business, Economics, or Finance bachelor",
+        "English C1",
+        "Quantitative prerequisites (statistics, mathematics)",
+        "GMAT recommended"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "wu-wien-marketing",
+      "universityId": "wu-wien",
+      "name": "Marketing",
+      "degree": "master",
+      "language": "german",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Strategic marketing, digital marketing, consumer behavior, and brand management. Vienna as a retail and brand management hub provides case study opportunities.",
+      "entryRequirements": [
+        "German C1",
+        "Business bachelor with marketing specialization",
+        "Entrance exam"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "wu-wien-business-law",
+      "universityId": "wu-wien",
+      "name": "Business Law",
+      "degree": "master",
+      "language": "german",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Combines business studies with commercial law. Corporate law, tax law, labor law, and EU commercial law. WU has Austria's leading business law faculty.",
+      "entryRequirements": [
+        "German C1 (legal German)",
+        "Law bachelor or Business/Law combined bachelor",
+        "Entrance exam"
+      ],
+      "field": "Law",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "wu-wien-socio-economics",
+      "universityId": "wu-wien",
+      "name": "Socio-Economics",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Interdisciplinary program combining economics with sociology. Economic policy, social policy, and sustainability. WU's unique approach to understanding economic systems in their social context.",
+      "entryRequirements": [
+        "German C1",
+        "Social sciences background",
+        "Entrance exam"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "wu-wien-data-science",
+      "universityId": "wu-wien",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Machine learning, statistical modeling, and business analytics. Interdisciplinary between Computer Science and Business. Growing demand for data scientists in Austrian and European financial sector.",
+      "entryRequirements": [
+        "Computer Science, Mathematics, or Statistics bachelor",
+        "English B2",
+        "Programming and mathematics prerequisites"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:08:57.481Z"
+}

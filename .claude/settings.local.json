@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rm:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(gh repo:*)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:upload.wikimedia.org)",
+      "WebSearch",
+      "WebFetch(domain:en.wikipedia.org)",
+      "Bash(npx tsc:*)",
+      "Bash(npm i:*)",
+      "Bash(npx ts-node:*)",
+      "Bash(npx tsx:*)"
+    ]
+  }
+}

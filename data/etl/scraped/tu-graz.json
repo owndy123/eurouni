@@ -1,0 +1,115 @@
+{
+  "universityId": "tu-graz",
+  "programs": [
+    {
+      "id": "tu-graz-computer-science",
+      "universityId": "tu-graz",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Leading CS program in southern Austria at TU Graz. Software development, algorithms, AI, and computer vision. Graz has Austria's highest density of tech companies outside Vienna.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics at secondary school",
+        "Austrian Matura or equivalent",
+        "Entrance exam for restricted programs"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-graz-software-engineering-and-management",
+      "universityId": "tu-graz",
+      "name": "Software Engineering and Management",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Combines advanced software engineering with project management and business skills. English-taught. Industry-focused with collaborations at Graz's many technology companies.",
+      "entryRequirements": [
+        "Computer Science bachelor or equivalent",
+        "English B2 (CEFR)",
+        "Mathematics and programming prerequisites"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-graz-electrical-engineering",
+      "universityId": "tu-graz",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Power electronics, telecommunications, and automation. Faculty of Electrical and Information Engineering. Strong in automotive electronics (Graz is home to Magna, AVL, and other automotive suppliers).",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics and Physics",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-graz-mechanical-engineering",
+      "universityId": "tu-graz",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 727,
+      "description": "Automotive engineering, production technology, and mechanical design. Graz's strong automotive industry (Magna, Steyr, AVL) provides excellent industry partnerships and career prospects.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics and Physics",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-graz-advanced-materials-science",
+      "universityId": "tu-graz",
+      "name": "Advanced Materials Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Nanomaterials, functional materials, and sustainable materials. Research-oriented with access to modern labs. Focus on applications in energy, electronics, and biomedical engineering.",
+      "entryRequirements": [
+        "Physics, Chemistry, or Engineering bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "tu-graz-civil-engineering",
+      "universityId": "tu-graz",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 727,
+      "description": "Structural engineering, construction management, and infrastructure. Focus on sustainable construction and alpine engineering (relevant for Alpine region infrastructure challenges).",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics and Physics",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:08:57.480Z"
+}

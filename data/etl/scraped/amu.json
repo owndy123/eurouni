@@ -1,0 +1,114 @@
+{
+  "universityId": "amu",
+  "programs": [
+    {
+      "id": "amu-english-studies",
+      "universityId": "amu",
+      "name": "English Studies",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "British and American literature, linguistics, and translation studies. Faculty of English. English-taught in Poznań with strong humanities tradition.",
+      "entryRequirements": [
+        "English C1 (CEFR)",
+        "Literature or linguistics background preferred",
+        "Entrance exam"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "amu-psychology",
+      "universityId": "amu",
+      "name": "Psychology",
+      "degree": "bachelor",
+      "language": "polish",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Clinical and research psychology. Faculty of Psychology. Empirical approach with extensive practice in partner healthcare institutions in Poznań.",
+      "entryRequirements": [
+        "Biology at secondary school",
+        "Polish C1 for foreigners",
+        "Entrance exam (psychology and biology)"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "amu-international-relations",
+      "universityId": "amu",
+      "name": "International Relations",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Global politics, European studies, and diplomacy. Faculty of Political Science and Journalism. Combines theory with practical analysis of contemporary international affairs.",
+      "entryRequirements": [
+        "English B2",
+        "Social sciences background preferred",
+        "Entrance exam"
+      ],
+      "field": "Social Sciences",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "amu-chemistry",
+      "universityId": "amu",
+      "name": "Chemistry",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Organic, inorganic, physical, and analytical chemistry. Modern labs and research opportunities. Faculty of Chemistry. Prepares for careers in pharma and chemical industry.",
+      "entryRequirements": [
+        "Chemistry and Mathematics at secondary school",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Chemistry",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "amu-mathematics",
+      "universityId": "amu",
+      "name": "Mathematics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Pure and applied mathematics with specializations in analysis, algebra, and statistics. Research-oriented with collaborations in academic community.",
+      "entryRequirements": [
+        "Mathematics bachelor or equivalent",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Mathematics",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "amu-journalism",
+      "universityId": "amu",
+      "name": "Journalism",
+      "degree": "bachelor",
+      "language": "polish",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Media and communication studies with practical journalism training. News writing, broadcast journalism, and digital media. Partnerships with Polish media outlets.",
+      "entryRequirements": [
+        "Polish language C1",
+        "Written entrance exam",
+        "Motivation interview"
+      ],
+      "field": "Communication",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.891Z"
+}

@@ -1,0 +1,152 @@
+{
+  "universityId": "pw",
+  "programs": [
+    {
+      "id": "pw-computer-science",
+      "universityId": "pw",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Poland's leading technical university's CS program. Software engineering, algorithms, AI, and cybersecurity. Faculty of Electronics and Information Technology. Warsaw tech ecosystem connections.",
+      "entryRequirements": [
+        "Mathematics at advanced secondary level",
+        "Physics preferred",
+        "English B2",
+        "Entrance exam (mathematics)"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pw-artificial-intelligence",
+      "universityId": "pw",
+      "name": "Artificial Intelligence",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, deep learning, computer vision, and NLP. State-of-the-art labs and research center. Industry partnerships with Warsaw AI companies.",
+      "entryRequirements": [
+        "Computer Science or Engineering bachelor",
+        "Mathematics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pw-civil-engineering",
+      "universityId": "pw",
+      "name": "Civil Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 240,
+      "durationMonths": 48,
+      "tuitionEur": 0,
+      "description": "Structural engineering, transportation, and infrastructure design. Faculty of Civil Engineering. Focus on modern construction technologies and sustainable building.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pw-electrical-engineering",
+      "universityId": "pw",
+      "name": "Electrical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power systems, electronics, and telecommunications. Faculty of Electrical Engineering. Combines theory with extensive lab work. Careers in energy and manufacturing.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pw-mechanical-engineering",
+      "universityId": "pw",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "english",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Design engineering, thermodynamics, and automotive engineering. Faculty of Mechanical Engineering. Strong industry ties with Polish manufacturing and automotive sector.",
+      "entryRequirements": [
+        "Mathematics and Physics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pw-cybernetics-and-robotics",
+      "universityId": "pw",
+      "name": "Cybernetics and Robotics",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Control systems, robotics, embedded systems, and automation. Research-focused with modern labs for autonomous systems and Industry 4.0 technologies.",
+      "entryRequirements": [
+        "Engineering or CS bachelor",
+        "Mathematics",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pw-software-engineering",
+      "universityId": "pw",
+      "name": "Software Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Advanced software architecture, DevOps, cloud computing, and distributed systems. Industry-aligned curriculum with Warsaw tech company projects.",
+      "entryRequirements": [
+        "CS or Software Engineering bachelor",
+        "English B2",
+        "Entrance exam"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "pw-power-engineering",
+      "universityId": "pw",
+      "name": "Power Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Renewable energy, power systems, and electrical machines. Growing field as Poland transitions to cleaner energy. Prepares for careers in energy sector.",
+      "entryRequirements": [
+        "Electrical Engineering bachelor or equivalent",
+        "English B2"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:09:17.890Z"
+}

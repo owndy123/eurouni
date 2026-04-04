@@ -1,0 +1,119 @@
+{
+  "universityId": "rwth",
+  "programs": [
+    {
+      "id": "rwth-mechanical-engineering",
+      "universityId": "rwth",
+      "name": "Mechanical Engineering",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Germany's largest and most renowned mechanical engineering program. Specializations in automotive, production, energy, and aerospace engineering. RWTH has exceptional industry partnerships with companies like BMW, Ford, and Siemens.",
+      "entryRequirements": [
+        "German DSH-2 or TestDaF 4x4",
+        "Mathematics and Physics at advanced level",
+        "Numerus Clausus very competitive",
+        "TMS recommended"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rwth-electrical-engineering-and-information-technology",
+      "universityId": "rwth",
+      "name": "Electrical Engineering and Information Technology",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Power engineering, telecommunications, and automation. RWTH's electrical engineering faculty is one of the largest in Europe with cutting-edge research in energy transition and Industry 4.0.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics and Physics advanced",
+        "Numerus Clausus applies"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rwth-computer-science",
+      "universityId": "rwth",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 0,
+      "description": "Top CS program in Germany's strongest technical university cluster. Software engineering, AI, data science, and computer graphics. Located in Aachen with proximity to Dutch and Belgian tech hubs.",
+      "entryRequirements": [
+        "German DSH-2",
+        "Mathematics advanced",
+        "Numerus Clausus applies",
+        "English B2 recommended"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rwth-automotive-engineering",
+      "universityId": "rwth",
+      "name": "Automotive Engineering",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "English-taught master focusing on vehicle dynamics, powertrain technology, and automotive electronics. RWTH has Germany's strongest automotive research program with direct industry links.",
+      "entryRequirements": [
+        "Mechanical, Electrical, or Automotive Engineering bachelor",
+        "English B2 (no German required)",
+        "GPA 2.5+",
+        "Relevant work/internship experience preferred"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rwth-data-science",
+      "universityId": "rwth",
+      "name": "Data Science",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Machine learning, statistics, and large-scale data processing. Interdisciplinary between Computer Science and Mathematics. Research-led with applications in industry and science.",
+      "entryRequirements": [
+        "CS, Math, or Stats bachelor",
+        "English B2",
+        "GPA 2.5+",
+        "Mathematics proficiency test"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "rwth-production-and-logistics-management",
+      "universityId": "rwth",
+      "name": "Production and Logistics Management",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 0,
+      "description": "Operations management, supply chain optimization, and digital production. Focus on Industry 4.0 and smart manufacturing. Aachen's manufacturing cluster provides excellent industry connections.",
+      "entryRequirements": [
+        "Engineering, Economics, or Business bachelor",
+        "English B2",
+        "GPA 2.5+",
+        "Quantitative skills test"
+      ],
+      "field": "Engineering",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:11:04.773Z"
+}

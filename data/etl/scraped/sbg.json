@@ -1,0 +1,114 @@
+{
+  "universityId": "sbg",
+  "programs": [
+    {
+      "id": "sbg-computer-science",
+      "universityId": "sbg",
+      "name": "Computer Science",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "CS program at Salzburg's multi-disciplinary university. Software development, data science, and digital media. Salzburg's growing tech scene and proximity to Munich provide career opportunities.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics at secondary school",
+        "Austrian Matura or equivalent"
+      ],
+      "field": "Computer Science",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "sbg-digital-humanities",
+      "universityId": "sbg",
+      "name": "Digital Humanities",
+      "degree": "master",
+      "language": "english",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Bridging humanities and digital technologies. Text mining, digital archives, cultural heritage informatics. Salzburg's UNESCO World Heritage setting provides unique applications.",
+      "entryRequirements": [
+        "Humanities or Social Sciences bachelor",
+        "English B2",
+        "Digital competencies assessment"
+      ],
+      "field": "Humanities",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "sbg-chemistry",
+      "universityId": "sbg",
+      "name": "Chemistry",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Foundation in organic, inorganic, physical, and analytical chemistry. Modern labs and research opportunities. Salzburg location in Austria's pharma and chemical region.",
+      "entryRequirements": [
+        "German C1",
+        "Chemistry and Mathematics at secondary school",
+        "Entrance exam"
+      ],
+      "field": "Chemistry",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "sbg-musicology",
+      "universityId": "sbg",
+      "name": "Musicology",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Music history, theory, and ethnomusicology in Mozart's city. Salzburg's world-renowned music festival provides unique cultural context. Prepares for careers in music journalism, archiving, and cultural management.",
+      "entryRequirements": [
+        "German C1",
+        "Music theory basics",
+        "Entrance exam (music aptitude)"
+      ],
+      "field": "Arts",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "sbg-psychology",
+      "universityId": "sbg",
+      "name": "Psychology",
+      "degree": "master",
+      "language": "german",
+      "ects": 120,
+      "durationMonths": 24,
+      "tuitionEur": 727,
+      "description": "Specializations in clinical psychology, work psychology, and research methodology. Salzburg's smaller scale allows for close faculty-student interaction and intensive research training.",
+      "entryRequirements": [
+        "Psychology bachelor or equivalent",
+        "German C1",
+        "Entrance exam"
+      ],
+      "field": "Psychology",
+      "lastUpdated": "2026-04-04"
+    },
+    {
+      "id": "sbg-business-administration",
+      "universityId": "sbg",
+      "name": "Business Administration",
+      "degree": "bachelor",
+      "language": "german",
+      "ects": 180,
+      "durationMonths": 36,
+      "tuitionEur": 727,
+      "description": "Comprehensive business studies with a focus on tourism management and international business. Salzburg's position as a tourist destination and proximity to German business centers creates unique opportunities.",
+      "entryRequirements": [
+        "German C1",
+        "Mathematics at secondary school",
+        "Entrance exam"
+      ],
+      "field": "Business",
+      "lastUpdated": "2026-04-04"
+    }
+  ],
+  "savedAt": "2026-04-04T21:08:57.480Z"
+}
