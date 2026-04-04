@@ -73,7 +73,15 @@ export default function ProgramCard({ program, university, score }: ProgramCardP
           </span>
         </div>
 
-        {/* Quick info - visible always */}
+        {/* Entry Requirements - always visible */}
+        <div className="mb-4">
+          <h4 className="text-xs font-semibold text-slate-500 uppercase mb-1">Entry Requirements</h4>
+          <p className="text-sm text-slate-700 line-clamp-2">
+            {program.entryRequirements.length > 0 ? program.entryRequirements.join(' • ') : 'View on university website'}
+          </p>
+        </div>
+
+        {/* Quick info */}
         <div className="grid grid-cols-3 gap-3 text-sm text-slate-600 mb-4">
           <div className="flex items-center gap-1">
             <GraduationCap className="w-4 h-4 text-slate-400" />
@@ -89,28 +97,7 @@ export default function ProgramCard({ program, university, score }: ProgramCardP
           </div>
         </div>
 
-        {/* Hidden hover content */}
-        <div className="grid grid-cols-2 gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-y-2 group-hover:translate-y-0">
-          <div>
-            <h4 className="text-xs font-semibold text-slate-500 uppercase mb-1">Location</h4>
-            <p className="text-sm text-slate-700 flex items-center gap-1">
-              <MapPin className="w-3 h-3" />
-              {university.city}, {university.country}
-            </p>
-          </div>
-          <div>
-            <h4 className="text-xs font-semibold text-slate-500 uppercase mb-1">Workload</h4>
-            <p className="text-sm text-slate-700">
-              ~{Math.round(program.ects * 27.5)} hours/year
-            </p>
-          </div>
-          <div className="col-span-2">
-            <h4 className="text-xs font-semibold text-slate-500 uppercase mb-1">Entry Requirements</h4>
-            <p className="text-sm text-slate-700 line-clamp-2">
-              {program.entryRequirements.join(', ')}
-            </p>
-          </div>
-        </div>
+
 
         {/* Action */}
         <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-end">
