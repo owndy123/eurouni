@@ -359,9 +359,6 @@ export default function ProgramsPage() {
             <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
               Browse European University Programs
             </h1>
-            <p className="text-slate-500 text-sm mb-6">
-              Discover {programs.length} programs across {universities.length} universities in {countries.length} countries
-            </p>
 
             {/* Search Bar */}
             <div className="relative">

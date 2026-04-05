@@ -119,12 +119,6 @@ export default function Home() {
             <span className="block text-primary">European University</span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Discover {stats.totalPrograms} programs across {stats.totalUniversities} universities in {stats.countries} countries.
-            Our Student Calculator matches you based on your academic profile, language skills, and career goals.
-          </p>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="gap-2">
