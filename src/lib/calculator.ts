@@ -346,7 +346,7 @@ const LANGUAGE_LEVELS = {
 export function calculateProgramScore(
   profile: StudentProfile,
   program: {
-    language: 'english' | 'local' | 'both' | 'german' | 'polish' | 'hungarian' | 'slovak'
+    language: 'english' | 'local' | 'both' | 'german' | 'polish' | 'hungarian' | 'slovak' | 'czech' | 'dutch'
     tuitionEur: number
     durationMonths: number
     ects: number
@@ -442,7 +442,7 @@ export function calculateAllScores(
   programs: Array<{
     id: string
     universityId: string
-    language: 'english' | 'local' | 'both' | 'german' | 'polish' | 'hungarian' | 'slovak'
+    language: 'english' | 'local' | 'both' | 'german' | 'polish' | 'hungarian' | 'slovak' | 'czech' | 'dutch'
     tuitionEur: number
     durationMonths: number
     ects: number
