@@ -240,7 +240,7 @@ export default function Home() {
 
           <div className="text-center mt-10">
             <Button asChild variant="outline" size="lg">
-              <Link href="/programs" className="gap-2">
+              <Link href="/universities" className="gap-2">
                 View All Universities
                 <ArrowRight className="w-4 h-4" />
               </Link>
