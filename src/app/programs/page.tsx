@@ -348,6 +348,7 @@ export default function ProgramsPage() {
             <Link href="/programs" className="text-primary font-medium">Programs</Link>
             <Link href="/universities" className="text-slate-600 hover:text-slate-900">Universities</Link>
             <Link href="/onboarding" className="text-slate-600 hover:text-slate-900">Match Me</Link>
+            <Link href="/about" className="text-slate-600 hover:text-slate-900">About</Link>
           </nav>
         </div>
       </header>

@@ -224,7 +224,7 @@ export default function OnboardingPage() {
             <span className="text-lg font-bold text-slate-900">EuroUni</span>
           </Link>
           <span className="text-sm text-slate-500">
-            {currentStep <= 4 ? `Step ${currentStep} of 4` : 'Your Results'}
+            {currentStep <= 4 ? `Step ${currentStep} of 5` : 'Your Results'}
           </span>
         </div>
       </header>

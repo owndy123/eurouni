@@ -57,6 +57,7 @@ export default function UniversitiesPage() {
             <a className="text-slate-600 hover:text-slate-900 transition-colors" href="/programs">Programs</a>
             <a className="text-primary font-medium" href="/universities">Universities</a>
             <a className="text-slate-600 hover:text-slate-900 transition-colors" href="/onboarding">Match Me</a>
+            <a className="text-slate-600 hover:text-slate-900 transition-colors" href="/about">About</a>
           </nav>
         </div>
       </header>

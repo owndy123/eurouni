@@ -95,6 +95,18 @@ export default function Home() {
             >
               Programs
             </Link>
+            <Link
+              href="/universities"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Universities
+            </Link>
+            <Link
+              href="/about"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              About
+            </Link>
             <Button asChild size="sm">
               <Link href="/onboarding" className="gap-2">
                 Start Matching
