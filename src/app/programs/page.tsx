@@ -55,11 +55,11 @@ const LANGUAGE_MAP: Record<string, string> = {
 export default function ProgramsPage() {
   // Filter state
   const [search, setSearch] = useState('')
-  const [selectedCountry, setSelectedCountry] = useState<string>('')
-  const [selectedDegree, setSelectedDegree] = useState<string>('')
-  const [selectedLanguage, setSelectedLanguage] = useState<string>('')
-  const [selectedField, setSelectedField] = useState<string>('')
-  const [selectedUniversity, setSelectedUniversity] = useState<string>('')
+  const [selectedCountry, setSelectedCountry] = useState<string>(undefined as unknown as string)
+  const [selectedDegree, setSelectedDegree] = useState<string>(undefined as unknown as string)
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(undefined as unknown as string)
+  const [selectedField, setSelectedField] = useState<string>(undefined as unknown as string)
+  const [selectedUniversity, setSelectedUniversity] = useState<string>(undefined as unknown as string)
   const [maxTuition, setMaxTuition] = useState<number[]>([20000])
   const [freeOnly, setFreeOnly] = useState(false)
   const [sortBy, setSortBy] = useState<string>('name-asc')
