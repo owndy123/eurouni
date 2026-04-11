@@ -1,12 +1,13 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'About EuroUni',
-  description: 'EuroUni helps European high school graduates find the perfect university program. Learn about our mission, the student calculator, and how we cover 7 countries with 306 programs.',
-}
+import Link from 'next/link'
+import { useState } from 'react'
+import { Menu } from 'lucide-react'
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 
 export default function AboutPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-slate-50/50">
       {/* Header */}
@@ -16,12 +17,56 @@ export default function AboutPage() {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap w-7 h-7 text-primary"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
             <span className="text-xl font-bold text-slate-900">EuroUni</span>
           </Link>
-          <nav className="flex items-center gap-5 text-sm">
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-5 text-sm">
             <Link className="text-slate-600 hover:text-slate-900 transition-colors" href="/programs">Programs</Link>
             <Link className="text-slate-600 hover:text-slate-900 transition-colors" href="/universities">Universities</Link>
             <Link className="text-slate-600 hover:text-slate-900 transition-colors" href="/onboarding">Match Me</Link>
             <Link className="text-primary font-medium" href="/about">About</Link>
           </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+
+          {/* Mobile menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetContent side="right" className="w-72">
+              <SheetHeader className="pb-6">
+                <SheetTitle className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap w-5 h-5 text-primary"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="MM6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                  EuroUni
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1">
+                {[
+                  { href: '/programs', label: 'Programs', primary: false },
+                  { href: '/universities', label: 'Universities', primary: false },
+                  { href: '/onboarding', label: 'Match Me', primary: false },
+                  { href: '/about', label: 'About', primary: true },
+                ].map(({ href, label, primary }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${
+                      primary
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 

@@ -1,9 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { GraduationCap, MapPin, Languages, Calculator, ArrowRight, Globe, Users, BookOpen, TrendingUp } from 'lucide-react'
+import { GraduationCap, MapPin, Languages, Calculator, ArrowRight, Globe, Users, BookOpen, TrendingUp, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
+import { SheetTrigger } from '@/components/ui/sheet'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { universities, programs, getStats, getUniversityWithLogo } from '@/data/mockData'
 import { UniversityAvatar } from '@/components/university-avatar'
@@ -74,6 +77,7 @@ function UniversityCard({
 export default function Home() {
   const stats = getStats()
   const topUniversities = universities.slice(0, 6)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-background">
@@ -88,7 +92,9 @@ export default function Home() {
               EuroUni
             </span>
           </Link>
-          <div className="flex items-center gap-6">
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-6">
             <Link
               href="/programs"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -114,6 +120,48 @@ export default function Home() {
               </Link>
             </Button>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+
+          {/* Mobile menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetContent side="right" className="w-72">
+              <SheetHeader className="pb-6">
+                <SheetTitle className="flex items-center gap-2">
+                  <GraduationCap className="w-5 h-5 text-primary" />
+                  EuroUni
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1">
+                {[
+                  { href: '/programs', label: 'Programs', primary: false },
+                  { href: '/universities', label: 'Universities', primary: false },
+                  { href: '/about', label: 'About', primary: false },
+                  { href: '/onboarding', label: 'Start Matching', primary: true },
+                ].map(({ href, label, primary }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${
+                      primary
+                        ? 'bg-primary text-white hover:bg-primary/90'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </nav>
 

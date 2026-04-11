@@ -18,6 +18,8 @@ import {
   Languages,
   Clock,
   School,
+  Menu,
+  Link2,
   Loader2,
 } from 'lucide-react'
 import Link from 'next/link'
@@ -65,6 +67,7 @@ export default function ProgramsPage() {
   const [sortBy, setSortBy] = useState<string>('name-asc')
   const [showFilters, setShowFilters] = useState(false)
   const [page, setPage] = useState(1)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Derived data
   const countries = useMemo(() => Array.from(new Set(universities.map(u => u.country))).sort(), [])
@@ -339,12 +342,56 @@ export default function ProgramsPage() {
             <GraduationCap className="w-7 h-7 text-primary" />
             <span className="text-xl font-bold text-slate-900">EuroUni</span>
           </div>
-          <nav className="flex items-center gap-5 text-sm">
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-5 text-sm">
             <Link href="/programs" className="text-primary font-medium">Programs</Link>
             <Link href="/universities" className="text-slate-600 hover:text-slate-900">Universities</Link>
             <Link href="/onboarding" className="text-slate-600 hover:text-slate-900">Match Me</Link>
             <Link href="/about" className="text-slate-600 hover:text-slate-900">About</Link>
           </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 text-slate-600 hover:text-slate-900"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+
+          {/* Mobile menu sheet */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetContent side="right" className="w-72">
+              <SheetHeader className="pb-6">
+                <SheetTitle className="flex items-center gap-2">
+                  <GraduationCap className="w-5 h-5 text-primary" />
+                  EuroUni
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1">
+                {[
+                  { href: '/programs', label: 'Programs', primary: true },
+                  { href: '/universities', label: 'Universities', primary: false },
+                  { href: '/onboarding', label: 'Match Me', primary: false },
+                  { href: '/about', label: 'About', primary: false },
+                ].map(({ href, label, primary }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                      primary
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 

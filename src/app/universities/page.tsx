@@ -2,10 +2,14 @@
 
 import { useState } from 'react';
 import { universities, programs, type University, type Program } from '@/lib/dataSource';
+import { Menu, X } from 'lucide-react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import Link from 'next/link';
 
 export default function UniversitiesPage() {
   const [search, setSearch] = useState('');
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Get unique countries
   const countries = Array.from(new Set(universities.map((u: University) => u.country))).sort();
@@ -53,12 +57,56 @@ export default function UniversitiesPage() {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap w-7 h-7 text-primary"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
             <span className="text-xl font-bold text-slate-900">EuroUni</span>
           </a>
-          <nav className="flex items-center gap-5 text-sm">
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-5 text-sm">
             <a className="text-slate-600 hover:text-slate-900 transition-colors" href="/programs">Programs</a>
             <a className="text-primary font-medium" href="/universities">Universities</a>
             <a className="text-slate-600 hover:text-slate-900 transition-colors" href="/onboarding">Match Me</a>
             <a className="text-slate-600 hover:text-slate-900 transition-colors" href="/about">About</a>
           </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900"
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+
+          {/* Mobile menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetContent side="right" className="w-72">
+              <SheetHeader className="pb-6">
+                <SheetTitle className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap w-5 h-5 text-primary"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                  EuroUni
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1">
+                {[
+                  { href: '/programs', label: 'Programs', primary: false },
+                  { href: '/universities', label: 'Universities', primary: true },
+                  { href: '/onboarding', label: 'Match Me', primary: false },
+                  { href: '/about', label: 'About', primary: false },
+                ].map(({ href, label, primary }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${
+                      primary
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    }`}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
 
