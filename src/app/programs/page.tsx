@@ -194,7 +194,6 @@ export default function ProgramsPage() {
             <SelectValue placeholder="All Countries" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Countries</SelectItem>
             {countries.map(c => (
               <SelectItem key={c} value={c}>{c}</SelectItem>
             ))}
@@ -213,7 +212,6 @@ export default function ProgramsPage() {
             <SelectValue placeholder="All Degrees" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Degrees</SelectItem>
             <SelectItem value="bachelor">Bachelor&apos;s</SelectItem>
             <SelectItem value="master">Master&apos;s</SelectItem>
           </SelectContent>
@@ -231,7 +229,6 @@ export default function ProgramsPage() {
             <SelectValue placeholder="All Languages" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Languages</SelectItem>
             {Object.entries(LANGUAGE_MAP).map(([val, label]) => (
               <SelectItem key={val} value={val}>{label}</SelectItem>
             ))}
@@ -250,7 +247,6 @@ export default function ProgramsPage() {
             <SelectValue placeholder="All Fields" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Fields</SelectItem>
             {ALL_FIELDS.map(f => (
               <SelectItem key={f} value={f}>{f}</SelectItem>
             ))}
@@ -269,7 +265,6 @@ export default function ProgramsPage() {
             <SelectValue placeholder="All Universities" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="">All Universities</SelectItem>
             {universities.map(u => (
               <SelectItem key={u.id} value={u.id}>{u.name}</SelectItem>
             ))}
