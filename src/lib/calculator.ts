@@ -140,38 +140,49 @@ export const UNIVERSITY_RANKINGS: Record<string, number> = {
   'tu-berlin': 148,
   'rwth': 99,
   'heidelberg': 84,
-  'charite': 118,
   'kit': 119,
-  'tu-munich': 37,
-  'fau': 218,
-  'tu-dresden': 194,
-  'u-freiburg': 86,
-  'u-munich': 59,
+  'fub': 70,
+  'hu-berlin': 103,
   // Austria
   'univie': 140,
-  'tu-wien': 184,
-  'u-graz': 321,
-  'u-innsbruck': 298,
-  'u-salzburg': 451,
+  'tuw': 184,
+  'jku': 351,
+  'tu-graz': 371,
+  'uibk': 298,
+  'sbg': 451,
+  'wu-wien': 511,
+  'mu-wien': 601,
   // Czech Republic
-  'charles-university': 268,
-  'ctu-prague': 410,
-  'masaryk': 421,
+  'cuni': 268,
+  'vut-brno': 410,
   // Poland
-  'uw': 322,
   'uj': 368,
-  'tu-warsaw': 601,
+  'amu': 651,
+  'pw': 601,
+  'agh': 551,
+  'pwr': 751,
+  'ug': 801,
+  'pg': 851,
+  'put': 801,
   // Hungary
   'elte': 701,
-  'budapest-uni': 801,
+  'bme': 801,
+  'semmelweis': 501,
+  'debrecen': 901,
   // Slovakia
-  'ukba': 1001,
-  'tu-kosice': 1201,
+  'stuba': 1001,
+  'tuke': 1101,
+  'uniba': 1201,
+  'ukf': 1501,
   // Netherlands
   'tue': 138,
-  'tu-delft': 47,
-  'eur': 180,
-  'uu': 132,
+  'tudelft': 47,
+  'leiden': 74,
+  'rug': 132,
+  'uva': 180,
+  'vu': 201,
+  'utwente': 251,
+  'radboud': 232,
 }
 
 /**
@@ -237,17 +248,30 @@ export function scoreCitySize(citySizePreference: number, cityBucket: CityBucket
 
 /**
  * Score tuition affordability (0-100)
+ * Budget-conscious: free programs get a bonus, but quality & ranking still matter.
  * budget: monthly budget in EUR
  * tuitionEur: annual tuition in EUR (0 = free)
  */
 export function scoreTuition(budget: number, tuitionEur: number): number {
-  if (tuitionEur === 0) return 100
-  // Convert annual tuition to monthly equivalent for comparison
+  // Convert annual tuition to monthly equivalent
   const monthlyTuition = tuitionEur / 12
-  if (monthlyTuition <= budget) return 75
-  // Score decreases as tuition exceeds budget
-  const ratio = budget / monthlyTuition
-  return Math.max(0, ratio * 50)
+
+  // If it's free, good start — but not an automatic 100
+  if (tuitionEur === 0) {
+    // Free programs: 75-90 based on whether monthly budget is also comfortable
+    return budget > 300 ? 90 : 75
+  }
+
+  // If tuition fits comfortably in budget
+  if (monthlyTuition <= budget) {
+    // Fits in budget: 65-74
+    return Math.round(74 - (monthlyTuition / budget) * 9)
+  }
+
+  // Tuition exceeds budget — score drops proportionally but doesn't cliff to 0
+  // Range: 0-50 based on how much over budget
+  const overRatio = budget / monthlyTuition
+  return Math.max(0, Math.round(overRatio * 50))
 }
 
 // Field matching keywords for partial and related matches
@@ -403,12 +427,23 @@ export function calculateProgramScore(
   }
 
   // Calculate weighted total
-  const totalScore =
+  const rawTotal =
     academicScore * weights.academic +
     locationScore * weights.location +
     languageScore * weights.language +
     budgetScore * weights.budget +
     careerScore * weights.career
+
+  // Bonus for highly-ranked universities (top 50 globally)
+  const uniRank = universityParams?.ranking ?? UNIVERSITY_RANKINGS[universityParams?.universityId ?? '']
+  let rankingBonus = 0
+  if (uniRank) {
+    if (uniRank <= 50) rankingBonus = 8
+    else if (uniRank <= 100) rankingBonus = 5
+    else if (uniRank <= 200) rankingBonus = 2
+  }
+
+  const totalScore = rawTotal + rankingBonus
 
   return {
     programId: '',
