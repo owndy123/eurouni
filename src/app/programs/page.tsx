@@ -335,6 +335,9 @@ export default function ProgramsPage() {
 
   return (
     <div className="min-h-screen bg-slate-50/50">
+      {/* VERSION CHECK — remove after confirmed deployed */}
+      <div className="bg-yellow-400 text-black text-xs text-center py-1 font-mono">Programs v3 — deployed</div>
+
       {/* Header */}
       <header className="bg-white border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
