@@ -521,10 +521,10 @@ export function calculateAllScores(
       fieldOfStudy: studentFieldOfStudy,
     })
 
-    // Adjust total score with distance component
+    // Adjust total score with distance component (40% weight — proximity matters)
     let totalScore = result.score
     if (hasHomeLocation) {
-      totalScore = (result.score * 0.85) + (distanceScore * 0.15)
+      totalScore = (result.score * 0.60) + (distanceScore * 0.40)
     }
 
     results.push({
